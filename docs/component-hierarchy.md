@@ -23,14 +23,22 @@
  - PhotoThumbnail
   + PhotoIndex
 
+**CommentsContainer**
+ - CommentIndex
+
 **PhotoIndex**
  - PhotoIndexItem
   + PhotoDetail
-    + Comments
-      - Comment
+    + CommentsIndex
     - Tags
       - Tag
     * Photo
+
+**CommentIndex**
+ - CommentIndexItem
+
+**NewPhotoContainer**
+ - NewPhoto
 
 **Search**
 
@@ -39,6 +47,9 @@
 
 **NewTag**
  - NewTag
+
+**newComment**
+ - NewComment
 
 **TagsSearch**
  + AutoSearch

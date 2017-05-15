@@ -8,11 +8,13 @@
     signUp: {errors: []},
     logIn: {errors: []},
     uploadPhoto: {errors: []}
+    createComment: {errors: []}
   },
   photos: {
     1: {
       title: "Title",
-      body: "Body",
+      body: "body",
+      image_url: "url",
       author_id: 1,
       album_id: 1
       tags: {
@@ -21,13 +23,20 @@
           name: "Tag"
         }
       }
+      comments: {
+        1: {
+          id: 1
+          body: "body"
+        }
+      }
     }
   },
   albums: {
     1: {
       title: "Album",
       author_id: 1,
-      description: "Description"
+      description: "Description",
+      photos: []
     }
   }
   tagFilters: [1, 2, 3]
