@@ -50,6 +50,25 @@ class SessionForm extends React.Component {
     );
   }
 
+  emailField() {
+    if (this.props.formType === 'login') {
+      return;
+    } else {
+      return (
+        <div>
+          <label>Email:
+            <input type="text"
+              value={this.state.email}
+              onChange={this.update('email')}
+              className="login-input"
+              />
+          </label>
+          <br/>
+        </div>
+      );
+    }
+  }
+
   render() {
     return (
       <div className="login-form-container">
@@ -68,14 +87,7 @@ class SessionForm extends React.Component {
                />
              </label>
              <br />
-             <label>Email:
-               <input type="text"
-                 value={this.state.email}
-                 onChange={this.update('email')}
-                 className="login-input"
-               />
-             </label>
-             <br/>
+             {this.emailField()}
              <label>Password:
                <input type="password"
                  value={this.state.password}
