@@ -4,24 +4,24 @@
  - AuthForm
 
 **HomeContainer**
- - Home
+ - Home (holds PhotosContainer)
  - Navbar
 
 **PhotosContainer**
- - PhotoThumbnail
-  * PhotoIndex
+ - PhotoIndex
+  * PhotoThumbnail
 
 **AlbumContainer**
- - AlbumThumbnail
-  + PhotoIndex
+ - AlbumIndex
+  + AlbumThumbnail
 
 **SearchResultsContainer**
  - Search
- - PhotoIndex
+ - PhotoIndex (photos changed by search)
 
 **TagContainer**
- - PhotoThumbnail
-  + PhotoIndex
+ -  PhotoIndex (renders tags)
+  + PhotoThumbnail
 
 **CommentsContainer**
  - CommentIndex
@@ -42,8 +42,8 @@
 
 **Search**
 
-**NewAlbum**
- - NewAlbum
+**New/EditAlbum**
+ - AlbumForm
 
 **NewTag**
  - NewTag
@@ -63,8 +63,8 @@
 | "/sign-in" | "AuthFormContainer" |
 | "/home" | "HomeContainer" |
 | "/home/photo/:photoId" | "PhotosContainer" |
-| "/home/album/:albumId/photo/:photoId" | "AlbumContainer" |
-| "/home/tag/:tagId/photo/:photodId" | "TagContainer" |
+| "/home/album/:albumId" | "AlbumContainer" |
+| "/home/tag/:tagId" | "TagContainer" |
 | "/home/search-results" | "SearchResultsContainer"
 | "/new-photo" | "NewPhotoContainer" |
 | "/new-album" | "NewAlbum" |

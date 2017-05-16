@@ -36,7 +36,7 @@ sufficient CSS styling:
 
 ### Phase 1: Backend setup and Front End User Authentication (2 days)
 
-**Objective:** Functioning rails project with front-end Authentication
+**Objective:** Functioning Rails project with front-end Authentication
 
 ### Phase 2: Photos Model, API, and components (2 days)
 
@@ -53,7 +53,7 @@ the API.
 
 ### Phase 5: Tags (1 day)
 
-**Objective:** Photos can be tagged with multiple tags, and tags are searchable.
+**Objective:** Photos can be tagged with multiple tags. Finish and submit Production README.
 
 ### Phase 6: - Infinite scroll for Photos Index (1 day)
 
@@ -62,5 +62,6 @@ the API.
 ### Bonus Features (TBD)
 - [ ] Infinite Scroll
 - [ ] Clicking on a photo triggers a modal view with details and comments
+- [ ] Tags are searchable
 - [ ] Metadata for photos
 - [ ] Favorites and Follows

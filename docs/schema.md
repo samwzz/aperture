@@ -18,7 +18,7 @@ body        | text      | not null
 image_url   | text      | not null
 author_id   | integer   | not null, foreign key (references users), indexed
 album_id    | integer   | not null, foreign key (references albums), indexed
-
+<!-- look at taggings -->
 ## albums
 column name | data type | details
 ------------|-----------|-----------------------

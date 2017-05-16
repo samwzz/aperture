@@ -26,7 +26,7 @@
 - `PATCH /api/photos/:id`
 - `DELETE /api/photos/:id`
 
-### Notebooks
+### Albums
 
 - `GET /api/albums`
 - `POST /api/albums`
