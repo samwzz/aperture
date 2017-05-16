@@ -39,7 +39,7 @@
 - `GET /api/tags`
 - `POST /api/photos/:photo_id/tags`
 - `DELETE /api/photos/:photo_id/tags/:tag_name`
-
+<!-- query string -->
 ### Comments
 
 - `GET /api/photos/:photo_id/comments`
