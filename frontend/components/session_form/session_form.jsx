@@ -11,6 +11,14 @@ class SessionForm extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
+  componentWillReceiveProps(nextProps) {
+    console.log(this.props);
+    console.log(nextProps);
+    if (nextProps.loggedIn) {
+      this.props.history.push('/');
+    }
+  }
+
   update(field) {
     return e => this.setState({
       [field]: e.currentTarget.value
@@ -27,7 +35,7 @@ class SessionForm extends React.Component {
     if (this.props.formType === 'login') {
       return <Link to="/signup">Sign up instead</Link>;
     } else {
-      return <Link to="/login">sign in instead</Link>;
+      return <Link to="/login">Log in instead</Link>;
     }
   }
 

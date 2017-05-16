@@ -10,10 +10,9 @@ const mapStateToProps = ({ session }, ownProps) => ({
 
 const mapDispatchToProps = (dispatch, ownProps) => {
   const formType = ownProps.location.pathname.slice(1);
-  console.log(ownProps);
   const processForm = (formType === 'login') ? login : signup;
   return {
-    processForm: user => dispatch(processForm(user))
+    processForm: user => dispatch(processForm({ user }))
   };
 };
 
