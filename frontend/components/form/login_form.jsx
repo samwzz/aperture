@@ -9,6 +9,18 @@ class LoginForm extends React.Component {
     };
   }
 
+  update(field) {
+    return e => this.setState({
+      [field]: e.currentTarget.value
+    });
+  }
+
+  handleSubmit(e) {
+    e.preventDefault();
+    const user = Object.assign({}, this.state);
+    this.props.login(user);
+  }
+
   renderErrors() {
     return(
       <ul className="errors">
