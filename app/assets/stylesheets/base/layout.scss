@@ -25,3 +25,13 @@ button:hover {
 .hidden {
 	display: none;
 }
+
+input[type="text"],
+input[type="password"],
+textarea, {
+  -webkit-appearance: textfield;
+  -moz-appearance: textfield;
+  appearance: textfield;
+
+  border: 1px solid gray;
+}
