@@ -8,6 +8,7 @@ class SignupForm extends React.Component {
       password: "",
       email: ""
     };
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   update(field) {
