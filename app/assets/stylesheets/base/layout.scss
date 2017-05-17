@@ -1,0 +1,27 @@
+html {
+	position: relative;
+	height: 100%;
+}
+
+button {
+	background-color: gray;
+	border-color: black;
+	color: white;
+	font-weight: bold;
+	padding: 7px 9px;
+	border-radius: 3px;
+	transition: background-color 0.3s;
+	font-family: sans-serif;
+	text-transform: uppercase;
+	font-size: 11px;
+	text-align: center;
+}
+
+button:hover {
+	background-color: black;
+	border-color: black;
+}
+
+.hidden {
+	display: none;
+}
