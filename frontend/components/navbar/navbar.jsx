@@ -62,7 +62,12 @@ class Navbar extends React.Component {
 
   render() {
     const { currentUser, logout, loggedIn } = this.props;
-    const form = this.state.formType === "Sign Up" ? <SignupFormContainer /> : <LoginFormContainer/>
+    let form;
+    if (this.state.formType === "Sign Up") {
+      form = <SignupFormContainer closeModal={this.closeModal} />;
+    } else if (this.state.formType === "Log In") {
+      form = <LoginFormContainer closeModal={this.closeModal} />;
+    }
 
     return (
       <nav className="main-nav">
