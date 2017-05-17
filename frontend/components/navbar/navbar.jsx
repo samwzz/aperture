@@ -58,8 +58,14 @@ class Navbar extends React.Component {
     if (!this.props.loggedIn) {
       return (
         <nav className="login-signup">
-          <button id="login-button" onClick={this.handleLoginClick}>Log In</button>
-          <button id="signup-button" onClick={this.handleSignupClick}>Sign Up</button>
+          <ul>
+            <li>
+              <button id="login-button" onClick={this.handleLoginClick}>Log In</button>
+            </li>
+            <li>
+              <button id="signup-button" onClick={this.handleSignupClick}>Sign Up</button>
+            </li>
+          </ul>
         </nav>
       );
     }
@@ -82,30 +88,34 @@ class Navbar extends React.Component {
     return (
       <nav className="main-nav">
         <nav className="left-nav">
-          <h1 className="logo">FStop</h1>
+          <ul>
+            <li id="logo">FStop</li>
+          </ul>
         </nav>
-        {this.sessionLinks()}
-        <Modal
-          isOpen={this.state.LoginModalOpen}
-          onAfterOpen={this.afterModalOpen}
-          onRequestClose={this.closeLoginModal}
-          style={FormModalStyle}
-          contentLabel="LoginModal"
-          >
-          <LoginFormContainer closeLoginModal={this.closeLoginModal} openSignupModal={this.openSignupModal} />
-          <button onClick={this.closeLoginModal}>Close</button>
-        </Modal>
-        <Modal
-          isOpen={this.state.SignupModalOpen}
-          onAfterOpen={this.afterModalOpen}
-          onRequestClose={this.closeSignupModal}
-          style={FormModalStyle}
-          contentLabel="SignupModal"
-          >
-          <SignupFormContainer closeSignupModal={this.closeSignupModal} openLoginModal={this.openLoginModal} />
-          <button onClick={this.closeSignupModal}>Close</button>
-        </Modal>
-        {this.personalGreeting(currentUser, logout)}
+        <nav className="right-nav">
+          {this.sessionLinks()}
+          <Modal
+            isOpen={this.state.LoginModalOpen}
+            onAfterOpen={this.afterModalOpen}
+            onRequestClose={this.closeLoginModal}
+            style={FormModalStyle}
+            contentLabel="LoginModal"
+            >
+            <LoginFormContainer closeLoginModal={this.closeLoginModal} openSignupModal={this.openSignupModal} />
+            <button onClick={this.closeLoginModal}>Close</button>
+          </Modal>
+          <Modal
+            isOpen={this.state.SignupModalOpen}
+            onAfterOpen={this.afterModalOpen}
+            onRequestClose={this.closeSignupModal}
+            style={FormModalStyle}
+            contentLabel="SignupModal"
+            >
+            <SignupFormContainer closeSignupModal={this.closeSignupModal} openLoginModal={this.openLoginModal} />
+            <button onClick={this.closeSignupModal}>Close</button>
+          </Modal>
+          {this.personalGreeting(currentUser, logout)}
+        </nav>
       </nav>
     );
   }
