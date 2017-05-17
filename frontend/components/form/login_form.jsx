@@ -1,41 +1,12 @@
 import React from 'react';
-import { Link, withRouter } from 'react-router-dom';
 
-class SessionForm extends React.Component {
+class LoginForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       username: "",
-      email: "",
       password: ""
     };
-    this.handleSubmit = this.handleSubmit.bind(this);
-  }
-
-  componentWillReceiveProps(nextProps) {
-    if (nextProps.loggedIn) {
-      this.props.history.push('/');
-    }
-  }
-
-  update(field) {
-    return e => this.setState({
-      [field]: e.currentTarget.value
-    });
-  }
-
-  handleSubmit(e) {
-    e.preventDefault();
-    const user = Object.assign({}, this.state);
-    this.props.processForm(user);
-  }
-
-  navLink() {
-    if (this.props.formType === 'login') {
-      return <Link to="/signup">Sign Up</Link>;
-    } else {
-      return <Link to="/login">Log In</Link>;
-    }
   }
 
   renderErrors() {
@@ -50,25 +21,6 @@ class SessionForm extends React.Component {
     );
   }
 
-  emailField() {
-    if (this.props.formType === 'login') {
-      return;
-    } else {
-      return (
-        <div>
-          <label>Email:
-            <input type="text"
-              value={this.state.email}
-              onChange={this.update('email')}
-              className="login-input"
-              />
-          </label>
-          <br/>
-        </div>
-      );
-    }
-  }
-
   render() {
     return (
       <div className="login-form-container">
@@ -77,6 +29,7 @@ class SessionForm extends React.Component {
            <div className="login-form">
              <br/>
              <label>Username:
+               <br/>
                <input type="text"
                  value={this.state.username}
                  onChange={this.update('username')}
@@ -84,8 +37,8 @@ class SessionForm extends React.Component {
                />
              </label>
              <br />
-             {this.emailField()}
              <label>Password:
+               <br/>
                <input type="password"
                  value={this.state.password}
                  onChange={this.update('password')}
@@ -101,4 +54,4 @@ class SessionForm extends React.Component {
   }
 }
 
-export default withRouter(SessionForm);
+export default LoginForm;
