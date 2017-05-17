@@ -10,6 +10,12 @@ class LoginForm extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
+  componentWillReceiveProps(nextProps) {
+    if (nextProps.loggedIn) {
+      this.props.history.push('/');
+    }
+  }
+
   update(field) {
     return e => this.setState({
       [field]: e.currentTarget.value

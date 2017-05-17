@@ -9,8 +9,7 @@ const App = () => (
   <div>
     <header>
       <h1>FStop</h1>
-      <LoginFormContainer />
-      <SignupFormContainer />
+      <NavbarContainer />
 
     </header>
   </div>
