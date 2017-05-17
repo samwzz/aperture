@@ -8,29 +8,45 @@ class Navbar extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      modalOpen: false,
-      formType: ""
+      LoginModalOpen: false,
+      SignupModalOpen: false
     };
-    this.openModal = this.openModal.bind(this);
-    this.closeModal = this.closeModal.bind(this);
+    this.handleLoginClick = this.handleLoginClick.bind(this);
+    this.openLoginModal = this.openLoginModal.bind(this);
+    this.closeLoginModal = this.closeLoginModal.bind(this);
+
+    this.handleSignupClick = this.handleSignupClick.bind(this);
+    this.openSignupModal = this.openSignupModal.bind(this);
+    this.closeSignupModal = this.closeSignupModal.bind(this);
+
     this.afterModalOpen = this.afterModalOpen.bind(this);
-
-    this.handleClick = this.handleClick.bind(this);
   }
 
-  handleClick(e) {
+  handleLoginClick(e) {
     e.preventDefault();
-    this.setState({ modalOpen: true });
-    const formType = e.currentTarget.textContent;
-    this.setState({ formType });
+    this.setState({ LoginModalOpen: true });
   }
 
-  openModal() {
-    this.setState({ modalOpen: true });
+  openLoginModal() {
+    this.setState({ LoginModalOpen: true });
   }
 
-  closeModal() {
-    this.setState({ modalOpen: false });
+  closeLoginModal() {
+    this.setState({ LoginModalOpen: false });
+    FormModalStyle.content.opacity = 0;
+  }
+
+  handleSignupClick(e) {
+    e.preventDefault();
+    this.setState({ SignupModalOpen: true });
+  }
+
+  openSignupModal() {
+    this.setState({ SignupModalOpen: true });
+  }
+
+  closeSignupModal() {
+    this.setState({ SignupModalOpen: false });
     FormModalStyle.content.opacity = 0;
   }
 
@@ -42,8 +58,8 @@ class Navbar extends React.Component {
     if (!this.props.loggedIn) {
       return (
         <nav className="login-signup">
-          <button id="login-button" onClick={this.handleClick}>Log In</button>
-          <button id="signup-button" onClick={this.handleClick}>Sign Up</button>
+          <button id="login-button" onClick={this.handleLoginClick}>Log In</button>
+          <button id="signup-button" onClick={this.handleSignupClick}>Sign Up</button>
         </nav>
       );
     }
@@ -62,12 +78,6 @@ class Navbar extends React.Component {
 
   render() {
     const { currentUser, logout, loggedIn } = this.props;
-    let form;
-    if (this.state.formType === "Sign Up") {
-      form = <SignupFormContainer closeModal={this.closeModal} />;
-    } else if (this.state.formType === "Log In") {
-      form = <LoginFormContainer closeModal={this.closeModal} />;
-    }
 
     return (
       <nav className="main-nav">
@@ -76,14 +86,24 @@ class Navbar extends React.Component {
         </nav>
         {this.sessionLinks()}
         <Modal
-          isOpen={this.state.modalOpen}
+          isOpen={this.state.LoginModalOpen}
           onAfterOpen={this.afterModalOpen}
-          onRequestClose={this.closeModal}
+          onRequestClose={this.closeLoginModal}
           style={FormModalStyle}
-          contentLabel="Modal"
+          contentLabel="LoginModal"
           >
-          {form}
-          <button onClick={this.closeModal}>Close</button>
+          <LoginFormContainer closeLoginModal={this.closeLoginModal} openSignupModal={this.openSignupModal} />
+          <button onClick={this.closeLoginModal}>Close</button>
+        </Modal>
+        <Modal
+          isOpen={this.state.SignupModalOpen}
+          onAfterOpen={this.afterModalOpen}
+          onRequestClose={this.closeSignupModal}
+          style={FormModalStyle}
+          contentLabel="SignupModal"
+          >
+          <SignupFormContainer closeSignupModal={this.closeSignupModal} openLoginModal={this.openLoginModal} />
+          <button onClick={this.closeSignupModal}>Close</button>
         </Modal>
         {this.personalGreeting(currentUser, logout)}
       </nav>

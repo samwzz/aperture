@@ -9,6 +9,7 @@ class SignupForm extends React.Component {
       email: ""
     };
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.switchForm = this.switchForm.bind(this);
   }
 
   update(field) {
@@ -21,6 +22,12 @@ class SignupForm extends React.Component {
     e.preventDefault();
     const user = Object.assign({}, this.state);
     this.props.signup(user).then(() => this.props.closeModal());
+  }
+
+  switchForm(e) {
+    e.preventDefault();
+    this.props.closeSignupModal();
+    this.props.openLoginModal();
   }
 
   renderErrors() {
@@ -70,6 +77,11 @@ class SignupForm extends React.Component {
              </label>
              <br/>
              <input type="submit" value="Submit" />
+             <br/>
+             <div>
+               Already have an account?
+               <a href="#" onClick={this.switchForm}> Log in</a>
+             </div>
            </div>
         </form>
       </div>

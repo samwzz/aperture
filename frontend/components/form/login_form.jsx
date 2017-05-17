@@ -8,12 +8,7 @@ class LoginForm extends React.Component {
       password: ""
     };
     this.handleSubmit = this.handleSubmit.bind(this);
-  }
-
-  componentWillReceiveProps(nextProps) {
-    if (nextProps.loggedIn) {
-      this.props.history.push('/');
-    }
+    this.switchForm = this.switchForm.bind(this);
   }
 
   update(field) {
@@ -26,6 +21,12 @@ class LoginForm extends React.Component {
     e.preventDefault();
     const user = Object.assign({}, this.state);
     this.props.login(user).then(() => this.props.closeModal());
+  }
+
+  switchForm(e) {
+    e.preventDefault();
+    this.props.closeLoginModal();
+    this.props.openSignupModal();
   }
 
   renderErrors() {
@@ -66,6 +67,11 @@ class LoginForm extends React.Component {
              </label>
              <br/>
              <input type="submit" value="Submit" />
+             <br/>
+             <div>
+               Don't have an account?
+               <a href="#" onClick={this.switchForm}> Sign up</a>
+             </div>
            </div>
         </form>
       </div>
