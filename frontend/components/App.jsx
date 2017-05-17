@@ -7,10 +7,8 @@ import SignupFormContainer from './form/signup_form_container';
 
 const App = () => (
   <div>
-    <header className="main-nav">
-      <h1>FStop</h1>
+    <header>
       <NavbarContainer />
-
     </header>
   </div>
 );

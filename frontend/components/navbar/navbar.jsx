@@ -65,7 +65,10 @@ class Navbar extends React.Component {
     const form = this.state.formType === "Sign Up" ? <SignupFormContainer /> : <LoginFormContainer/>
 
     return (
-      <nav className="navbar">
+      <nav className="main-nav">
+        <nav className="left-nav">
+          <h1 className="logo">FStop</h1>
+        </nav>
         {this.sessionLinks()}
         <Modal
           isOpen={this.state.modalOpen}
