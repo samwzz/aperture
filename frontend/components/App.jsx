@@ -1,5 +1,5 @@
 import React from 'react';
-import NavbarContainer from './navbar/navbar_container';
+import GreetingContainer from './greeting/greeting_container';
 import SessionFormContainer from './session_form/session_form_container';
 import { Route } from 'react-router-dom';
 
@@ -7,7 +7,7 @@ const App = () => (
   <div>
     <header>
       <h1>FStop</h1>
-      <NavbarContainer />
+      <GreetingContainer />
     </header>
 
     <Route path="/login" component={SessionFormContainer} />
