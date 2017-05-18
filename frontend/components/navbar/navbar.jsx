@@ -14,10 +14,12 @@ class Navbar extends React.Component {
     this.handleLoginClick = this.handleLoginClick.bind(this);
     this.openLoginModal = this.openLoginModal.bind(this);
     this.closeLoginModal = this.closeLoginModal.bind(this);
+    this.clearErrorsAndCloseLogin = this.clearErrorsAndCloseLogin.bind(this);
 
     this.handleSignupClick = this.handleSignupClick.bind(this);
     this.openSignupModal = this.openSignupModal.bind(this);
     this.closeSignupModal = this.closeSignupModal.bind(this);
+    this.clearErrorsAndCloseSignup = this.clearErrorsAndCloseSignup.bind(this);
 
     this.afterModalOpen = this.afterModalOpen.bind(this);
   }
@@ -31,10 +33,14 @@ class Navbar extends React.Component {
     this.setState({ LoginModalOpen: true });
   }
 
+  clearErrorsAndCloseLogin() {
+    this.props.receiveErrors([]);
+    this.closeLoginModal();
+  }
+
   closeLoginModal() {
     this.setState({ LoginModalOpen: false });
     FormModalStyle.content.opacity = 0;
-    // this.props.receiveErrors([]);
   }
 
   handleSignupClick(e) {
@@ -46,10 +52,14 @@ class Navbar extends React.Component {
     this.setState({ SignupModalOpen: true });
   }
 
+  clearErrorsAndCloseSignup() {
+    this.props.receiveErrors([]);
+    this.closeSignupModal();
+  }
+
   closeSignupModal() {
     this.setState({ SignupModalOpen: false });
     FormModalStyle.content.opacity = 0;
-    // this.props.receiveErrors([]);
   }
 
   afterModalOpen() {
@@ -100,7 +110,7 @@ class Navbar extends React.Component {
           <Modal
             isOpen={this.state.LoginModalOpen}
             onAfterOpen={this.afterModalOpen}
-            onRequestClose={this.closeLoginModal}
+            onRequestClose={this.clearErrorsAndCloseLogin}
             style={FormModalStyle}
             contentLabel="LoginModal"
             className="form-modal"
@@ -110,7 +120,7 @@ class Navbar extends React.Component {
           <Modal
             isOpen={this.state.SignupModalOpen}
             onAfterOpen={this.afterModalOpen}
-            onRequestClose={this.closeSignupModal}
+            onRequestClose={this.clearErrorsAndCloseSignup}
             style={FormModalStyle}
             contentLabel="SignupModal"
             className="form-modal"

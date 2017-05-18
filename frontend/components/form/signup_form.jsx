@@ -35,7 +35,7 @@ class SignupForm extends React.Component {
     e.preventDefault();
     this.props.closeSignupModal();
     this.props.openLoginModal();
-    // this.props.receiveErrors([]);
+    this.props.receiveErrors([]);
   }
 
   renderErrors() {
