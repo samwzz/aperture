@@ -10,6 +10,7 @@ const App = () => (
     <header>
       <NavbarContainer />
     </header>
+    <div className="overlay"></div>
   </div>
 );
 
