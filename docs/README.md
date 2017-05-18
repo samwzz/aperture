@@ -2,7 +2,7 @@
 
 [Heroku link][heroku]
 
-[heroku]: https://www.fstop-app.herokuapp.com
+[heroku]: https://fstop-app.herokuapp.com
 
 ## Minimum Viable Product
 

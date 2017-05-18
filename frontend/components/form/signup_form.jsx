@@ -10,6 +10,7 @@ class SignupForm extends React.Component {
     };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.switchForm = this.switchForm.bind(this);
+    this.handleGuestLogin = this.handleGuestLogin.bind(this);
   }
 
   update(field) {
@@ -22,6 +23,12 @@ class SignupForm extends React.Component {
     e.preventDefault();
     const user = Object.assign({}, this.state);
     this.props.signup(user).then(() => this.props.closeSignupModal());
+  }
+
+  handleGuestLogin(e) {
+    e.preventDefault();
+    this.props.login({username: "guest", password: "password"})
+      .then(() => this.props.closeSignupModal());
   }
 
   switchForm(e) {
