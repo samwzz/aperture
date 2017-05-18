@@ -34,7 +34,7 @@ class Navbar extends React.Component {
   closeLoginModal() {
     this.setState({ LoginModalOpen: false });
     FormModalStyle.content.opacity = 0;
-    this.props.receiveErrors([]);
+    // this.props.receiveErrors([]);
   }
 
   handleSignupClick(e) {
@@ -49,7 +49,7 @@ class Navbar extends React.Component {
   closeSignupModal() {
     this.setState({ SignupModalOpen: false });
     FormModalStyle.content.opacity = 0;
-    this.props.receiveErrors([]);
+    // this.props.receiveErrors([]);
   }
 
   afterModalOpen() {
@@ -75,6 +75,7 @@ class Navbar extends React.Component {
 
   personalGreeting(currentUser, logout) {
     if (currentUser) {
+
       return (
         <hgroup className="header-group">
           <h2 className="header-name">Hi, {currentUser.username}!</h2>

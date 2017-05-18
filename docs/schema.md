@@ -14,7 +14,7 @@ column name | data type | details
 ------------|-----------|-----------------------
 id          | integer   | not null, primary key
 title       | string    | not null
-body        | text      | not null
+description | text      | not null
 image_url   | text      | not null
 author_id   | integer   | not null, foreign key (references users), indexed
 album_id    | integer   | not null, foreign key (references albums), indexed
@@ -33,7 +33,7 @@ column name  | data type | details
 id           | integer   | not null, primary key
 name         | string    | not null
 taggable_id  | integer   | indexed
-taggable_type| integer   | 
+taggable_type| integer   |
 
 ## comments
 column name | data type | details
