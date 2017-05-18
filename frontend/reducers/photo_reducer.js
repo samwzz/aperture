@@ -1,53 +1,26 @@
-import * as APIUtil from '../util/photo_api_util';
+import { merge } from 'lodash';
+import { RECEIVE_PHOTOS, RECEIVE_PHOTO, REMOVE_PHOTO, RECEIVE_ERRORS } from '../actions/photo_actions';
 
-export const RECEIVE_PHOTOS = 'RECEIVE_PHOTOS';
-export const RECEIVE_PHOTO = 'RECEIVE_PHOTO';
-export const RECEIVE_ERRORS = 'RECEIVE_ERRORS';
-export const REMOVE_PHOTO = 'REMOVE_PHOTO';
+const PhotosReducer = (state = {}, action) => {
+  Object.freeze(state);
+  let nextState;
 
-export const receivePhotos = photos => ({
-  type: RECEIVE_PHOTOS,
-  photos
-});
+  switch (action.type) {
+    case RECEIVE_PHOTOS:
+      return action.photos;
+    case RECEIVE_PHOTO:
+      const newPhoto = {[action.photo.id]: action.photo};
+      return merge({}, state, newPhoto);
+    case RECEIVE_ERRORS:
+      const errors = action.errors;
+      return merge({}, { errors });
+    case REMOVE_PHOTO:
+      nextState = merge({}, state);
+      delete nextState[action.photo.id];
+      return nextState;
+    default:
+      return state;
+  }
+};
 
-export const receivePhoto = photo => ({
-  type: RECEIVE_PHOTO,
-  photo
-});
-
-export const removePhoto = photo => ({
-  type: REMOVE_PHOTO,
-  photo
-});
-
-export const receiveErrors = errors => ({
-  type: RECEIVE_ERRORS,
-  errors
-});
-
-export const fetchPhotos = () => dispatch => (
-  APIUtil.fetchPhotos().then(photos => (
-    dispatch(receivePhotos(photos))
-  ))
-);
-
-export const fetchPhoto = id => dispatch => (
-  APIUtil.fetchPhoto(id).then(photo => (
-    dispatch(receivePhoto(photo))
-  ))
-);
-
-export const createPhoto = photo => dispatch => (
-  APIUtil.createPhoto(photo).then(photo => (
-    dispatch(receivePhoto(photo)),
-    err => dispatch(receiveErrors(err.responseJSON))
-  ))
-);
-
-export const updatePhoto = photo => dispatch => (
-  APIUtil.updatePhoto(photo).then(photo => (dispatch(receivePhoto(photo))))
-);
-
-export const deletePhoto = photo => dispatch => (
-  APIUtil.deletePhoto(photo).then(photo => (dispatch(removePhoto(photo))))
-);
+export default PhotosReducer;
