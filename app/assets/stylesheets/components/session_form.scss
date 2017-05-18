@@ -15,6 +15,7 @@
   font-size: 24px;
   text-align: center;
 }
+
 .login-form-text {
   text-align: center;
   font-size: 12px;
@@ -22,8 +23,8 @@
 }
 
 .login-form input {
-  margin: 3px 0 9px 0;
-  height: 27px;
+  margin: 6px 0 17px 0;
+  height: 37px;
   width: 100%;
 }
 
@@ -51,7 +52,7 @@ input[type="submit"]:hover {
   position: fixed;
   top: 50%;
   left: 50%;
-  min-width: 300px;
+  min-width: 346px;
   min-height: 320px;
   border: 1px solid black;
   border-radius: 2px;

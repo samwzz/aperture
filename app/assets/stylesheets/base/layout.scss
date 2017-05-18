@@ -49,6 +49,7 @@ textarea, {
   border: 1px solid $light-gray;
   border-radius: 2px;
 	line-height: 1.4em;
+	transition: border-color 0.2s;
 }
 
 a {

@@ -6,10 +6,13 @@ body {
   display: flex;
   justify-content: space-between;
   padding: 0 40px;
-  // background-color: black;
-  opacity: 0.5;
+  background-color: rgba(0,0,0,0.5);
+  opacity: 1;
+  color: white;
   height: 50px;
   width: 100%;
+  font-family: $sans-serif;
+  -webkit-font-smoothing: initial;
 }
 
 .left-nav > ul, .right-nav > ul {
@@ -30,6 +33,21 @@ body {
 
 .login-signup > ul {
   display: flex;
+}
+
+.main-nav a {
+  display: inline-block;
+  height: 100%;
+  line-height: 50px;
+  color: white;
+}
+
+.right-nav a {
+  padding: 0 20px;
+}
+
+.right-nav a:hover {
+  background-color: rgba(255,255,255,0.1);
 }
 
 .header-group {

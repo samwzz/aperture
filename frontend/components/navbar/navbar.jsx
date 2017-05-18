@@ -60,10 +60,10 @@ class Navbar extends React.Component {
         <nav className="login-signup">
           <ul>
             <li>
-              <button id="login-button" onClick={this.handleLoginClick}>Log in</button>
+              <a id="login" onClick={this.handleLoginClick}>Log in</a>
             </li>
             <li>
-              <button id="signup-button" onClick={this.handleSignupClick}>Sign Up</button>
+              <a id="signup" onClick={this.handleSignupClick}>Sign Up</a>
             </li>
           </ul>
         </nav>
