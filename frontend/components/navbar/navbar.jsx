@@ -34,6 +34,7 @@ class Navbar extends React.Component {
   closeLoginModal() {
     this.setState({ LoginModalOpen: false });
     FormModalStyle.content.opacity = 0;
+    this.props.receiveErrors([]);
   }
 
   handleSignupClick(e) {
@@ -48,6 +49,7 @@ class Navbar extends React.Component {
   closeSignupModal() {
     this.setState({ SignupModalOpen: false });
     FormModalStyle.content.opacity = 0;
+    this.props.receiveErrors([]);
   }
 
   afterModalOpen() {

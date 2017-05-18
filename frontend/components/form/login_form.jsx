@@ -34,6 +34,7 @@ class LoginForm extends React.Component {
     e.preventDefault();
     this.props.closeLoginModal();
     this.props.openSignupModal();
+    this.props.receiveErrors([]);
   }
 
   renderErrors() {
