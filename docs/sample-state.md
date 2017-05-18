@@ -16,28 +16,30 @@
   photos: {
     1: {
       title: "Title",
-      body: "body",
+      description: "description",
       image_url: "url",
-      author_id: 1,
-      album_id: 1
-      tags: {
+      user_id: 1,
+      album_id: 1,
+      tags: [
         1: {
           id: 1
           name: "Tag"
-        }
-      }
-      comments: {
+        },
+        ...
+      ]
+      comments: [
         1: {
           id: 1
           body: "body"
-        }
-      }
+        },
+        ...
+      ]
     }
   },
   albums: {
     1: {
       title: "Album",
-      author_id: 1,
+      user_id: 1,
       description: "Description",
       photos: []
     }
