@@ -18,18 +18,24 @@
 .login-form-text {
   text-align: center;
   font-size: 12px;
-  margin-top: 7px;
+  margin-top: 10px;
 }
 
 .login-form input {
-  margin: 2px 0 9px 0;
+  margin: 3px 0 9px 0;
   height: 27px;
   width: 100%;
 }
 
+input:focus {
+  border-color: $blue;
+}
+
 input[type="submit"] {
   -webkit-appearance: button;
-  border: 1px solid black;
+  color: white;
+  background-color: $green;
+  border: 1px solid $dark-green;
   border-radius: 1px;
   padding: 0 11px;
   margin-top: 8px;
@@ -37,14 +43,23 @@ input[type="submit"] {
   font-size: 15px;
 }
 
+input[type="submit"]:hover {
+  background-color: $light-green;
+}
+
 .form-modal {
   position: fixed;
   top: 50%;
   left: 50%;
   min-width: 300px;
-  min-height: 300px;
+  min-height: 320px;
   border: 1px solid black;
   border-radius: 2px;
   background-color: white;
   transform: translate(-50%, -50%);
+}
+
+.errors {
+  color: $light-red;
+  margin-top: 8px;
 }

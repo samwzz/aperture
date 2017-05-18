@@ -15,7 +15,7 @@ const FormModalStyle = {
     // right           : '40%',
     // bottom          : '30%',
     border          : '1px solid #ccc',
-    padding         : '25px',
+    padding         : '30px',
     zIndex          : 11,
     opacity         : 0,
     transition      : 'opacity 0.5s'
