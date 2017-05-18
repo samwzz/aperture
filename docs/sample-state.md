@@ -1,15 +1,18 @@
 ```js
 {
-  currentUser: {
-    id: 1,
-    username: "user"
-  },
-  forms: {
-    signUp: {errors: []},
-    logIn: {errors: []},
-    uploadPhoto: {errors: []}
-    createComment: {errors: []}
-  },
+  session: {
+    currentUser: {
+      id: 1,
+      username: "user"
+    },
+    errors:[]
+  }
+  // forms: {
+  //   signUp: {errors: []},
+  //   logIn: {errors: []},
+  //   uploadPhoto: {errors: []}
+  //   createComment: {errors: []}
+  // },
   photos: {
     1: {
       title: "Title",
