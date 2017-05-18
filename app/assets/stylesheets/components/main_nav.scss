@@ -5,16 +5,19 @@ body {
 .main-nav {
   display: flex;
   justify-content: space-between;
-  padding: 10px 0;
-  height: 30px;
+  padding: 0 40px;
+  // background-color: black;
+  opacity: 0.5;
+  height: 50px;
+  width: 100%;
 }
 
-.left-nav, .right-nav {
+.left-nav > ul, .right-nav > ul {
   display: flex;
   align-items: center;
   cursor: pointer;
 	text-transform: uppercase;
-	font-family: sans-serif;
+	font-family: $sans-serif;
 	font-weight: bold;
 	font-size: 15px;
 	padding: 7px 9px;
@@ -22,7 +25,7 @@ body {
 }
 
 .left-nav {
-  margin-left: 20px;
+
 }
 
 .login-signup > ul {
@@ -32,10 +35,6 @@ body {
 .header-group {
   display: flex;
   align-items: center;
-}
-
-.login-form-container {
-
 }
 
 .logo {

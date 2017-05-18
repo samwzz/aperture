@@ -52,35 +52,31 @@ class LoginForm extends React.Component {
     return (
       <div className="login-form-container">
         <form onSubmit={this.handleSubmit} className="login-form-box">
-           {this.renderErrors()}
-           <div className="login-form">
-             <br/>
-             <label>Username:
-               <br/>
-               <input type="text"
-                 value={this.state.username}
-                 onChange={this.update('username')}
-                 className="login-input"
-               />
-             </label>
-             <br />
-             <label>Password:
-               <br/>
-               <input type="password"
-                 value={this.state.password}
-                 onChange={this.update('password')}
-                 className="login-input"
-               />
-             </label>
-             <br/>
-             <input type="submit" value="Submit" />
-             <br/>
-             <div>
-               Don't have an account?
-               <a href="#" onClick={this.switchForm}> Sign up</a>
-               <a href="#" onClick={this.handleGuestLogin}> Sign in as guest</a>
-             </div>
-           </div>
+          <h1>Log In to FStop</h1>
+          {this.renderErrors()}
+          <div className="login-form">
+            <label>Username</label>
+            <input type="text"
+              value={this.state.username}
+              onChange={this.update('username')}
+              className="login-input"
+            />
+            <label>Password</label>
+            <input type="password"
+              value={this.state.password}
+              onChange={this.update('password')}
+              className="login-input"
+            />
+            <input type="submit" value="Log in" />
+            <div className="login-form-text">
+              Don't have an account?
+              <a href="#" onClick={this.switchForm}> Sign up</a>
+            </div>
+            <div className="login-form-text">or</div>
+            <a className="login-form-text" href="#" onClick={this.handleGuestLogin}>
+              Continue as guest
+            </a>
+          </div>
         </form>
       </div>
     );

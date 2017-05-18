@@ -60,7 +60,7 @@ class Navbar extends React.Component {
         <nav className="login-signup">
           <ul>
             <li>
-              <button id="login-button" onClick={this.handleLoginClick}>Log In</button>
+              <button id="login-button" onClick={this.handleLoginClick}>Log in</button>
             </li>
             <li>
               <button id="signup-button" onClick={this.handleSignupClick}>Sign Up</button>
@@ -100,9 +100,9 @@ class Navbar extends React.Component {
             onRequestClose={this.closeLoginModal}
             style={FormModalStyle}
             contentLabel="LoginModal"
+            className="form-modal"
             >
             <LoginFormContainer closeLoginModal={this.closeLoginModal} openSignupModal={this.openSignupModal} />
-            <button onClick={this.closeLoginModal}>Close</button>
           </Modal>
           <Modal
             isOpen={this.state.SignupModalOpen}
@@ -110,9 +110,9 @@ class Navbar extends React.Component {
             onRequestClose={this.closeSignupModal}
             style={FormModalStyle}
             contentLabel="SignupModal"
+            className="form-modal"
             >
             <SignupFormContainer closeSignupModal={this.closeSignupModal} openLoginModal={this.openLoginModal} />
-            <button onClick={this.closeSignupModal}>Close</button>
           </Modal>
           {this.personalGreeting(currentUser, logout)}
         </nav>

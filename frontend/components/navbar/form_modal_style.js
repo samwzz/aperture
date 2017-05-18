@@ -10,12 +10,12 @@ const FormModalStyle = {
   },
   content : {
     position        : 'fixed',
-    top             : '30%',
-    left            : '40%',
-    right           : 'auto',
-    bottom          : 'auto',
+    // top             : '30%',
+    // left            : '40%',
+    // right           : '40%',
+    // bottom          : '30%',
     border          : '1px solid #ccc',
-    padding         : '20px',
+    padding         : '25px',
     zIndex          : 11,
     opacity         : 0,
     transition      : 'opacity 0.5s'
