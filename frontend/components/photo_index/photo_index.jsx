@@ -22,7 +22,7 @@ class PhotoIndex extends React.Component {
     ));
 
     return (
-      <div id="test">
+      <div id="gallery">
         {photoItems}
       </div>
     );
