@@ -19,4 +19,9 @@ document.addEventListener('DOMContentLoaded', () => {
   Modal.setAppElement(document.body);
   const root = document.getElementById('root');
   ReactDOM.render(<Root store={ store }/>, root);
+  $("#test").justifiedGallery({
+    rowHeight : 300,
+    lastRow : 'nojustify',
+    margins : 3
+  });
 });
