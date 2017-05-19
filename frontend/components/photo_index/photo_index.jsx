@@ -7,6 +7,14 @@ class PhotoIndex extends React.Component {
     this.props.fetchPhotos();
   }
 
+  componentDidUpdate() {
+    $("#test").justifiedGallery({
+      rowHeight : 300,
+      lastRow : 'nojustify',
+      margins : 3
+    });
+  }
+
   render () {
     const { photos } = this.props;
     const photoItems = photos.map((photo) => (
@@ -14,11 +22,9 @@ class PhotoIndex extends React.Component {
     ));
 
     return (
-      <section className="photo-index">
-        <ul className="photo-list">
-          { photoItems }
-        </ul>
-      </section>
+      <div id="test">
+        {photoItems}
+      </div>
     );
   }
 }
