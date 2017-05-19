@@ -12,8 +12,9 @@ const App = () => (
       <NavbarContainer />
     </header>
     <section>
-      <div className=""></div>
-      <Route exact path="/" component={ PhotoIndexContainer } />
+      <div className="photo-index">
+        <Route exact path="/" component={ PhotoIndexContainer } />
+      </div>
       <Route exact path="/photos/:photoId/" component={ PhotoShowContainer } />
     </section>
   </div>
