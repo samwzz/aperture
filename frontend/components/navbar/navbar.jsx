@@ -89,7 +89,7 @@ class Navbar extends React.Component {
       return (
         <hgroup className="header-group">
           <h2 className="header-name">Hi, {currentUser.username}!</h2>
-          <button className="header-button" onClick={logout}>Log Out</button>
+          <a className="header-button" onClick={logout}>Log Out</a>
         </hgroup>
       );
     }
