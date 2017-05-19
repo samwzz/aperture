@@ -11,8 +11,10 @@ class PhotoIndexItem extends React.Component {
 
     return(
       <li className="photo-item">
-        <Link to={`/posts/${photo.id}`}><img src={`${photo.image_url}`} /></Link>
+        <Link to={`/photo/${photo.id}`}><img src={`${photo.image_url}`} /></Link>
       </li>
     );
   }
 }
+
+export default PhotoIndexItem;
