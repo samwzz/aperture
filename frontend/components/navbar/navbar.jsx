@@ -102,7 +102,10 @@ class Navbar extends React.Component {
       <nav className="main-nav">
         <nav className="left-nav">
           <ul>
-            <li id="logo">FStop</li>
+            <li id="logo">
+              <img src="http://res.cloudinary.com/db1ywnpgj/image/upload/v1495217848/fstop_pgulp1.png"/>
+            </li>
+            <li id="logo">fstop</li>
           </ul>
         </nav>
         <nav className="right-nav">

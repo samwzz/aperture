@@ -1,8 +1,12 @@
 .photo-list {
   display: flex;
   flex-flow: row wrap;
+  max-width: 300px;
 }
 
 .photo-item {
-  width: 400px;
+
+  img {
+
+  }
 }
