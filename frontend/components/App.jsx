@@ -5,6 +5,7 @@ import { Route } from 'react-router-dom';
 import LoginFormContainer from './form/login_form_container';
 import SignupFormContainer from './form/signup_form_container';
 import PhotoIndexContainer from './photo_index/photo_index_container';
+import PhotoShowContainer from './photo_show/photo_show_container';
 
 const App = () => (
   <div>
@@ -14,6 +15,7 @@ const App = () => (
     <section>
       <div className=""></div>
       <Route exact path="/" component={ PhotoIndexContainer } />
+      <Route exact path="/photos/:photoId/" component={ PhotoShowContainer } />
     </section>
   </div>
 );
