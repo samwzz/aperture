@@ -77,13 +77,22 @@ class SignupForm extends React.Component {
             />
             <input type="submit" value="Sign up" />
             <div className="login-form-text">
-              Already have an account?
-              <a href="#" onClick={this.switchForm}> Log in</a>
+              <div className="tos-statement">
+                By signing up, you agree to our
+                <a className="login-form-link" href="#"> Terms of Service.</a>
+                <br/>
+              </div>
+              <div className="switch-form">
+                Already have an account?
+                <a href="#" onClick={this.switchForm}> Log in</a>
+              </div>
             </div>
             <div className="login-form-text">or</div>
-            <a className="login-form-text" href="#" onClick={this.handleGuestLogin}>
-              Continue as guest
-            </a>
+            <div className="login-form-text">
+              <a href="#" onClick={this.handleGuestLogin}>
+                Continue as guest
+              </a>
+            </div>
           </div>
         </form>
       </div>

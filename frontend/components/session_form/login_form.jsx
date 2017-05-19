@@ -74,9 +74,11 @@ class LoginForm extends React.Component {
               <a href="#" onClick={this.switchForm}> Sign up</a>
             </div>
             <div className="login-form-text">or</div>
-            <a className="login-form-text" href="#" onClick={this.handleGuestLogin}>
-              Continue as guest
-            </a>
+            <div className="login-form-text">
+              <a href="#" onClick={this.handleGuestLogin}>
+                Continue as guest
+              </a>
+            </div>
           </div>
         </form>
       </div>

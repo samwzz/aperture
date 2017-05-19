@@ -20,6 +20,14 @@
   text-align: center;
   font-size: 12px;
   margin-top: 10px;
+  color: $gray;
+  a {
+    color: $blue;
+  }
+}
+
+.tos-statement {
+  margin-bottom: 3px;
 }
 
 .login-form input {
