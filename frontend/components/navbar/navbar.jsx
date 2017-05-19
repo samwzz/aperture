@@ -1,7 +1,7 @@
 import React from 'react';
 import Modal from 'react-modal';
-import LoginFormContainer from '../form/login_form_container';
-import SignupFormContainer from '../form/signup_form_container';
+import LoginFormContainer from '../session_form/login_form_container';
+import SignupFormContainer from '../session_form/signup_form_container';
 import FormModalStyle from './form_modal_style';
 
 class Navbar extends React.Component {
