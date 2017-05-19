@@ -17,9 +17,9 @@ p3 = Photo.create(title: "", description: "", image_url: "http://res.cloudinary.
 p5 = Photo.create(title: "", description: "", image_url: "http://res.cloudinary.com/db1ywnpgj/image/upload/v1495174738/redd-angelo-100505_bfybcn.jpg", user_id: u.id)
 p3 = Photo.create(title: "", description: "", image_url: "http://res.cloudinary.com/db1ywnpgj/image/upload/v1495176797/photo-1494587416117-f102a2ac0a8d_kifq1n.jpg", user_id: u.id )
 p6 = Photo.create(title: "", description: "", image_url: "http://res.cloudinary.com/db1ywnpgj/image/upload/v1495174735/chad-greiter-234802_wo57qu.jpg", user_id: u.id)
-# p7 = Photo.create(title: "", description: "", image_url: "http://res.cloudinary.com/db1ywnpgj/image/upload/v1495174735/claudio-testa-232180_kdlosn.jpg", user_id: u.id)
+p7 = Photo.create(title: "", description: "", image_url: "http://res.cloudinary.com/db1ywnpgj/image/upload/v1495174735/claudio-testa-232180_kdlosn.jpg", user_id: u.id)
 p3 = Photo.create(title: "", description: "", image_url: "http://res.cloudinary.com/db1ywnpgj/image/upload/v1495176797/photo-1494587416117-f102a2ac0a8d_kifq1n.jpg", user_id: u.id )
-# p8 = Photo.create(title: "", description: "", image_url: "http://res.cloudinary.com/db1ywnpgj/image/upload/v1495174738/redd-angelo-229312_pmj2e1.jpg", user_id: u.id)
+p8 = Photo.create(title: "", description: "", image_url: "http://res.cloudinary.com/db1ywnpgj/image/upload/v1495174738/redd-angelo-229312_pmj2e1.jpg", user_id: u.id)
 p9 = Photo.create(title: "", description: "", image_url: "http://res.cloudinary.com/db1ywnpgj/image/upload/v1495174736/ben-harritt-222981_kchol9.jpg", user_id: u.id)
 
 
@@ -31,6 +31,16 @@ p10 = Photo.create(title: "", description: "", image_url: "https://images.unspla
 p10 = Photo.create(title: "", description: "", image_url: "https://images.unsplash.com/photo-1491036775913-3fbc5c455842?dpr=1&auto=format&fit=crop&w=1500&h=1000&q=80&cs=tinysrgb&crop=&bg=", user_id: u.id)
 p10 = Photo.create(title: "", description: "", image_url: "https://images.unsplash.com/photo-1494375856376-7d2b3a016fa3?dpr=1&auto=format&fit=crop&w=1500&h=2247&q=80&cs=tinysrgb&crop=&bg=", user_id: u.id)
 
+p10 = Photo.create(title: "", description: "", image_url: "http://res.cloudinary.com/db1ywnpgj/image/upload/v1495179973/photo-1482784160316-6eb046863ece_xagcea.jpg", user_id: u.id)
+p10 = Photo.create(title: "", description: "", image_url: "http://res.cloudinary.com/db1ywnpgj/image/upload/v1495179973/photo-1448454050639-2f8d4bf26975_uwpwqo.jpg", user_id: u.id)
+p10 = Photo.create(title: "", description: "", image_url: "http://res.cloudinary.com/db1ywnpgj/image/upload/v1495179973/photo-1491036775913-3fbc5c455842_aee3tx.jpg", user_id: u.id)
+p10 = Photo.create(title: "", description: "", image_url: "http://res.cloudinary.com/db1ywnpgj/image/upload/v1495179973/photo-1494375856376-7d2b3a016fa3_usyiq2.jpg", user_id: u.id)
+p10 = Photo.create(title: "", description: "", image_url: "http://res.cloudinary.com/db1ywnpgj/image/upload/v1495179973/pexels-photo-141635_ueizkw.jpg", user_id: u.id)
+p10 = Photo.create(title: "", description: "", image_url: "http://res.cloudinary.com/db1ywnpgj/image/upload/v1495179973/photo-1482784160316-6eb046863ece_xagcea.jpg", user_id: u.id)
+p10 = Photo.create(title: "", description: "", image_url: "http://res.cloudinary.com/db1ywnpgj/image/upload/v1495179973/photo-1448454050639-2f8d4bf26975_uwpwqo.jpg", user_id: u.id)
+p10 = Photo.create(title: "", description: "", image_url: "http://res.cloudinary.com/db1ywnpgj/image/upload/v1495179973/photo-1491036775913-3fbc5c455842_aee3tx.jpg", user_id: u.id)
+p10 = Photo.create(title: "", description: "", image_url: "http://res.cloudinary.com/db1ywnpgj/image/upload/v1495179973/photo-1494375856376-7d2b3a016fa3_usyiq2.jpg", user_id: u.id)
+p10 = Photo.create(title: "", description: "", image_url: "http://res.cloudinary.com/db1ywnpgj/image/upload/v1495179973/pexels-photo-141635_ueizkw.jpg", user_id: u.id)
 p10 = Photo.create(title: "", description: "", image_url: "http://res.cloudinary.com/db1ywnpgj/image/upload/v1495179973/photo-1482784160316-6eb046863ece_xagcea.jpg", user_id: u.id)
 p10 = Photo.create(title: "", description: "", image_url: "http://res.cloudinary.com/db1ywnpgj/image/upload/v1495179973/photo-1448454050639-2f8d4bf26975_uwpwqo.jpg", user_id: u.id)
 p10 = Photo.create(title: "", description: "", image_url: "http://res.cloudinary.com/db1ywnpgj/image/upload/v1495179973/photo-1491036775913-3fbc5c455842_aee3tx.jpg", user_id: u.id)
