@@ -4,13 +4,19 @@ import SessionFormContainer from './session_form/session_form_container';
 import { Route } from 'react-router-dom';
 import LoginFormContainer from './form/login_form_container';
 import SignupFormContainer from './form/signup_form_container';
+import PhotoIndexContainer from './photo_index/photo_index_container';
+import PhotoShowContainer from './photo_show/photo_show_container';
 
 const App = () => (
   <div>
     <header>
       <NavbarContainer />
     </header>
-    <div className=""></div>
+    <body>
+      <div className=""></div>
+      <Route exact path="/" component={ PhotoIndexContainer } />
+      <Route exact path="/posts/:postId" component={ PhotoShowContainer } />
+    </body>
   </div>
 );
 
