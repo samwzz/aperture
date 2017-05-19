@@ -1,5 +1,6 @@
 import React from 'react';
 import Modal from 'react-modal';
+import { Link } from 'react-router-dom';
 import LoginFormContainer from '../session_form/login_form_container';
 import SignupFormContainer from '../session_form/signup_form_container';
 import FormModalStyle from './form_modal_style';
@@ -102,10 +103,12 @@ class Navbar extends React.Component {
       <nav className="main-nav">
         <nav className="left-nav">
           <ul>
-            <li id="logo">
-              <img src="http://res.cloudinary.com/db1ywnpgj/image/upload/v1495217848/fstop_pgulp1.png"/>
+            <li id="logo-image">
+              <img src="http://res.cloudinary.com/db1ywnpgj/image/upload/v1495218853/fstop-white_tsdk7k.png"/>
             </li>
-            <li id="logo">fstop</li>
+            <li id="logo-text">
+              <Link to="/">FStop</Link>
+            </li>
           </ul>
         </nav>
         <nav className="right-nav">

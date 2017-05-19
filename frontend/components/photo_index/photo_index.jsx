@@ -8,10 +8,11 @@ class PhotoIndex extends React.Component {
   }
 
   componentDidUpdate() {
-    $("#test").justifiedGallery({
+    $(".gallery").justifiedGallery({
       rowHeight : 300,
-      lastRow : 'nojustify',
-      margins : 3
+      lastRow : 'justify',
+      margins : 8,
+      cssAnimation: false
     });
   }
 
@@ -22,7 +23,7 @@ class PhotoIndex extends React.Component {
     ));
 
     return (
-      <div id="gallery">
+      <div className="gallery">
         {photoItems}
       </div>
     );
