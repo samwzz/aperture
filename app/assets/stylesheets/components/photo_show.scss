@@ -1,0 +1,14 @@
+.photo-show-container {
+  display: flex;
+  justify-content: center;
+}
+
+.photo-show {
+  display: flex;
+  flex-direction: column;
+}
+
+.image {
+  height: 80vh;
+  width: auto;
+}

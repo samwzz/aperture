@@ -13,11 +13,13 @@ class PhotoShow extends React.Component {
   render () {
     const { photo } = this.props;
     return (
-      <div className="photo-show">
-        <Link to="/">Back to Photos Index</Link>
-        <h1>{ photo.title }</h1>
-        <p>{ photo.description }</p>
-        <img src={photo.image_url} />
+      <div className="photo-show-container">
+        <div className="photo-show">
+          <Link to="/">Back to photos</Link>
+          <h1>{ photo.title }</h1>
+          <p>{ photo.description }</p>
+          <img className="image" src={photo.image_url} />
+        </div>
       </div>
     );
   }
