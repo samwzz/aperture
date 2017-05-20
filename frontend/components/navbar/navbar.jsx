@@ -3,7 +3,7 @@ import Modal from 'react-modal';
 import { Link } from 'react-router-dom';
 import LoginFormContainer from '../session_form/login_form_container';
 import SignupFormContainer from '../session_form/signup_form_container';
-import FormModalStyle from './form_modal_style';
+import FormModalStyle from '../modal/form_modal_style';
 
 class Navbar extends React.Component {
   constructor(props) {

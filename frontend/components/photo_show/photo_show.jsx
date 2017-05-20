@@ -7,7 +7,7 @@ class PhotoShow extends React.Component {
   }
 
   componentDidMount() {
-    this.props.fetchPhoto(this.props.photoId);
+    this.props.fetchPhoto(this.props.photo.id);
   }
 
   render () {

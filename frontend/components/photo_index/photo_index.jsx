@@ -1,7 +1,7 @@
 import React from 'react';
 import { Route } from 'react-router-dom';
 import PhotoIndexItem from './photo_index_item';
-import PhotoModal from './photo_modal';
+import PhotoModal from '../modal/photo_modal';
 import Modal from 'react-modal';
 
 class PhotoIndex extends React.Component {
@@ -11,6 +11,12 @@ class PhotoIndex extends React.Component {
 
   componentDidMount() {
     this.props.fetchPhotos();
+    $(".gallery").justifiedGallery({
+      rowHeight : 300,
+      lastRow : 'justify',
+      margins : 8,
+      cssAnimation: false
+    });
   }
 
   componentDidUpdate() {
