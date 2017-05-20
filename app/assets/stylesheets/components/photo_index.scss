@@ -4,6 +4,11 @@
 //   max-width: 300px;
 // }
 
+body {
+  background-color: $lightest-gray;
+  background-size: cover;
+}
+
 .photo-index {
   padding: 20px 40px;
 }

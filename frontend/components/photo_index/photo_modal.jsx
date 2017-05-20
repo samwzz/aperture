@@ -11,7 +11,8 @@ const modalstyle = {
     left            : 0,
     right           : 0,
     bottom          : 0,
-    backgroundColor : 'rgba(0, 0, 0, 0.9)',
+    // backgroundColor : 'rgba(247, 248, 250, 0.97)',
+    backgroundColor : 'rgba(0, 0, 0, 0.85)',
     zIndex          : 10
   },
   content : {
@@ -21,16 +22,13 @@ const modalstyle = {
     top                        : '5%',
     left                       : '10%',
     right                      : '10%',
-    border                     : '1px solid #ccc',
-    "border-radius"            : '2px',
-    "background-color"         : 'white',
+    // border                     : '1px solid black',
     "transform"                : 'translate(0%, 0%)',
     padding                    : '36px',
     overflow                   : 'auto',
     WebkitOverflowScrolling    : 'touch',
-    borderRadius               : '4px',
     outline                    : 'none',
-
+    borderRadius               : '3px',
     zIndex          : 11,
     opacity         : 100,
     transition      : 'opacity 0.5s'
@@ -68,12 +66,12 @@ class PhotoModal extends React.Component {
     const { photo } = this.props;
     return (
       <div>
-        <button
+        <a
           className="photo-modal-item"
           onClick={this.openModal}
           >
           <img className="photo-modal-img" src={photo.image_url}/>
-        </button>
+        </a>
         <Modal
           isOpen={this.state.modalOpen}
 
