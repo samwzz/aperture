@@ -5,12 +5,7 @@ import { selectPhoto } from '../../reducers/selectors';
 import PhotoShow from './photo_show';
 
 const mapStateToProps = (state, { match }) => {
-  const photoId = parseInt(match.params.photoId);
-  const photo = selectPhoto(state, match.params.photoId);
-  return {
-    photoId,
-    photo
-  };
+
 };
 
 const mapDispatchToProps = (dispatch) => ({
@@ -18,6 +13,6 @@ const mapDispatchToProps = (dispatch) => ({
 });
 
 export default connect(
-  mapStateToProps,
+  null,
   mapDispatchToProps
 )(PhotoShow);

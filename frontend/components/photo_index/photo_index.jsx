@@ -5,12 +5,16 @@ import PhotoModal from './photo_modal';
 import Modal from 'react-modal';
 
 class PhotoIndex extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+
   componentDidMount() {
     this.props.fetchPhotos();
   }
 
   componentDidUpdate() {
-    $(".photo-list").justifiedGallery({
+    $(".gallery").justifiedGallery({
       rowHeight : 300,
       lastRow : 'justify',
       margins : 8,
@@ -18,19 +22,23 @@ class PhotoIndex extends React.Component {
     });
   }
 
+  openModal() {
+    this.setState({ modalOpen: true });
+  }
+
+  closeModal() {
+    this.setState({ modalOpen: false });
+  }
+
   render () {
     const { photos } = this.props;
     const photoItems = photos.map((photo) => (
-      <PhotoIndexItem key={photo.id} photo={photo} />
+      <PhotoModal key={photo.id} photo={photo} />
     ));
 
     return (
       <div className="gallery">
-        <div className="photo-list">
-          {photoItems}
-        </div>
-
-
+        {photoItems}
       </div>
     );
   }

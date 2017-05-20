@@ -10,9 +10,9 @@ class PhotoIndexItem extends React.Component {
     const { photo } = this.props;
     return(
       <div className="photo-item">
-        <Link to={`/photos/${photo.id}`}>
+        <a>
           <img src={photo.image_url} />
-        </Link>
+        </a>
       </div>
     );
   }
