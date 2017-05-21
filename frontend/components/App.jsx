@@ -1,5 +1,5 @@
 import React from 'react';
-import NavbarContainer from './navbar/navbar_container';
+import HomeContainer from './home/home_container';
 import { Route } from 'react-router-dom';
 import LoginFormContainer from './session_form/login_form_container';
 import SignupFormContainer from './session_form/signup_form_container';
@@ -9,12 +9,14 @@ import PhotoShowContainer from './photo_show/photo_show_container';
 const App = () => (
   <div>
     <header>
-      <NavbarContainer />
+      <HomeContainer />
     </header>
     <section>
-      <div className="photo-index">
-        <Route exact path="/" component={ PhotoIndexContainer } />
+      <div className="test">
+
       </div>
+
+      <Route exact path="/discover" component={ PhotoIndexContainer } />
       <Route exact path="/photos/:photoId/" component={ PhotoShowContainer } />
     </section>
   </div>

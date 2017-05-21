@@ -1,3 +1,7 @@
+.test {
+  background-image: url(https://vignette1.wikia.nocookie.net/sanicsource/images/9/97/Doge.jpg);
+}
+
 .overlay{
   position:fixed;
    background:url(https://s.yimg.com/uy/build/images/sohp/sohp-grid-resized.jpg);
@@ -41,4 +45,12 @@
   100%{
     background-position:0px -3000px;
   }
+}
+
+.landing-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100%;
 }

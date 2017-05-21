@@ -11,12 +11,6 @@ class PhotoIndex extends React.Component {
 
   componentDidMount() {
     this.props.fetchPhotos();
-    $(".gallery").justifiedGallery({
-      rowHeight : 300,
-      lastRow : 'justify',
-      margins : 8,
-      cssAnimation: false
-    });
   }
 
   componentDidUpdate() {
@@ -43,9 +37,11 @@ class PhotoIndex extends React.Component {
     ));
 
     return (
-      <div className="gallery">
-        {photoItems}
-      </div>
+      <section className="photo-index">
+        <div className="gallery">
+          {photoItems}
+        </div>
+      </section>
     );
   }
 }
