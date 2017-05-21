@@ -11,15 +11,16 @@ class PhotoIndex extends React.Component {
 
   componentDidMount() {
     this.props.fetchPhotos();
-  }
-
-  componentDidUpdate() {
     $("#gallery").justifiedGallery({
       rowHeight : 300,
       lastRow : 'justify',
       margins : 9,
       cssAnimation: false
     });
+  }
+
+  componentDidUpdate() {
+    $("#gallery").justifiedGallery("norewind");
   }
 
   openModal() {
