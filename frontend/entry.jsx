@@ -16,6 +16,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
   window.store = store;
   window.fetchPhotos = APIUtil.fetchPhotos;
+  window.fetchUserPhotos = APIUtil.fetchUserPhotos;
   Modal.setAppElement(document.body);
   const root = document.getElementById('root');
   ReactDOM.render(<Root store={ store }/>, root);

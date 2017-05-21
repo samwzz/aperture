@@ -1,7 +1,7 @@
 class Api::PhotosController < ApplicationController
   def index
-    if params.key?(:photo_id)
-      @photos = Photo.where(photo_id: params[:photo_id])
+    if params.key?(:user_id)
+      @photos = Photo.where(user_id: params[:user_id])
     else
       @photos = Photo.all
     end

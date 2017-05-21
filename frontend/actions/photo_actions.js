@@ -37,6 +37,12 @@ export const fetchPhoto = id => dispatch => (
   ))
 );
 
+export const fetchUserPhotos = userId => dispatch => (
+  APIUtil.fetchUserPhotos(userId).then(photos => (
+    dispatch(receivePhotos(photos))
+  ))
+);
+
 export const createPhoto = photo => dispatch => (
   APIUtil.createPhoto(photo).then(photo => (
     dispatch(receivePhoto(photo)),
