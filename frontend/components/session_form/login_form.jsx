@@ -11,8 +11,6 @@ class LoginForm extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
     this.switchForm = this.switchForm.bind(this);
     this.handleGuestLogin = this.handleGuestLogin.bind(this);
-
-    this.redirect = this.redirect.bind(this);
   }
 
   update(field) {
@@ -39,12 +37,6 @@ class LoginForm extends React.Component {
     this.props.closeLoginModal();
     this.props.openSignupModal();
     this.props.receiveErrors([]);
-  }
-
-  redirect() {
-    return(
-      <Redirect to="/discover" />
-    );
   }
 
   renderErrors() {

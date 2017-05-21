@@ -1,6 +1,12 @@
 class Api::PhotosController < ApplicationController
   def index
-    @photos = Photo.all
+    if params.key?(:photo_id)
+      @photos = Photo.where(photo_id: params[:photo_id])
+    else
+      @photos = Photo.all
+    end
+
+    render json: @photos
   end
 
   def show
