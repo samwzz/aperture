@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import LoginFormContainer from '../session_form/login_form_container';
 import SignupFormContainer from '../session_form/signup_form_container';
 import FormModalStyle from '../modal/form_modal_style';
+import UserPhotoContainer from '../user_photo/user_photo_container';
 
 class Home extends React.Component {
   constructor(props) {
@@ -150,6 +151,18 @@ class Home extends React.Component {
     }
   }
 
+  userPhotos() {
+    if (this.props.loggedIn) {
+      return(
+        <section className="user-photos-container">
+          <div className="user-photos">
+            <UserPhotoContainer />
+          </div>
+        </section>
+      );
+    }
+  }
+
   render() {
     const { currentUser, logout, loggedIn } = this.props;
 
@@ -177,6 +190,7 @@ class Home extends React.Component {
           </nav>
         </nav>
         {this.landing()}
+        {this.userPhotos()}
       </section>
     );
   }

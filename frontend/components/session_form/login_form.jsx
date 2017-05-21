@@ -28,8 +28,7 @@ class LoginForm extends React.Component {
   handleGuestLogin(e) {
     e.preventDefault();
     this.props.login({username: "guest", password: "password"})
-      .then(() => this.props.closeLoginModal())
-      .then(() => this.redirect());
+      .then(() => this.props.closeLoginModal());
   }
 
   switchForm(e) {
