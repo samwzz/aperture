@@ -28,6 +28,7 @@
   justify-content: center;
   align-items: center;
   margin-top: 350px;
+  background-color: $lightest-gray;
 }
 
 .user-photo-index .photo-modal-container {
@@ -53,7 +54,7 @@
 }
 
 .user-photo-index .photo-modal-container:hover {
-  box-shadow: 0 8px 32px 0 rgba(0,0,0,0.08);
+  box-shadow: 0 8px 32px 0 rgba(0,0,0,0.09);
   transition: box-shadow 0.2s;
 }
 
