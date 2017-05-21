@@ -32,14 +32,14 @@ class PhotoIndex extends React.Component {
 
   render () {
     const { photos } = this.props;
-    const photoItems = photos.map((photo) => (
+    const photoModals = photos.map((photo) => (
       <PhotoModal key={photo.id} photo={photo} />
     ));
 
     return (
       <section className="photo-index">
         <div id="gallery" className="justified-gallery">
-          {photoItems}
+          {photoModals}
         </div>
       </section>
     );

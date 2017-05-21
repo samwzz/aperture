@@ -1,10 +1,10 @@
 import React from 'react';
 import Modal from 'react-modal';
-import { Link } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 import LoginFormContainer from '../session_form/login_form_container';
 import SignupFormContainer from '../session_form/signup_form_container';
 import FormModalStyle from '../modal/form_modal_style';
-import UserPhotoContainer from '../user_photo/user_photo_container';
+import UserPhotoIndexContainer from '../user_photo/user_photo_index_container';
 
 class Home extends React.Component {
   constructor(props) {
@@ -26,7 +26,10 @@ class Home extends React.Component {
   }
 
   openLoginModal() {
-    this.setState({ LoginModalOpen: true });
+    this.setState({
+      LoginModalOpen: true,
+      SignupModalOpen: false
+    });
   }
 
   clearErrorsAndCloseLogin() {
@@ -40,7 +43,10 @@ class Home extends React.Component {
   }
 
   openSignupModal() {
-    this.setState({ SignupModalOpen: true });
+    this.setState({
+      SignupModalOpen: true,
+      LoginModalOpen: false
+     });
   }
 
   clearErrorsAndCloseSignup() {
@@ -152,11 +158,12 @@ class Home extends React.Component {
   }
 
   userPhotos() {
-    if (this.props.loggedIn) {
+    if (this.props.loggedIn && this.props.location.pathname === "/") {
+
       return(
         <section className="user-photos-container">
           <div className="user-photos">
-            <UserPhotoContainer />
+            <UserPhotoIndexContainer />
           </div>
         </section>
       );
@@ -196,4 +203,4 @@ class Home extends React.Component {
   }
 }
 
-export default Home;
+export default withRouter(Home);

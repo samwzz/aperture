@@ -2,7 +2,7 @@ import { connect } from 'react-redux';
 import { signup, login, logout, receiveErrors } from '../../actions/session_actions';
 import Home from './home';
 
-const mapStateToProps = ({ session }) => ({
+const mapStateToProps = ({ session }, ownProps) => ({
   currentUser: session.currentUser,
   loggedIn: Boolean(session.currentUser)
 });

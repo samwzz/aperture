@@ -2,7 +2,7 @@ import { connect } from 'react-redux';
 import { fetchUserPhotos } from '../../actions/photo_actions';
 import { selectPhotos } from '../../reducers/selectors';
 
-import UserPhoto from './user_photo';
+import UserPhotoIndex from './user_photo_index';
 
 const mapStateToProps = state => ({
   photos: selectPhotos(state),
@@ -16,4 +16,4 @@ const mapDispatchToProps = dispatch => ({
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(UserPhoto);
+)(UserPhotoIndex);
