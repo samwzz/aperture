@@ -12,6 +12,7 @@ class PhotoModal extends React.Component {
     };
     this.openModal = this.openModal.bind(this);
     this.closeModal = this.closeModal.bind(this);
+    this.afterModalOpen = this.afterModalOpen.bind(this);
   }
 
   // componentDidUpdate() {
@@ -29,6 +30,11 @@ class PhotoModal extends React.Component {
 
   closeModal() {
     this.setState({ modalOpen: false });
+    PhotoModalStyle.content.opacity = 0;
+  }
+
+  afterModalOpen() {
+    PhotoModalStyle.content.opacity = 100;
   }
 
   render() {
@@ -54,7 +60,7 @@ class PhotoModal extends React.Component {
           </div>
         <Modal
           isOpen={this.state.modalOpen}
-
+          onAfterOpen={this.afterModalOpen}
           onRequestClose={this.closeModal}
           style={PhotoModalStyle}
           contentLabel="PhotoModal"
