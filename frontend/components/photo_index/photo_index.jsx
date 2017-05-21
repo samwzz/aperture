@@ -38,7 +38,7 @@ class PhotoIndex extends React.Component {
 
     return (
       <section className="photo-index">
-        <div id="gallery">
+        <div id="gallery" class="justified-gallery">
           {photoModals}
         </div>
       </section>
