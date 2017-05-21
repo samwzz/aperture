@@ -14,7 +14,7 @@ class PhotoIndex extends React.Component {
   }
 
   componentDidUpdate() {
-    $(".gallery").justifiedGallery({
+    $("#gallery").justifiedGallery({
       rowHeight : 300,
       lastRow : 'justify',
       margins : 8,
@@ -38,7 +38,7 @@ class PhotoIndex extends React.Component {
 
     return (
       <section className="photo-index">
-        <div className="gallery">
+        <div id="gallery" className="justified-gallery">
           {photoItems}
         </div>
       </section>

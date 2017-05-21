@@ -15,7 +15,7 @@ class PhotoShow extends React.Component {
     return (
       <div className="photo-show-container">
         <div className="photo-show">
-          <Link to="/">Back to photos</Link>
+          <Link to="/discover">Back to photos</Link>
           <h1 className="photo-show-title">{ photo.title }</h1>
           <img className="photo-show-img" src={photo.image_url} />
           <p className="photo-show-description">{ photo.description }</p>

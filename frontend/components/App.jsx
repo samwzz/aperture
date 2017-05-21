@@ -5,6 +5,7 @@ import LoginFormContainer from './session_form/login_form_container';
 import SignupFormContainer from './session_form/signup_form_container';
 import PhotoIndexContainer from './photo_index/photo_index_container';
 import PhotoShowContainer from './photo_show/photo_show_container';
+import { AuthRoute, ProtectedRoute } from '../util/route_util';
 
 const App = () => (
   <div>
@@ -12,12 +13,8 @@ const App = () => (
       <HomeContainer />
     </header>
     <section>
-      <div className="test">
-
-      </div>
-
-      <Route exact path="/discover" component={ PhotoIndexContainer } />
-      <Route exact path="/photos/:photoId/" component={ PhotoShowContainer } />
+      <ProtectedRoute exact path="/discover" component={ PhotoIndexContainer } />
+      <ProtectedRoute exact path="/photos/:photoId/" component={ PhotoShowContainer } />
     </section>
   </div>
 );

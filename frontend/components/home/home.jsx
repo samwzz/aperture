@@ -115,12 +115,18 @@ class Home extends React.Component {
     );
   }
 
+  scrollingBG() {
+    return(
+      <div className="overlay"></div>
+    );
+  }
+
   landing() {
     if (!this.props.loggedIn) {
       return(
         <section className="landing-container">
-          <div className="overlay"></div>
           <div className="landing">
+
             <h1 className="landing-header">
               Discover the world through photography
             </h1>
@@ -152,11 +158,14 @@ class Home extends React.Component {
         <nav className="main-nav">
           <nav className="left-nav">
             <ul>
-              <li id="logo-image">
-                <img src="http://res.cloudinary.com/db1ywnpgj/image/upload/v1495218853/fstop-white_tsdk7k.png"/>
+              <li id="logo">
+                <Link id="logo-image" to="/">
+                  <img src="http://res.cloudinary.com/db1ywnpgj/image/upload/v1495218853/fstop-white_tsdk7k.png"/>
+                </Link>
+                <Link id="logo-text" to="/">FStop</Link>
               </li>
-              <li id="logo-text">
-                <Link to="/">FStop</Link>
+              <li>
+                <Link className="discover-link" to="/discover">Discover</Link>
               </li>
             </ul>
           </nav>
