@@ -33,7 +33,7 @@ class PhotoIndex extends React.Component {
   render () {
     const { photos } = this.props;
     const photoModals = photos.map((photo) => (
-      <PhotoModal key={photo.id} photo={photo} />
+      <PhotoModal key={`${photo.id}-index`} photo={photo} />
     ));
 
     return (

@@ -31,7 +31,7 @@ class UserPhotoIndex extends React.Component {
   render () {
     const { photos } = this.props;
     const photoModals = photos.map((photo) => (
-      <PhotoModal className="photo-modal" key={photo.id} photo={photo} />
+      <PhotoModal className="photo-modal" key={`${photo.id}-user`} photo={photo} />
     ));
     let noPhotos;
     if (this.state.numPhotos === 0) {
