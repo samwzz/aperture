@@ -36,16 +36,19 @@ class PhotoModal extends React.Component {
     return (
         <div>
           <div className="photo-modal-container">
-            <div className="photo-container">
-              <img
-                src={photo.image_url}
-                onClick={this.openModal}
-                className="photo-modal-img"
-                />
-              <div className="photo-info-container">
-                <div className="description">
-                  {photo.description}
-                </div>
+            <img
+              src={photo.image_url}
+              onClick={this.openModal}
+              className="photo-modal-image"
+              />
+            <div className="photo-info-container">
+              <div className="photo-info">
+                <p className="photo-username">
+                  User
+                </p>
+                <p className="photo-title">
+                  {photo.title}
+                </p>
               </div>
             </div>
           </div>

@@ -44,10 +44,10 @@ class UserPhotoIndex extends React.Component {
           <div className="cover-photo"></div>
           <div className="user-navigation">
             <ul className="profile-tabs">
-              <li id="photostream">
+              <li id="photostream-tab">
                 Photostream
               </li>
-              <li id="albums">
+              <li id="album-tab">
                 Albums
               </li>
             </ul>
