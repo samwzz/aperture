@@ -1,10 +1,7 @@
-.test {
-  background-image: url(https://vignette1.wikia.nocookie.net/sanicsource/images/9/97/Doge.jpg);
-}
-
 .overlay{
   position:fixed;
-   background:url(https://s.yimg.com/uy/build/images/sohp/sohp-grid-resized.jpg);
+  background: black;
+  //  background:url(https://s.yimg.com/uy/build/images/sohp/sohp-grid-resized.jpg);
   -webkit-animation:200s scroll infinite linear;
   -moz-animation:200s scroll infinite linear;
   -o-animation:200s scroll infinite linear;
@@ -48,9 +45,36 @@
 }
 
 .landing-container {
+  background: rgba(0,0,0,0.4);
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
   width: 100%;
+  text-align: center;
+}
+
+h1.landing-header {
+  position:relative;
+  bottom: 50px;
+  margin-bottom: 20px;
+  font-size: 48px;
+  color: white;
+  text-shadow: 0 0 1px rgba(0,0,0,0.6);
+}
+
+h2.landing-text {
+  position: relative;
+  bottom: 50px;
+  margin-bottom: 40px;
+  font-size: 24px;
+  color: white;
+}
+
+button.get-started {
+  position: relative;
+  bottom: 50px;
+  min-width: 250px;
+  height: 50px;
+  font-size: 20px;
 }

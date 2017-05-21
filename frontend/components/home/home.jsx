@@ -119,14 +119,15 @@ class Home extends React.Component {
     if (!this.props.loggedIn) {
       return(
         <section className="landing-container">
+          <div className="overlay"></div>
           <div className="landing">
             <h1 className="landing-header">
-              Landing heading
+              Discover the world through photography
             </h1>
             <h2 className="landing-text">
-              Join the FStop community and stay inspired.
+              Join the FStop community, share your story, and stay inspired.
             </h2>
-            <a className="get-started" onClick={this.openSignupModal}>Get started</a>
+            <button className="get-started" onClick={this.openSignupModal}>Get started</button>
             <Modal
               isOpen={this.state.SignupModalOpen}
               onAfterOpen={this.afterModalOpen}
