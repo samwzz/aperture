@@ -34,13 +34,21 @@ class PhotoModal extends React.Component {
   render() {
     const { photo } = this.props;
     return (
-      <div>
-        <a
-          className="photo-modal-item"
-          onClick={this.openModal}
-          >
-          <img className="photo-modal-img" src={photo.image_url}/>
-        </a>
+        <div>
+          <div className="photo-modal-container">
+            <div className="photo-container">
+              <img
+                src={photo.image_url}
+                onClick={this.openModal}
+                className="photo-modal-img"
+                />
+              <div className="photo-info-container">
+                <div className="description">
+                  {photo.description}
+                </div>
+              </div>
+            </div>
+          </div>
         <Modal
           isOpen={this.state.modalOpen}
 

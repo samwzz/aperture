@@ -17,7 +17,7 @@ class PhotoIndex extends React.Component {
     $("#gallery").justifiedGallery({
       rowHeight : 300,
       lastRow : 'justify',
-      margins : 8,
+      margins : 9,
       cssAnimation: false
     });
   }

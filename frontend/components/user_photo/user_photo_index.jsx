@@ -39,9 +39,21 @@ class UserPhotoIndex extends React.Component {
     }
 
     return (
-      <section className="user-photo-index-container">
-        Photostream
-        <div id="user-photo-index">
+      <section className="user-profile-container">
+        <div className="profile-header-container">
+          <div className="cover-photo"></div>
+          <div className="user-navigation">
+            <ul className="profile-tabs">
+              <li id="photostream">
+                Photostream
+              </li>
+              <li id="albums">
+                Albums
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div className="user-photo-index">
           <h2>{noPhotos}</h2>
           {photoModals}
         </div>

@@ -1,0 +1,54 @@
+.user-pofile-container {
+  background-color: black !important;
+}
+
+.cover-photo {
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-image: url(https://res.cloudinary.com/db1ywnpgj/image/upload/v1495179973/pexels-photo-141635_ueizkw.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  height: 300px;
+}
+
+.profile-header-container {
+  display: block;
+}
+
+// .user-photo-index {
+//   display: flex;
+//   flex-direction: column;
+//   justify-content: space-between;
+// }
+
+.user-photo-index {
+  margin-top: 400px;
+}
+
+.user-photo-index .photo-modal-container {
+  margin: 150px 0;
+}
+
+.user-photo-index .photo-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.user-photo-index .photo-modal-img {
+  height: 50%;
+  width: 50%;
+  cursor: pointer;
+}
+
+.user-photo-index .photo-info-container {
+  display: flex;
+  justify-content: flex-start;
+  height: 40px;
+  width: 100%
+}
