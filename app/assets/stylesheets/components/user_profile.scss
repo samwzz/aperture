@@ -52,6 +52,11 @@
   font-family: $sans-serif;
 }
 
+.user-photo-index .photo-modal-container:hover {
+  box-shadow: 0 8px 32px 0 rgba(0,0,0,0.08);
+  transition: box-shadow 0.2s;
+}
+
 .user-info {
   display: flex;
   flex-direction: column;
