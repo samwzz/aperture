@@ -8,7 +8,11 @@
   flex-direction: column;
 }
 
-.image {
+.photo-show-img {
   height: 80vh;
   width: auto;
+}
+
+.photo-modal {
+  background-color: $darker-gray;
 }

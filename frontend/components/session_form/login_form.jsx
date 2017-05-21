@@ -1,4 +1,5 @@
 import React from 'react';
+import { Redirect } from 'react-router-dom';
 
 class LoginForm extends React.Component {
   constructor(props) {
@@ -10,6 +11,8 @@ class LoginForm extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
     this.switchForm = this.switchForm.bind(this);
     this.handleGuestLogin = this.handleGuestLogin.bind(this);
+
+    this.redirect = this.redirect.bind(this);
   }
 
   update(field) {
@@ -27,7 +30,8 @@ class LoginForm extends React.Component {
   handleGuestLogin(e) {
     e.preventDefault();
     this.props.login({username: "guest", password: "password"})
-      .then(() => this.props.closeLoginModal());
+      .then(() => this.props.closeLoginModal())
+      .then(() => this.redirect());
   }
 
   switchForm(e) {
@@ -35,6 +39,12 @@ class LoginForm extends React.Component {
     this.props.closeLoginModal();
     this.props.openSignupModal();
     this.props.receiveErrors([]);
+  }
+
+  redirect() {
+    return(
+      <Redirect to="/discover" />
+    );
   }
 
   renderErrors() {
