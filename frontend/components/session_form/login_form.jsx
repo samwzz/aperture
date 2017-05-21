@@ -54,6 +54,9 @@ class LoginForm extends React.Component {
     return (
       <div className="login-form-container">
         <form onSubmit={this.handleSubmit} className="login-form-box">
+          <div className="form-logo">
+            <img src="https://res.cloudinary.com/db1ywnpgj/image/upload/v1495219123/fstop_pz6x63.png"/>
+          </div>
           <h1>Log In to FStop</h1>
           {this.renderErrors()}
           <div className="login-form">

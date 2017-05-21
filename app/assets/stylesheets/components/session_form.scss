@@ -11,9 +11,21 @@
   margin-top: 15px;
 }
 
-.login-form-box h1 {
-  font-size: 24px;
-  text-align: center;
+.form-logo {
+  display: flex;
+  justify-content: center;
+}
+
+.login-form-box {
+  h1 {
+    font-size: 24px;
+    text-align: center;
+  }
+  img {
+    width: 100px;
+    height: 100px;
+    margin-bottom: 7px;
+  }
 }
 
 .login-form-text {

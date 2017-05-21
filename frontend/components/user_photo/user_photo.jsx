@@ -33,12 +33,17 @@ class UserPhoto extends React.Component {
 
   render () {
     const { photos } = this.props;
-    const photoItems = photos.map((photo) => (
+    let photoItems = photos.map((photo) => (
       <PhotoModal key={photo.id} photo={photo} />
     ));
 
+    if (photos.length === 0) {
+
+    }
+
     return (
       <section className="photo-index">
+        Photostream
         <div id="gallery" className="justified-gallery">
           {photoItems}
         </div>
