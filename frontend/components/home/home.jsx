@@ -94,9 +94,11 @@ class Home extends React.Component {
   }
 
   scrollingBG() {
-    return(
-      <div className="overlay"></div>
-    );
+    if (!this.props.loggedIn) {
+      return(
+        <div className="overlay"></div>
+      );
+    }
   }
 
   landing() {
@@ -150,6 +152,7 @@ class Home extends React.Component {
         {this.signupFormModal()}
         {this.landing()}
         {this.allPhotos()}
+        {this.scrollingBG()}
       </section>
     );
   }

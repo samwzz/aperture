@@ -11,78 +11,32 @@ class AlbumIndex extends React.Component {
   }
 
   componentDidMount() {
-    window.scrollTo(0, 0);
-    const { fetchPhotos, fetchUserPhotos, currentUser } = this.props;
-    if (this.props.location.pathname === `/users/${currentUser.id}`) {
-      fetchUserPhotos(currentUser.id)
-      .then(() => this.setState({
-        numPhotos: this.props.photos.length
-      }));
-      $('.cover-photo').parallax({imageSrc: 'https://res.cloudinary.com/db1ywnpgj/image/upload/v1495179973/pexels-photo-141635_ueizkw.jpg'});
-    } else {
-      fetchPhotos();
-    }
-  }
-
-  componentWillUnmount() {
-    $('.parallax-mirror').remove();
-  }
-
-  openModal() {
-    this.setState({ modalOpen: true });
-  }
-
-  closeModal() {
-    this.setState({ modalOpen: false });
-  }
-
-  userProfile() {
-    if (this.props.location.pathname === `/users/${this.props.currentUser.id}`) {
-      return(
-        <div className="profile-header-container">
-          <div className="cover-photo"></div>
-          <div className="header-spacer">
-            <div className="avatar">
-              <div className="avatar-wrapper">
-                <img src="https://res.cloudinary.com/db1ywnpgj/image/upload/v1495431600/Doge_hu9gbb.jpg"/>
-              </div>
-            </div>
-          </div>
-          <div className="user-nav">
-            <ul className="profile-tabs">
-              <li id="photostream-tab">
-                <a>Photostream</a>
-              </li>
-              <li id="album-tab">
-                <a>Albums</a>
-              </li>
-            </ul>
-          </div>
-        </div>
-      );
-    }
+    this.props.fetchAlbums()
+    .then(() => this.setState({
+      numPhotos: this.props.photos.length
+    }));
   }
 
   render () {
-    const { photos } = this.props;
-    const photoModals = photos.map((photo) => (
-      <PhotoModal className="photo-modal" key={`${photo.id}-user`} photo={photo} />
-    ));
-    let noPhotos;
-    if (this.state.numPhotos === 0) {
-      noPhotos = "You will find your photos here. Now, go out and take some photos!";
+    let noAlbums;
+    if (this.state.numAlbums === 0) {
+      noAlbums = "You will find your albums here.";
     }
 
+    const { albums } = this.props;
+    const albumItems = albums.map((album) => (
+      <AlbumIndexItem key={`${album.id}`} album={album} />
+    ));
+
     return (
-      <section className="photo-list-container">
-        {this.userProfile()}
-        <div className="photo-list">
-          <h2 className="no-photo-msg">{noPhotos}</h2>
-          {photoModals}
+      <section className="album-index-container">
+        <div id="album-index">
+          {noAlbums}
+          {albumItems}
         </div>
       </section>
     );
   }
 }
 
-export default withRouter(PhotoList);
+export default withRouter(AlbumIndex);
