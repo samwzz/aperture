@@ -2,65 +2,75 @@
   min-height: 400px;
   background: transparent;
   z-index: -11;
+  margin-bottom: -100px;
 }
 
 .profile-header-container {
+  text-align: center;
   display: block;
   // min-height: 400px;
   // background: transparent;
 }
 
+.username h1 {
+  margin: 50px 0 -100px 0;
+  font-size: 30px;
+}
+
 .user-nav {
+  display: relative;
   background: white;
   min-height: 50px;
   border-top: 1px solid $lighter-gray;
   border-bottom: 1px solid $lighter-gray;
+  a {
+    display: inline-block;
+    font-family: $sans-serif;
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: bold;
+    color: $gray;
+    height: 50px;
+    padding: 15px;
+    cursor: pointer;
+  }
+  ul {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+  li:hover a {
+    color: $blue;
+  }
+  li:active a {
+    border-bottom: 2px solid $blue;
+  }
 }
 
-// .photo-list {
-//   display: flex;
-//   flex-direction: column;
-//   justify-content: space-between;
-// }
-
-.photo-list {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  // margin-top: 350px;
-  background-color: $lightest-gray;
+.header-spacer {
+  min-height: 100px;
 }
 
-.photo-list .photo-modal-container {
-  width: 800px;
-  margin-top: 90px;
+.avatar {
+  height: 100px;
+  width: 100px;
+  position: relative;
+  margin: 0 auto;
+  top: 50px;
   z-index: 100;
 }
 
-.photo-modal-image {
-  cursor: pointer;
-}
-
-.photo-list .photo-info-container {
-  display: flex;
-  align-items: center;
-  height: 60px;
-  width: 100%;
-  padding: 10px;
-  background-color: white;
-  border-bottom-right-radius: 5px;
-  border-bottom-left-radius: 5px;
-  font-family: $sans-serif;
-}
-
-.photo-list .photo-modal-container:hover {
-  box-shadow: 0 8px 32px 0 rgba(0,0,0,0.09);
-  transition: box-shadow 0.2s;
-}
-
-.user-info {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+.avatar-wrapper {
+  height: 100px;
+  width: 100px;
+  margin: 0 auto;
+  border: 3px solid white;
+  border-radius: 50%;
+  position: relative;
+  overflow: hidden;
+  background-size: cover;
+  img {
+    height: 100%;
+    width: 100%;
+  }
 }

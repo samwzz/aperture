@@ -186,7 +186,7 @@ class Home extends React.Component {
                 <Link id="logo-image" to="/">
                   <img src="http://res.cloudinary.com/db1ywnpgj/image/upload/v1495218853/fstop-white_tsdk7k.png"/>
                 </Link>
-                <Link id="logo-text" to="/">FStop</Link>
+                <Link id="logo-text" to="/">Aperture</Link>
               </li>
               <li>
                 <Link className="discover-link" to="/discover">Discover</Link>

@@ -8,7 +8,7 @@
 
 u = User.create(username: "guest", email: "guest@example.com", password: "password")
 
-p = Photo.create(title: "doge", description: "doge description", image_url: "https://vignette1.wikia.nocookie.net/sanicsource/images/9/97/Doge.jpg/revision/latest?cb=20160112233015", user_id: u.id )
+p = Photo.create(title: "doge", description: "doge description", image_url: "https://res.cloudinary.com/db1ywnpgj/image/upload/v1495431600/Doge_hu9gbb.jpg", user_id: u.id )
 p1 = Photo.create(title: "", description: "", image_url: "https://res.cloudinary.com/db1ywnpgj/image/upload/v1495176797/photo-1476111021705-ac3b3304fe20_innk8p.jpg", user_id: u.id )
 p2 = Photo.create(title: "", description: "", image_url: "https://res.cloudinary.com/db1ywnpgj/image/upload/v1495176797/photo-1466853817435-05b43fe45b39_qltxrr.jpg", user_id: u.id )
 p3 = Photo.create(title: "", description: "", image_url: "https://res.cloudinary.com/db1ywnpgj/image/upload/v1495176797/photo-1494587416117-f102a2ac0a8d_kifq1n.jpg", user_id: u.id )

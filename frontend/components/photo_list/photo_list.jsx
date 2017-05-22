@@ -38,16 +38,20 @@ class PhotoList extends React.Component {
       return(
         <div className="profile-header-container">
           <div className="cover-photo"></div>
-          <div classname="username">
-            <h1>{this.props.currentUser.username}</h1>
+          <div className="header-spacer">
+            <div className="avatar">
+              <div className="avatar-wrapper">
+                <img src="https://res.cloudinary.com/db1ywnpgj/image/upload/v1495431600/Doge_hu9gbb.jpg"/>
+              </div>
+            </div>
           </div>
           <div className="user-nav">
             <ul className="profile-tabs">
               <li id="photostream-tab">
-                Photostream
+                <a>Photostream</a>
               </li>
               <li id="album-tab">
-                Albums
+                <a>Albums</a>
               </li>
             </ul>
           </div>
