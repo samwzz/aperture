@@ -2,7 +2,7 @@ class Api::AlbumsController < ApplicationController
   def index
     @albums = Album.where(user_id: params[:user_id])
 
-    render json: @albums
+    render :index
   end
 
   def show
