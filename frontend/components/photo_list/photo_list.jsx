@@ -13,6 +13,7 @@ class PhotoList extends React.Component {
   }
 
   componentDidMount() {
+    window.scrollTo(0, 0);
     const { fetchPhotos, fetchUserPhotos, currentUser } = this.props;
     if (this.props.location.pathname === `/users/${currentUser.id}`) {
       fetchUserPhotos(currentUser.id)
