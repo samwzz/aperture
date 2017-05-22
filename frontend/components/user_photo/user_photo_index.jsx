@@ -35,7 +35,7 @@ class UserPhotoIndex extends React.Component {
     ));
     let noPhotos;
     if (this.state.numPhotos === 0) {
-      noPhotos = "Go out and take some photos!";
+      noPhotos = "You will find your photos here. Now, go out and take some photos!";
     }
 
     return (
@@ -54,7 +54,7 @@ class UserPhotoIndex extends React.Component {
           </div>
         </div>
         <div className="user-photo-index">
-          <h2>{noPhotos}</h2>
+          <h2 className="no-photo-msg">{noPhotos}</h2>
           {photoModals}
         </div>
       </section>

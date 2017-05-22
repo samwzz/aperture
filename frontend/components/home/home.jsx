@@ -187,6 +187,11 @@ class Home extends React.Component {
               <li>
                 <Link className="discover-link" to="/discover">Discover</Link>
               </li>
+              <li>
+                <Link className="user-profile-link" to={`/users/${currentUser.id}`}>
+                  {currentUser.username}
+                </Link>
+              </li>
             </ul>
           </nav>
           <nav className="right-nav">
