@@ -1,6 +1,6 @@
 .cover-photo {
   display: block;
-  position: absolute;
+  position: relative;
   top: 0;
   right: 0;
   bottom: 0;
@@ -27,7 +27,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-top: 350px;
+  // margin-top: 350px;
   background-color: $lightest-gray;
 }
 

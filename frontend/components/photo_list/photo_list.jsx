@@ -33,21 +33,23 @@ class PhotoList extends React.Component {
   }
 
   userProfile() {
-    return(
-      <div className="profile-header-container">
-        <div className="cover-photo"></div>
-        <div className="user-navigation">
-          <ul className="profile-tabs">
-            <li id="photostream-tab">
-              Photostream
-            </li>
-            <li id="album-tab">
-              Albums
-            </li>
-          </ul>
+    if (this.props.location.pathname === `/users/${this.props.currentUser.id}`) {
+      return(
+        <div className="profile-header-container">
+          <div className="cover-photo"></div>
+          <div className="user-navigation">
+            <ul className="profile-tabs">
+              <li id="photostream-tab">
+                Photostream
+              </li>
+              <li id="album-tab">
+                Albums
+              </li>
+            </ul>
+          </div>
         </div>
-      </div>
-    );
+      );
+    }
   }
 
   render () {
