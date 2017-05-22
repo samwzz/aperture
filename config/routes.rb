@@ -7,10 +7,14 @@ Rails.application.routes.draw do
 
     resources :photos, only: [:index, :create, :show, :update, :destroy]
     resources :albums, only: [:create, :show, :update, :destroy]
-    
+
     resources :users do
       resources :photos, only: [:index]
       resources :albums, only: [:index]
+    end
+
+    resources :albums do
+      resources :photos, only: [:index]
     end
   end
 end

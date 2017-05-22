@@ -25,7 +25,8 @@
 - `GET /api/photos/:id`
 - `PATCH /api/photos/:id`
 - `DELETE /api/photos/:id`
--  `GET /api/users/:user_id/photos`
+- `GET /api/users/:user_id/photos`
+- `GET /api/albums/:album_id/photos`
 
 ### Albums
 
@@ -33,7 +34,7 @@
 - `POST /api/albums`
 - `GET /api/albums/:id`
 - `DELETE /api/albums/:id`
-- `GET /api/albums/:id/photos`
+- `GET /api/users/:user_id/albums`
 
 ### Tags
 
