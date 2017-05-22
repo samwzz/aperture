@@ -1,4 +1,4 @@
-Apertureimport React from 'react';
+import React from 'react';
 
 class SignupForm extends React.Component {
   constructor(props) {
