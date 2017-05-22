@@ -1,4 +1,4 @@
-import React from 'react';
+Apertureimport React from 'react';
 
 class LoginForm extends React.Component {
   constructor(props) {
@@ -56,7 +56,7 @@ class LoginForm extends React.Component {
           <div className="form-logo">
             <img src="https://res.cloudinary.com/db1ywnpgj/image/upload/v1495219123/fstop_pz6x63.png"/>
           </div>
-          <h1>Log In to FStop</h1>
+          <h1>Log In to Aperture</h1>
           {this.renderErrors()}
           <div className="login-form">
             <label>Username</label>
