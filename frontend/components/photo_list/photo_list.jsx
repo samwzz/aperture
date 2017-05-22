@@ -26,6 +26,10 @@ class PhotoList extends React.Component {
     }
   }
 
+  componentWillUnmount() {
+    $('.parallax-mirror').remove();
+  }
+
   openModal() {
     this.setState({ modalOpen: true });
   }
