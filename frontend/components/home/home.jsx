@@ -4,7 +4,7 @@ import { Link, withRouter } from 'react-router-dom';
 import LoginFormContainer from '../session_form/login_form_container';
 import SignupFormContainer from '../session_form/signup_form_container';
 import FormModalStyle from '../modal/form_modal_style';
-import UserProfileContainer from '../user_profile/user_profile_container';
+import PhotoListContainer from '../photo_list/photo_list_container';
 
 class Home extends React.Component {
   constructor(props) {
@@ -75,11 +75,6 @@ class Home extends React.Component {
             <li>
               <a id="signup" onClick={this.openSignupModal}>Sign Up</a>
             </li>
-            <li>
-              <Link className="user-profile-link" to={`/users/${currentUser.id}`}>
-                {currentUser.username}
-              </Link>
-            </li>
           </ul>
         </nav>
       );
@@ -92,6 +87,9 @@ class Home extends React.Component {
       return (
         <hgroup className="header-group">
           <h2 className="header-name">Hi, {currentUser.username}!</h2>
+          <Link className="user-profile-link" to={`/users/${currentUser.id}`}>
+            {currentUser.username}
+          </Link>
           <a className="header-button" onClick={logout}>Log Out</a>
         </hgroup>
       );
@@ -163,13 +161,13 @@ class Home extends React.Component {
     }
   }
 
-  userPhotos() {
+  allPhotos() {
     if (this.props.loggedIn && this.props.location.pathname === "/") {
 
       return(
-        <section className="user-photos-container">
-          <div className="user-photos">
-            <UserProfileContainer />
+        <section className="all-photos-container">
+          <div className="all-photos">
+            <PhotoListContainer />
           </div>
         </section>
       );
@@ -203,7 +201,7 @@ class Home extends React.Component {
           </nav>
         </nav>
         {this.landing()}
-        {this.userPhotos()}
+        {this.allPhotos()}
       </section>
     );
   }
