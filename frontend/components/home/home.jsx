@@ -9,8 +9,88 @@ import PhotoListContainer from '../photo_list/photo_list_container';
 class Home extends React.Component {
   constructor(props) {
     super(props);
+    this.state = {
+      LoginModalOpen: false,
+      SignupModalOpen: false
+    };
+    this.openLoginModal = this.openLoginModal.bind(this);
+    this.closeLoginModal = this.closeLoginModal.bind(this);
+    this.clearErrorsAndCloseLogin = this.clearErrorsAndCloseLogin.bind(this);
 
+    this.openSignupModal = this.openSignupModal.bind(this);
+    this.closeSignupModal = this.closeSignupModal.bind(this);
+    this.clearErrorsAndCloseSignup = this.clearErrorsAndCloseSignup.bind(this);
+
+    this.afterModalOpen = this.afterModalOpen.bind(this);
     this.landing = this.landing.bind(this);
+  }
+
+  openLoginModal() {
+    this.setState({
+      LoginModalOpen: true,
+      SignupModalOpen: false
+    });
+  }
+
+  clearErrorsAndCloseLogin() {
+    this.props.receiveErrors([]);
+    this.closeLoginModal();
+  }
+
+  closeLoginModal() {
+    this.setState({ LoginModalOpen: false });
+    FormModalStyle.content.opacity = 0;
+  }
+
+  openSignupModal() {
+    this.setState({
+      SignupModalOpen: true,
+      LoginModalOpen: false
+     });
+  }
+
+  clearErrorsAndCloseSignup() {
+    this.props.receiveErrors([]);
+    this.closeSignupModal();
+  }
+
+  closeSignupModal() {
+    this.setState({ SignupModalOpen: false });
+    FormModalStyle.content.opacity = 0;
+  }
+
+  afterModalOpen() {
+    FormModalStyle.content.opacity = 100;
+  }
+
+  loginFormModal() {
+    return(
+      <Modal
+        isOpen={this.state.LoginModalOpen}
+        onAfterOpen={this.afterModalOpen}
+        onRequestClose={this.clearErrorsAndCloseLogin}
+        style={FormModalStyle}
+        contentLabel="LoginModal"
+        className="form-modal"
+        >
+        <LoginFormContainer closeLoginModal={this.closeLoginModal} openSignupModal={this.openSignupModal} />
+      </Modal>
+    );
+  }
+
+  signupFormModal() {
+    return(
+      <Modal
+        isOpen={this.state.SignupModalOpen}
+        onAfterOpen={this.afterModalOpen}
+        onRequestClose={this.clearErrorsAndCloseSignup}
+        style={FormModalStyle}
+        contentLabel="SignupModal"
+        className="form-modal"
+        >
+        <SignupFormContainer closeSignupModal={this.closeSignupModal} openLoginModal={this.openLoginModal} />
+      </Modal>
+    );
   }
 
   scrollingBG() {
@@ -65,7 +145,9 @@ class Home extends React.Component {
     const { currentUser, logout, loggedIn } = this.props;
 
     return (
-    <section className="home">
+      <section className="home">
+        {this.loginFormModal()}
+        {this.signupFormModal()}
         {this.landing()}
         {this.allPhotos()}
       </section>
