@@ -1,65 +1,76 @@
 .cover-photo {
-  display: block;
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  background-image: url(https://res.cloudinary.com/db1ywnpgj/image/upload/v1495179973/pexels-photo-141635_ueizkw.jpg);
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center center;
-  height: 340px;
+  min-height: 400px;
+  background: transparent;
+  z-index: -11;
+  margin-bottom: -100px;
 }
 
 .profile-header-container {
+  text-align: center;
   display: block;
+  // min-height: 400px;
+  // background: transparent;
 }
 
-// .user-photo-index {
-//   display: flex;
-//   flex-direction: column;
-//   justify-content: space-between;
-// }
-
-.user-photo-index {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  margin-top: 350px;
-  background-color: $lightest-gray;
+.username h1 {
+  margin: 50px 0 -100px 0;
+  font-size: 30px;
 }
 
-.user-photo-index .photo-modal-container {
-  width: 800px;
-  margin-top: 90px;
+.user-nav {
+  display: relative;
+  background: white;
+  min-height: 50px;
+  border-top: 1px solid $lighter-gray;
+  border-bottom: 1px solid $lighter-gray;
+  a {
+    display: inline-block;
+    font-family: $sans-serif;
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: bold;
+    color: $gray;
+    height: 50px;
+    padding: 15px;
+    cursor: pointer;
+  }
+  ul {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+  li:hover a {
+    color: $blue;
+  }
+  li:active a {
+    border-bottom: 2px solid $blue;
+  }
+}
+
+.header-spacer {
+  min-height: 100px;
+}
+
+.avatar {
+  height: 100px;
+  width: 100px;
+  position: relative;
+  margin: 0 auto;
+  top: 50px;
   z-index: 100;
 }
 
-.photo-modal-image {
-  cursor: pointer;
-}
-
-.user-photo-index .photo-info-container {
-  display: flex;
-  align-items: center;
-  height: 60px;
-  width: 100%;
-  padding: 10px;
-  background-color: white;
-  border-bottom-right-radius: 5px;
-  border-bottom-left-radius: 5px;
-  font-family: $sans-serif;
-}
-
-.user-photo-index .photo-modal-container:hover {
-  box-shadow: 0 8px 32px 0 rgba(0,0,0,0.09);
-  transition: box-shadow 0.2s;
-}
-
-.user-info {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+.avatar-wrapper {
+  height: 100px;
+  width: 100px;
+  margin: 0 auto;
+  border: 3px solid white;
+  border-radius: 50%;
+  position: relative;
+  overflow: hidden;
+  background-size: cover;
+  img {
+    height: 100%;
+    width: 100%;
+  }
 }

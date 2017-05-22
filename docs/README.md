@@ -1,12 +1,12 @@
-# FStop
+# Aperture
 
 [Heroku link][heroku]
 
-[heroku]: https://fstop-app.herokuapp.com
+[heroku]: https://aperture-app.herokuapp.com
 
 ## Minimum Viable Product
 
-FStop is a web application inspired by Flickr built using Ruby on Rails and
+Aperture is a web application inspired by Flickr built using Ruby on Rails and
 React/Redux. By the end of Week 9, this app will, at a minimum, satisfy the
 following criteria with smooth, bug-free navigation, adequate seed data and
 sufficient CSS styling:

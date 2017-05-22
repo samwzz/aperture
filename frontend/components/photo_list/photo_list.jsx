@@ -1,5 +1,5 @@
 import React from 'react';
-import { Route } from 'react-router-dom';
+import { withRouter, Route } from 'react-router-dom';
 import PhotoIndexItem from '../photo_index/photo_index_item';
 import PhotoModal from '../modal/photo_modal';
 import Modal from 'react-modal';
@@ -13,11 +13,16 @@ class PhotoList extends React.Component {
   }
 
   componentDidMount() {
-    const { fetchUserPhotos, currentUser } = this.props;
-    fetchUserPhotos(currentUser.id)
-    .then(() => this.setState({
-      numPhotos: this.props.photos.length
-    }));
+    const { fetchPhotos, fetchUserPhotos, currentUser } = this.props;
+    if (this.props.location.pathname === `/users/${currentUser.id}`) {
+      fetchUserPhotos(currentUser.id)
+      .then(() => this.setState({
+        numPhotos: this.props.photos.length
+      }));
+      $('.cover-photo').parallax({imageSrc: 'https://res.cloudinary.com/db1ywnpgj/image/upload/v1495179973/pexels-photo-141635_ueizkw.jpg'});
+    } else {
+      fetchPhotos();
+    }
   }
 
   openModal() {
@@ -26,6 +31,33 @@ class PhotoList extends React.Component {
 
   closeModal() {
     this.setState({ modalOpen: false });
+  }
+
+  userProfile() {
+    if (this.props.location.pathname === `/users/${this.props.currentUser.id}`) {
+      return(
+        <div className="profile-header-container">
+          <div className="cover-photo"></div>
+          <div className="header-spacer">
+            <div className="avatar">
+              <div className="avatar-wrapper">
+                <img src="https://res.cloudinary.com/db1ywnpgj/image/upload/v1495431600/Doge_hu9gbb.jpg"/>
+              </div>
+            </div>
+          </div>
+          <div className="user-nav">
+            <ul className="profile-tabs">
+              <li id="photostream-tab">
+                <a>Photostream</a>
+              </li>
+              <li id="album-tab">
+                <a>Albums</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      );
+    }
   }
 
   render () {
@@ -39,21 +71,9 @@ class PhotoList extends React.Component {
     }
 
     return (
-      <section className="user-profile-container">
-        <div className="profile-header-container">
-          <div className="cover-photo"></div>
-          <div className="user-navigation">
-            <ul className="profile-tabs">
-              <li id="photostream-tab">
-                Photostream
-              </li>
-              <li id="album-tab">
-                Albums
-              </li>
-            </ul>
-          </div>
-        </div>
-        <div className="user-photo-index">
+      <section className="photo-list-container">
+        {this.userProfile()}
+        <div className="photo-list">
           <h2 className="no-photo-msg">{noPhotos}</h2>
           {photoModals}
         </div>
@@ -62,4 +82,4 @@ class PhotoList extends React.Component {
   }
 }
 
-export default PhotoList;
+export default withRouter(PhotoList);

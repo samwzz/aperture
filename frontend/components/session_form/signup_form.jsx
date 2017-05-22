@@ -57,7 +57,7 @@ class SignupForm extends React.Component {
           <div className="form-logo">
             <img src="https://res.cloudinary.com/db1ywnpgj/image/upload/v1495219123/fstop_pz6x63.png"/>
           </div>
-          <h1>Join FStop</h1>
+          <h1>Join Aperture</h1>
           {this.renderErrors()}
           <div className="login-form">
             <label>Username</label>

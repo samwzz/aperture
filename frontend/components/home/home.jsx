@@ -142,7 +142,7 @@ class Home extends React.Component {
               Discover the world through photography
             </h1>
             <h2 className="landing-text">
-              Join the FStop community, share your story, and stay inspired.
+              Join the Aperture community, share your story, and stay inspired.
             </h2>
             <button className="get-started" onClick={this.openSignupModal}>Get started</button>
             <Modal
@@ -186,7 +186,7 @@ class Home extends React.Component {
                 <Link id="logo-image" to="/">
                   <img src="http://res.cloudinary.com/db1ywnpgj/image/upload/v1495218853/fstop-white_tsdk7k.png"/>
                 </Link>
-                <Link id="logo-text" to="/">FStop</Link>
+                <Link id="logo-text" to="/">Aperture</Link>
               </li>
               <li>
                 <Link className="discover-link" to="/discover">Discover</Link>
