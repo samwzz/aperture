@@ -4,7 +4,7 @@ import { Link, withRouter } from 'react-router-dom';
 import LoginFormContainer from '../session_form/login_form_container';
 import SignupFormContainer from '../session_form/signup_form_container';
 import FormModalStyle from '../modal/form_modal_style';
-import UserPhotoIndexContainer from '../user_photo/user_photo_index_container';
+import UserProfileContainer from '../user_profile/user_profile_container';
 
 class Home extends React.Component {
   constructor(props) {
@@ -65,6 +65,7 @@ class Home extends React.Component {
 
   sessionLinks() {
     if (!this.props.loggedIn) {
+      const { currentUser } = this.props;
       return (
         <nav className="login-signup">
           <ul>
@@ -73,6 +74,11 @@ class Home extends React.Component {
             </li>
             <li>
               <a id="signup" onClick={this.openSignupModal}>Sign Up</a>
+            </li>
+            <li>
+              <Link className="user-profile-link" to={`/users/${currentUser.id}`}>
+                {currentUser.username}
+              </Link>
             </li>
           </ul>
         </nav>
@@ -163,7 +169,7 @@ class Home extends React.Component {
       return(
         <section className="user-photos-container">
           <div className="user-photos">
-            <UserPhotoIndexContainer />
+            <UserProfileContainer />
           </div>
         </section>
       );
@@ -186,11 +192,6 @@ class Home extends React.Component {
               </li>
               <li>
                 <Link className="discover-link" to="/discover">Discover</Link>
-              </li>
-              <li>
-                <Link className="user-profile-link" to={`/users/${currentUser.id}`}>
-                  {currentUser.username}
-                </Link>
               </li>
             </ul>
           </nav>

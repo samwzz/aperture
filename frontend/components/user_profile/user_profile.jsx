@@ -4,7 +4,7 @@ import PhotoIndexItem from '../photo_index/photo_index_item';
 import PhotoModal from '../modal/photo_modal';
 import Modal from 'react-modal';
 
-class UserPhotoIndex extends React.Component {
+class UserProfile extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -62,4 +62,4 @@ class UserPhotoIndex extends React.Component {
   }
 }
 
-export default UserPhotoIndex;
+export default UserProfile;
