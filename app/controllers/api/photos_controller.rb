@@ -6,7 +6,7 @@ class Api::PhotosController < ApplicationController
       @photos = Photo.all
     end
 
-    render json: @photos
+    render :index
   end
 
   def show

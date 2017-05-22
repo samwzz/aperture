@@ -1,5 +1,5 @@
 class Photo < ApplicationRecord
-  validates :title, :description, :image_url, :user_id, presence: true
+  # validates :title, :description, :image_url, :user_id, presence: true
 
   belongs_to :user,
     primary_key: :id,
