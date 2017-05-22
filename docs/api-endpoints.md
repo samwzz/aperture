@@ -25,6 +25,7 @@
 - `GET /api/photos/:id`
 - `PATCH /api/photos/:id`
 - `DELETE /api/photos/:id`
+-  `GET /api/users/:user_id/photos`
 
 ### Albums
 

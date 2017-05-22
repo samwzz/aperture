@@ -16,7 +16,7 @@ id          | integer   | not null, primary key
 title       | string    | not null
 description | text      | not null
 image_url   | string    | not null
-author_id   | integer   | not null, foreign key (references users), indexed
+user_id     | integer   | not null, foreign key (references users), indexed
 album_id    | integer   | not null, foreign key (references albums), indexed
 
 ## albums
