@@ -19,6 +19,7 @@ class PhotoList extends React.Component {
       .then(() => this.setState({
         numPhotos: this.props.photos.length
       }));
+      $('.cover-photo').parallax({imageSrc: 'https://res.cloudinary.com/db1ywnpgj/image/upload/v1495179973/pexels-photo-141635_ueizkw.jpg'});
     } else {
       fetchPhotos();
     }
@@ -37,7 +38,10 @@ class PhotoList extends React.Component {
       return(
         <div className="profile-header-container">
           <div className="cover-photo"></div>
-          <div className="user-navigation">
+          <div classname="username">
+            <h1>{this.props.currentUser.username}</h1>
+          </div>
+          <div className="user-nav">
             <ul className="profile-tabs">
               <li id="photostream-tab">
                 Photostream

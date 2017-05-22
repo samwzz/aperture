@@ -1,19 +1,20 @@
 .cover-photo {
-  display: block;
-  position: relative;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  background-image: url(https://res.cloudinary.com/db1ywnpgj/image/upload/v1495179973/pexels-photo-141635_ueizkw.jpg);
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center center;
-  height: 340px;
+  min-height: 400px;
+  background: transparent;
+  z-index: -11;
 }
 
 .profile-header-container {
   display: block;
+  // min-height: 400px;
+  // background: transparent;
+}
+
+.user-nav {
+  background: white;
+  min-height: 50px;
+  border-top: 1px solid $lighter-gray;
+  border-bottom: 1px solid $lighter-gray;
 }
 
 // .photo-list {
