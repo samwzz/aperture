@@ -1,9 +1,0 @@
-development:
-  s3_bucket: "aperture-app-dev"
-
-production:
-  s3_bucket: "aperture-app-pro"
-
-s3_region:  "us-east-1"
-s3_access_key_id: "AKIAJGKVI6QCDBBBXDVA"
-s3_secret_access_key: "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"
