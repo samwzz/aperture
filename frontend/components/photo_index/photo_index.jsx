@@ -14,6 +14,7 @@ class PhotoIndex extends React.Component {
 
   componentDidMount() {
     const { match, fetchPhotos, fetchUserPhotos, photos } = this.props;
+    // decide whether to fetch all photos or only user photos
     if (match.path === "/users/:userId") {
       $('#photostream-tab').addClass('active');
       fetchUserPhotos(parseInt(match.params["userId"]))
@@ -48,15 +49,17 @@ class PhotoIndex extends React.Component {
   }
 
   render () {
+    const { photos } = this.props;
+    console.log(photos);
+    const photoModals = photos.map((photo) => (
+      <PhotoModal key={`${photo.id}-index`} photo={photo} />
+    ));
     let noPhotos;
+    console.log(this.state.numPhotos);
     if (this.state.numPhotos === 0) {
       noPhotos = "You will find your photos here. Now, go out and take some photos!";
     }
 
-    const { photos } = this.props;
-    const photoModals = photos.map((photo) => (
-      <PhotoModal key={`${photo.id}-index`} photo={photo} />
-    ));
 
     return (
       <section className="photo-index">

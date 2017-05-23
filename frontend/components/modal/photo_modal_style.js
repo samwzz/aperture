@@ -6,7 +6,7 @@ const PhotoModalStyle = {
     right           : 0,
     bottom          : 0,
     // backgroundColor : 'rgba(247, 248, 250, 0.97)',
-    backgroundColor : 'rgba(0, 0, 0, 0.85)',
+    backgroundColor : 'rgba(0, 0, 0, 0.8)',
     zIndex          : 10
   },
   content : {

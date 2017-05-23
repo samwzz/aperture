@@ -13,10 +13,12 @@ class Home extends React.Component {
       LoginModalOpen: false,
       SignupModalOpen: false
     };
+    // Login Modal
     this.openLoginModal = this.openLoginModal.bind(this);
     this.closeLoginModal = this.closeLoginModal.bind(this);
     this.clearErrorsAndCloseLogin = this.clearErrorsAndCloseLogin.bind(this);
 
+    // Signup Modal
     this.openSignupModal = this.openSignupModal.bind(this);
     this.closeSignupModal = this.closeSignupModal.bind(this);
     this.clearErrorsAndCloseSignup = this.clearErrorsAndCloseSignup.bind(this);

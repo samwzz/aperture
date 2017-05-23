@@ -13,6 +13,7 @@ class AlbumIndex extends React.Component {
   componentDidMount() {
     window.scrollTo(0, 0);
     $('#album-tab').addClass('active');
+    // set numAlbums after fetching user albums
     this.props.fetchUserAlbums(this.props.currentUser.id)
     .then(() => this.setState({
       numAlbums: this.props.albums.length
@@ -36,7 +37,7 @@ class AlbumIndex extends React.Component {
 
     return (
       <section className="album-index-container">
-        <div id="album-index">
+        <div className="album-index">
           {noAlbums}
           {albumItems}
         </div>

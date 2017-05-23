@@ -1,0 +1,50 @@
+.album-index {
+  display: flex;
+  flex-flow: row wrap;
+  padding: 70px 150px;
+
+  .album-item-container {
+    width: 260px;
+    height: 260px;
+
+    .back-layer {
+      width: 245px;
+      border-top: 1px solid $gray;
+      position: relative;
+      bottom: 1px;
+      left: 1px;
+    }
+
+    .mid-layer {
+      width: 240px;
+      border-top: 1px solid $gray;
+      position: relative;
+      bottom: 5px;
+      left: 4px;
+    }
+
+    .album-item {
+      width: 250px;
+      height: 250px;
+      overflow: hidden;
+      background-size: cover;
+      background: linear-gradient(0deg,rgba(0,0,0,.9) 0,transparent 50%,transparent);
+
+      a {
+        display: flex;
+        justify-content: center;
+        height: 250px;
+
+        img {
+          width: auto;
+          height: 100%;
+          z-index: 10;
+        }
+
+        img:hover {
+
+        }
+      }
+    }
+  }
+}
