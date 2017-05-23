@@ -12,7 +12,7 @@ Album.destroy_all
 
 u = User.create(username: "guest", email: "guest@example.com", password: "password")
 
-# a = Album.create(title: "album", description: "nice album", user_id: u.id,)
+a = Album.create(title: "album", description: "nice album", user_id: u.id,)
 
 p = Photo.create!(title: "doge", description: "doge description", image_url: "https://res.cloudinary.com/db1ywnpgj/image/upload/v1495431600/Doge_hu9gbb.jpg", user_id: u.id )
 p1 = Photo.create!(title: "", description: "", image_url: "https://res.cloudinary.com/db1ywnpgj/image/upload/v1495176797/photo-1476111021705-ac3b3304fe20_innk8p.jpg", user_id: u.id )
