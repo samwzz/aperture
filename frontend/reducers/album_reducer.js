@@ -1,6 +1,12 @@
 import { merge } from 'lodash';
 import { RECEIVE_ALBUMS, RECEIVE_ALBUM, REMOVE_ALBUM, RECEIVE_ERRORS } from '../actions/album_actions';
 
+const defaultAlbum = Object.freeze({
+  title: "",
+  description: "",
+  user_id: null,
+});
+
 const PhotosReducer = (state = {}, action) => {
   Object.freeze(state);
   let nextState;
