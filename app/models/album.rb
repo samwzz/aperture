@@ -1,5 +1,5 @@
 class Album < ApplicationRecord
-  validates :title, :description, :user_id, presence: true
+  # validates :title, :description, :user_id, presence: true
 
   has_many :photos,
     primary_key: :id,
