@@ -38,22 +38,26 @@ class PhotoForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     const formData = new FormData();
+    formData.append("photo[title]", this.state.title);
+    formData.append("photo[description]", this.state.description);
+    formData.append("photo[image]", this.state.image_file);
+    this.props.createPhoto(formData, this.goBack);
   }
 
   componentWillMount() {
-    if (this.props.post !== undefined) {
+    if (this.props.photo !== undefined) {
       this.setState({
-        title: this.props.post.title,
-        description: this.props.post.description
+        title: this.props.photo.title,
+        description: this.props.photo.description
       });
     }
   }
 
   render() {
-    const formTitle = (this.props.postId === undefined) ? "Create New Post" : "Edit Post";
+    const formTitle = (this.props.photoId === undefined) ? "Create New Photo" : "Edit Photo";
 
     return(
-      <form className="post-form" onSubmit={this.handleSubmit}>
+      <form className="photo-form" onSubmit={this.handleSubmit}>
         <h3 className="form-title">{formTitle}</h3>
         <label>
           Title:
@@ -63,7 +67,7 @@ class PhotoForm extends React.Component {
           />
         </label>
         <label>
-          Body:
+          Description:
           <input className="input"
            value={this.state.description}
            onChange={this.update('description')}
