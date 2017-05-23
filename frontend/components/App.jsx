@@ -19,11 +19,11 @@ const App = () => (
     </header>
     <section>
       <Route exact path="/" component={ HomeContainer } />
-      <ProtectedRoute exact={true} path="/discover" component={ PhotoIndexContainer } />
+      <ProtectedRoute exact path="/discover" component={ PhotoIndexContainer } />
 
       <ProtectedRoute path="/users/:userId" component={ UserProfileContainer } />
-      <ProtectedRoute exact={true} path="/users/:userId" component={ PhotoListContainer } />
-      <ProtectedRoute exact={true} path="/users/:userId/albums" component={ AlbumIndexContainer } />
+      <ProtectedRoute exact path="/users/:userId" component={ PhotoListContainer } />
+      <ProtectedRoute exact path="/users/:userId/albums" component={ AlbumIndexContainer } />
     </section>
   </div>
 );
