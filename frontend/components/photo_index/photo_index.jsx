@@ -28,7 +28,7 @@ class PhotoIndex extends React.Component {
       rowHeight : 300,
       lastRow : 'justify',
       margins : 9,
-      cssAnimation: false,
+      cssAnimation: true,
     });
   }
 
