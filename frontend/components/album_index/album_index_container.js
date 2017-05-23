@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { fetchUserAlbums } from '../../actions/photo_actions';
+import { fetchUserAlbums } from '../../actions/album_actions';
 import { selectAlbums } from '../../reducers/selectors';
 
 import AlbumIndex from './album_index';

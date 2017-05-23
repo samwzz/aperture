@@ -1,6 +1,6 @@
 import React from 'react';
 import { withRouter, Route } from 'react-router-dom';
-import AlbumIndexItem from '../photo_index/album_index_item';
+import AlbumIndexItem from '../album_index/album_index_item';
 
 class AlbumIndex extends React.Component {
   constructor(props) {
@@ -11,9 +11,10 @@ class AlbumIndex extends React.Component {
   }
 
   componentDidMount() {
-    this.props.fetchAlbums()
+    window.scrollTo(0, 0);
+    this.props.fetchUserAlbums(this.props.currentUser.id)
     .then(() => this.setState({
-      numPhotos: this.props.photos.length
+      numAlbums: this.props.albums.length
     }));
   }
 

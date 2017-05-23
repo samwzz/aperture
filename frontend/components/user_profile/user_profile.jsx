@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import PhotoListContainer from '../photo_list/photo_list_container';
 
 class UserProfile extends React.Component {
@@ -25,15 +26,14 @@ class UserProfile extends React.Component {
           <div className="user-nav">
             <ul className="profile-tabs">
               <li id="photostream-tab">
-                <a>Photostream</a>
+                <Link to={`/users/${this.props.currentUser.id}`}>Photostream</Link>
               </li>
               <li id="album-tab">
-                <a>Albums</a>
+                <Link to={`/users/${this.props.currentUser.id}/albums`}>Albums</Link>
               </li>
             </ul>
           </div>
         </div>
-        <PhotoListContainer />
       </section>
     );
   }
