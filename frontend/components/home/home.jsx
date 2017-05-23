@@ -131,7 +131,7 @@ class Home extends React.Component {
   }
 
   allPhotos() {
-    if (this.props.loggedIn && this.props.location.pathname === "/") {
+    if (this.props.loggedIn && this.props.match.path === "/") {
 
       return(
         <section className="all-photos-container">

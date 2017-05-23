@@ -22,7 +22,7 @@ const App = () => (
       <ProtectedRoute exact path="/discover" component={ PhotoIndexContainer } />
 
       <ProtectedRoute path="/users/:userId" component={ UserProfileContainer } />
-      <ProtectedRoute exact path="/users/:userId" component={ PhotoListContainer } />
+      <ProtectedRoute exact path="/users/:userId" component={ PhotoIndexContainer } />
       <ProtectedRoute exact path="/users/:userId/albums" component={ AlbumIndexContainer } />
     </section>
   </div>
