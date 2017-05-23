@@ -18,12 +18,12 @@ const PhotosReducer = (state = {}, action) => {
       return action.photos;
     case RECEIVE_PHOTO:
       const newPhoto = {[action.photo.id]: action.photo};
-      return merge(defaultPhoto, state, newPhoto);
+      return merge({}, state, newPhoto);
     case RECEIVE_ERRORS:
       const errors = action.errors;
-      return merge(defaultPhoto, { errors });
+      return merge({}, { errors });
     case REMOVE_PHOTO:
-      nextState = merge(defaultPhoto, state);
+      nextState = merge({}, state);
       delete nextState[action.photo.id];
       return nextState;
     default:
