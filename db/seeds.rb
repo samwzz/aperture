@@ -29,13 +29,13 @@ p8 = Photo.create!(title: "", description: "", image_url: "https://res.cloudinar
 p9 = Photo.create!(title: "", description: "", image_url: "https://res.cloudinary.com/db1ywnpgj/image/upload/v1495174736/ben-harritt-222981_kchol9.jpg", user_id: u.id)
 
 
-p10 = Photo.create!(title: "", description: "", image_url: "https://images.unsplash.com/photo-1494587416117-f102a2ac0a8d?dpr=1&auto=format&fit=crop&w=1500&h=1000&q=80&cs=tinysrgb&crop=&bg=", user_id: u.id)
-p10 = Photo.create!(title: "", description: "", image_url: "https://images.unsplash.com/photo-1476111021705-ac3b3304fe20?dpr=1&auto=format&fit=crop&w=1500&h=2249&q=80&cs=tinysrgb&crop=&bg=", user_id: u.id)
-p10 = Photo.create!(title: "", description: "", image_url: "https://images.unsplash.com/photo-1466853817435-05b43fe45b39?dpr=1&auto=format&fit=crop&w=1500&h=1090&q=80&cs=tinysrgb&crop=&bg=", user_id: u.id)
-p10 = Photo.create!(title: "", description: "", image_url: "https://images.unsplash.com/photo-1482784160316-6eb046863ece?dpr=1&auto=format&fit=crop&w=1500&h=1000&q=80&cs=tinysrgb&crop=&bg=", user_id: u.id)
-p10 = Photo.create!(title: "", description: "", image_url: "https://images.unsplash.com/photo-1448454050639-2f8d4bf26975?dpr=1&auto=format&fit=crop&w=1500&h=1125&q=80&cs=tinysrgb&crop=&bg=", user_id: u.id)
-p10 = Photo.create!(title: "", description: "", image_url: "https://images.unsplash.com/photo-1491036775913-3fbc5c455842?dpr=1&auto=format&fit=crop&w=1500&h=1000&q=80&cs=tinysrgb&crop=&bg=", user_id: u.id)
-p10 = Photo.create!(title: "", description: "", image_url: "https://images.unsplash.com/photo-1494375856376-7d2b3a016fa3?dpr=1&auto=format&fit=crop&w=1500&h=2247&q=80&cs=tinysrgb&crop=&bg=", user_id: u.id)
+p10 = Photo.create!(title: "", description: "", image_url: "https://images.unsplash.com/photo-1494587416117-f102a2ac0a8d?dpr=1&auto=format&fit=crop&w=1500&h=1000&q=80&cs=tinysrgb&crop=&bg=", user_id: u.id, album_id: a.id)
+p10 = Photo.create!(title: "", description: "", image_url: "https://images.unsplash.com/photo-1476111021705-ac3b3304fe20?dpr=1&auto=format&fit=crop&w=1500&h=2249&q=80&cs=tinysrgb&crop=&bg=", user_id: u.id, album_id: a.id)
+p10 = Photo.create!(title: "", description: "", image_url: "https://images.unsplash.com/photo-1466853817435-05b43fe45b39?dpr=1&auto=format&fit=crop&w=1500&h=1090&q=80&cs=tinysrgb&crop=&bg=", user_id: u.id, album_id: a.id)
+p10 = Photo.create!(title: "", description: "", image_url: "https://images.unsplash.com/photo-1482784160316-6eb046863ece?dpr=1&auto=format&fit=crop&w=1500&h=1000&q=80&cs=tinysrgb&crop=&bg=", user_id: u.id, album_id: a.id)
+p10 = Photo.create!(title: "", description: "", image_url: "https://images.unsplash.com/photo-1448454050639-2f8d4bf26975?dpr=1&auto=format&fit=crop&w=1500&h=1125&q=80&cs=tinysrgb&crop=&bg=", user_id: u.id, album_id: a.id)
+p10 = Photo.create!(title: "", description: "", image_url: "https://images.unsplash.com/photo-1491036775913-3fbc5c455842?dpr=1&auto=format&fit=crop&w=1500&h=1000&q=80&cs=tinysrgb&crop=&bg=", user_id: u.id, album_id: a.id)
+p10 = Photo.create!(title: "", description: "", image_url: "https://images.unsplash.com/photo-1494375856376-7d2b3a016fa3?dpr=1&auto=format&fit=crop&w=1500&h=2247&q=80&cs=tinysrgb&crop=&bg=", user_id: u.id, album_id: a.id)
 
 p10 = Photo.create!(title: "", description: "", image_url: "https://res.cloudinary.com/db1ywnpgj/image/upload/v1495179973/photo-1482784160316-6eb046863ece_xagcea.jpg", user_id: u.id)
 p10 = Photo.create!(title: "", description: "", image_url: "https://res.cloudinary.com/db1ywnpgj/image/upload/v1495179973/photo-1448454050639-2f8d4bf26975_uwpwqo.jpg", user_id: u.id)
