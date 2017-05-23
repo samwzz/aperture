@@ -2,11 +2,13 @@ import { merge } from 'lodash';
 import { RECEIVE_PHOTOS, RECEIVE_PHOTO, REMOVE_PHOTO, RECEIVE_ERRORS } from '../actions/photo_actions';
 
 const defaultPhoto = Object.freeze({
-  title: "",
-  description: "",
-  image_url: "",
-  user_id: null,
-  album_id: null
+  0: {
+    title: "",
+    description: "",
+    image_url: "",
+    user_id: null,
+    album_id: null
+  }
 });
 
 const PhotosReducer = (state = {}, action) => {

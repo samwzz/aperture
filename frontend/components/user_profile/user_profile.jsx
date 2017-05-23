@@ -8,9 +8,17 @@ class UserProfile extends React.Component {
   }
 
   componentDidMount() {
+
+  }
+
+  componentDidUpdate() {
     $('.cover-photo').parallax({
       imageSrc: 'https://res.cloudinary.com/db1ywnpgj/image/upload/v1495179973/pexels-photo-141635_ueizkw.jpg'
     });
+  }
+
+  componentWillReceiveProps(nextProps) {
+    console.log(nextProps);
   }
 
   componentWillUnmount() {

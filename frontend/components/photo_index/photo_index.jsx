@@ -50,12 +50,11 @@ class PhotoIndex extends React.Component {
 
   render () {
     const { photos } = this.props;
-    console.log(photos);
     const photoModals = photos.map((photo) => (
       <PhotoModal key={`${photo.id}-index`} photo={photo} />
     ));
     let noPhotos;
-    console.log(this.state.numPhotos);
+    
     if (this.state.numPhotos === 0) {
       noPhotos = "You will find your photos here. Now, go out and take some photos!";
     }
