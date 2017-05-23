@@ -134,7 +134,7 @@ class Navbar extends React.Component {
           <ul>
             <li id="logo">
               <Link id="logo-image" to="/">
-                <img src="http://res.cloudinary.com/db1ywnpgj/image/upload/v1495218853/fstop-white_tsdk7k.png"/>
+                <img src="http://res.cloudinary.com/db1ywnpgj/image/upload/v1495218853/aperture_logo_white.png"/>
               </Link>
               <Link id="logo-text" to="/">Aperture</Link>
             </li>
