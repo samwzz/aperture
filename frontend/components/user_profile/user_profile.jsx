@@ -1,10 +1,16 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 import PhotoListContainer from '../photo_list/photo_list_container';
 
 class UserProfile extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+
   componentDidMount() {
-    $('.cover-photo').parallax({imageSrc: 'https://res.cloudinary.com/db1ywnpgj/image/upload/v1495179973/pexels-photo-141635_ueizkw.jpg'});
+    $('.cover-photo').parallax({
+      imageSrc: 'https://res.cloudinary.com/db1ywnpgj/image/upload/v1495179973/pexels-photo-141635_ueizkw.jpg'
+    });
   }
 
   componentWillUnmount() {
@@ -39,4 +45,4 @@ class UserProfile extends React.Component {
   }
 }
 
-export default UserProfile;
+export default withRouter(UserProfile);

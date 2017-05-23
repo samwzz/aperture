@@ -16,6 +16,7 @@ class PhotoList extends React.Component {
     window.scrollTo(0, 0);
     const { fetchPhotos, fetchUserPhotos, currentUser } = this.props;
     if (this.props.location.pathname === `/users/${currentUser.id}`) {
+      $('#photostream-tab').addClass('active');
       fetchUserPhotos(currentUser.id)
       .then(() => this.setState({
         numPhotos: this.props.photos.length
@@ -23,6 +24,10 @@ class PhotoList extends React.Component {
     } else {
       fetchPhotos();
     }
+  }
+
+  componentWillUnmount() {
+    $('#photostream-tab').removeClass('active');
   }
 
   openModal() {
