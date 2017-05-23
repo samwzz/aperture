@@ -23,6 +23,8 @@ export const createPhoto = data => (
   $.ajax({
     method: 'POST',
     url: 'api/photos',
+    contentType: false,
+    processData: false,
     data
   })
 );
