@@ -9,6 +9,7 @@ import PhotoShowContainer from './photo_show/photo_show_container';
 import PhotoListContainer from './photo_list/photo_list_container';
 import UserProfileContainer from './user_profile/user_profile_container';
 import AlbumIndexContainer from './album_index/album_index_container';
+import PhotoForm from './photo_form/photo_form';
 
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
 
@@ -18,6 +19,7 @@ const App = () => (
       <NavbarContainer />
     </header>
     <section>
+      <Route exact path="/" component={ PhotoForm } />
       <Route exact path="/" component={ HomeContainer } />
       <ProtectedRoute exact path="/discover" component={ PhotoIndexContainer } />
 

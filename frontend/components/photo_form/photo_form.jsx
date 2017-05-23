@@ -9,25 +9,35 @@ class PhotoForm extends React.Component {
     this.state = {
       title: "",
       description: "",
-      image_url: ""
+      image_url: "",
+      image_file: null
     };
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   update(property) {
-    return e => this.setState({ [property]: e.target.value });
+    return e => this.setState({[property]: e.target.value});
+  }
+
+  updateFile() {
+    return e => {
+      const file = e.currentTarget.files[0];
+      const reader = new FileReader();
+      reader.onloadend = function () {
+        this.setState({ image_file: file, image_url: reader.result });
+      }.bind(this);
+
+      if (file) {
+        reader.readAsDataURL(file);
+      } else {
+        this.setState({ image_file: null, image_url: "" });
+      }
+    };
   }
 
   handleSubmit(e) {
     e.preventDefault();
-    const { postId } = this.props;
-    const post = merge({}, this.props.post, this.state);
-    this.props.processForm({ post, id: postId }).then(
-      () => this.setState({
-        title: "",
-        description: ""
-      })
-    );
+    const formData = new FormData();
   }
 
   componentWillMount() {
@@ -43,22 +53,30 @@ class PhotoForm extends React.Component {
     const formTitle = (this.props.postId === undefined) ? "Create New Post" : "Edit Post";
 
     return(
-      <form className="post-form" onSubmit={ this.handleSubmit }>
-        <h3 className="form-title">{ formTitle }</h3>
+      <form className="post-form" onSubmit={this.handleSubmit}>
+        <h3 className="form-title">{formTitle}</h3>
         <label>
           Title:
           <input className="input"
-            value={ this.state.title }
-            onChange={ this.update('title') }
+            value={this.state.title}
+            onChange={this.update('title')}
           />
         </label>
         <label>
           Body:
           <input className="input"
-           value={ this.state.description }
-           onChange={ this.update('description') }
+           value={this.state.description}
+           onChange={this.update('description')}
            />
         </label>
+        <label>
+          Image:
+          <input
+            type="file"
+            onChange={this.updateFile()}
+            />
+        </label>
+        <img src={this.state.image_url} />;
         <button className="submit-button">Submit</button>
       </form>
     );
