@@ -1,7 +1,7 @@
 import React from 'react';
 import Modal from 'react-modal';
 import PhotoFormContainer from '../photo_form/photo_form_container';
-import FormModalStyle from './form_modal_style';
+import UploadModalStyle from './upload_modal_style';
 
 class UploadModal extends React.Component {
   constructor(props) {
@@ -42,7 +42,7 @@ class UploadModal extends React.Component {
           isOpen={this.state.modalOpen}
           onAfterOpen={this.afterModalOpen}
           onRequestClose={this.closeModal}
-          style={FormModalStyle}
+          style={UploadModalStyle}
           contentLabel="UploadModal"
           className="upload-modal"
           >

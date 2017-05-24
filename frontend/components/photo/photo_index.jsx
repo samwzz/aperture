@@ -20,16 +20,12 @@ class PhotoIndex extends React.Component {
       fetchUserPhotos(parseInt(match.params["userId"]))
       .then(() => this.setState({
         numPhotos: photos.length
-      }));
+      }))
+      .then(() => {});
     } else {
       fetchPhotos();
     }
-    $("#gallery").justifiedGallery({
-      rowHeight : 300,
-      lastRow : 'justify',
-      margins : 9,
-      cssAnimation: true,
-    });
+
   }
 
   componentWillUnmount() {
@@ -37,7 +33,12 @@ class PhotoIndex extends React.Component {
   }
 
   componentDidUpdate() {
-    $("#gallery").justifiedGallery("norewind");
+    $("#gallery").justifiedGallery({
+      rowHeight : 300,
+      lastRow : 'nojustify',
+      margins : 9,
+      cssAnimation: true,
+    });
   }
 
   openModal() {
@@ -54,7 +55,7 @@ class PhotoIndex extends React.Component {
       <PhotoModal key={`${photo.id}-index`} photo={photo} />
     ));
     let noPhotos;
-    
+
     if (this.state.numPhotos === 0) {
       noPhotos = "You will find your photos here. Now, go out and take some photos!";
     }
