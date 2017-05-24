@@ -2,7 +2,8 @@ import { connect } from 'react-redux';
 import { createPhoto, receiveErrors } from '../../actions/photo_actions';
 import PhotoForm from './photo_form';
 
-const mapStateToProps = ({ photos }) => ({
+const mapStateToProps = ({ session, photos }) => ({
+  currentUser: session.currentUser,
   errors: photos.errors
 });
 

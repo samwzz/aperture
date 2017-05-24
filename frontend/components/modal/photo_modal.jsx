@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import PhotoShowContainer from '../photo_show/photo_show_container';
+import PhotoShowContainer from '../photo/photo_show_container';
 import Modal from 'react-modal';
 import PhotoModalStyle from './photo_modal_style';
 

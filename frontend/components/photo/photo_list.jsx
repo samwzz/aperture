@@ -1,6 +1,6 @@
 import React from 'react';
 import { withRouter, Route } from 'react-router-dom';
-import PhotoIndexItem from '../photo_index/photo_index_item';
+import PhotoIndexItem from '../photo/photo_index_item';
 import PhotoModal from '../modal/photo_modal';
 import Modal from 'react-modal';
 

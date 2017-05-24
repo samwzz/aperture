@@ -4,7 +4,7 @@ import { Link, withRouter } from 'react-router-dom';
 import LoginFormContainer from '../session_form/login_form_container';
 import SignupFormContainer from '../session_form/signup_form_container';
 import FormModalStyle from '../modal/form_modal_style';
-import PhotoListContainer from '../photo_list/photo_list_container';
+import PhotoListContainer from '../photo/photo_list_container';
 
 class Home extends React.Component {
   constructor(props) {

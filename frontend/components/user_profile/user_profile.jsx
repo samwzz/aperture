@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router-dom';
-import PhotoListContainer from '../photo_list/photo_list_container';
+import PhotoListContainer from '../photo/photo_list_container';
 
 class UserProfile extends React.Component {
   constructor(props) {
