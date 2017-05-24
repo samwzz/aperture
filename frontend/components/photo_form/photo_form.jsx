@@ -41,8 +41,17 @@ class PhotoForm extends React.Component {
     formData.append("photo[title]", this.state.title);
     formData.append("photo[description]", this.state.description);
     formData.append("photo[image]", this.state.image_file);
-    this.props.createPhoto(formData, this.goBack);
-  }
+
+    if (this.props.formType === "upload") {
+      this.props.createPhoto(formData, this.goBack)
+        .then(data => this.props.history.push("/"))
+        .then(() => this.props.closeModal());
+   } else {
+      this.props.updatePhoto(formData, this.goBack)
+        .then(data => this.props.history.push("/"))
+        .then(() => this.props.closeModal());
+   }
+ }
 
   componentWillMount() {
     if (this.props.photo !== undefined) {
@@ -51,6 +60,18 @@ class PhotoForm extends React.Component {
         description: this.props.photo.description
       });
     }
+  }
+
+  renderErrors() {
+    return(
+      <ul className="errors">
+        {this.props.errors && this.props.errors.map((error, i) => (
+          <li key={`error-${i}`}>
+            {error}
+          </li>
+        ))}
+      </ul>
+    );
   }
 
   render() {
@@ -68,7 +89,7 @@ class PhotoForm extends React.Component {
         </label>
         <label>
           Description:
-          <input className="input"
+          <textarea className="input"
            value={this.state.description}
            onChange={this.update('description')}
            />

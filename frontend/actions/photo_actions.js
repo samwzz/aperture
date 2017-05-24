@@ -20,7 +20,7 @@ export const removePhoto = photo => ({
   photo
 });
 
-export const receiveErrors = errors => ({
+export const receivePhotoErrors = errors => ({
   type: RECEIVE_ERRORS,
   errors
 });

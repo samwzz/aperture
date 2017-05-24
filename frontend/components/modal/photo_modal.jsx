@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import PhotoShowContainer from '../photo/photo_show_container';
+import PhotoShow from '../photo/photo_show';
 import Modal from 'react-modal';
 import PhotoModalStyle from './photo_modal_style';
 
@@ -66,7 +66,8 @@ class PhotoModal extends React.Component {
           contentLabel="PhotoModal"
           className="photo-modal"
           >
-          <PhotoShowContainer key={photo.id} photo={photo} />
+          <a onClick={this.closeModal}>Back to photos</a>
+          <PhotoShow key={photo.id} photo={photo} />
         </Modal>
       </div>
     );

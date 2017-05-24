@@ -5,6 +5,7 @@ import LoginFormContainer from '../session_form/login_form_container';
 import SignupFormContainer from '../session_form/signup_form_container';
 import FormModalStyle from '../modal/form_modal_style';
 import PhotoListContainer from '../photo/photo_list_container';
+import UploadModal from '../modal/upload_modal';
 
 class Navbar extends React.Component {
   constructor(props) {
@@ -90,6 +91,9 @@ class Navbar extends React.Component {
             {currentUser.username}
           </Link>
           <a className="header-button" onClick={logout}>Log Out</a>
+              <UploadModal receivePhotoErrors={this.props.receivePhotoErrors}
+                currentUser={this.props.currentUser}
+                formType="upload" />
         </hgroup>
       );
     }

@@ -7,11 +7,12 @@ const defaultPhoto = Object.freeze({
     description: "",
     image_url: "",
     user_id: null,
-    album_id: null
+    album_id: null,
+    errors: []
   }
 });
 
-const PhotosReducer = (state = {}, action) => {
+const PhotosReducer = (state = defaultPhoto, action) => {
   Object.freeze(state);
   let nextState;
 

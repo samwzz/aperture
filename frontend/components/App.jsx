@@ -5,7 +5,6 @@ import NavbarContainer from './navbar/navbar_container';
 import LoginFormContainer from './session_form/login_form_container';
 import SignupFormContainer from './session_form/signup_form_container';
 import PhotoIndexContainer from './photo/photo_index_container';
-import PhotoShowContainer from './photo/photo_show_container';
 import PhotoListContainer from './photo/photo_list_container';
 import UserProfileContainer from './user_profile/user_profile_container';
 import AlbumIndexContainer from './album_index/album_index_container';
@@ -19,7 +18,6 @@ const App = () => (
       <NavbarContainer />
     </header>
     <section>
-      <Route exact path="/" component={ PhotoFormContainer } />
       <Route exact path="/" component={ HomeContainer } />
       <ProtectedRoute exact path="/discover" component={ PhotoIndexContainer } />
 
