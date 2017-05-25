@@ -6,6 +6,7 @@ class PhotoShow extends React.Component {
     super(props);
     const { photo } = this.props;
     this.state = {
+      id: photo.id,
       title: photo.title,
       description: photo.description,
       image_url: photo.image_url,
@@ -26,7 +27,8 @@ class PhotoShow extends React.Component {
   handleSelect(e) {
     e.preventDefault();
     this.updateAlbum();
-    this.props.updatePhoto(this.state);
+    debugger;
+    this.props.updatePhoto(this.state, this.props.photo.id);
   }
 
   selectAlbum() {

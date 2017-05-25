@@ -11,7 +11,7 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  updatePhoto: (photo) => dispatch(updatePhoto(photo)),
+  updatePhoto: (photo, id) => dispatch(updatePhoto(photo, id)),
   fetchUserAlbums: (userId) => dispatch(fetchUserAlbums(userId))
 });
 

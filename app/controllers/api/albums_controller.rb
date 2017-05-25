@@ -22,7 +22,7 @@ class Api::AlbumsController < ApplicationController
   def update
     @album = Album.find_by(id: params[:id])
 
-    if @album.update
+    if @album.update(album_params)
       render :show
     else
       render json: @album.errors.full_messages, status: 422

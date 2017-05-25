@@ -9,7 +9,7 @@ const mapStateToProps = ({ session, albums }) => ({
 
 const mapDispatchToProps = (dispatch, ownProps) => ({
   createAlbum: (album) => dispatch(createAlbum({ album })),
-  updateAlbum: (album) => dispatch(updateAlbum({ album })),
+  updateAlbum: (album, id) => dispatch(updateAlbum({ album }, id)),
   receiveAlbumErrors: (err) => dispatch(receiveAlbumErrors(err)),
   closeModal: () => ownProps.closeModal()
 });

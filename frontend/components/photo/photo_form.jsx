@@ -46,8 +46,7 @@ class PhotoForm extends React.Component {
 
     if (this.props.formType === "upload") {
       this.props.createPhoto( formData )
-        .then(data => {
-          return this.props.history.push(`/photos/${data.photo.id}`);})
+        .then(data => this.props.history.push(`/photos/${data.photo.id}`))
         .then(() => this.props.closeModal());
    } else {
       this.props.updatePhoto( formData, this.props.photo.id )
@@ -57,11 +56,15 @@ class PhotoForm extends React.Component {
  }
 
   componentWillMount() {
+    const { photo } = this.props;
+    debugger;
     if (this.props.photo !== undefined) {
       this.setState({
-        title: this.props.photo.title,
-        description: this.props.photo.description,
-        user_id: this.props.currentUser.id
+        title: photo.title,
+        description: photo.description,
+        user_id: this.props.currentUser.id,
+        image_url: photo.image_url,
+        image: photo.image
       });
     }
   }

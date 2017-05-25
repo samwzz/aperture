@@ -37,20 +37,20 @@ export const fetchUserAlbums = userId => dispatch => (
   ))
 );
 
-export const createAlbum = album => dispatch => (
-  APIUtil.createAlbum(album).then(album => (
-    dispatch(receiveAlbum(album)),
-    err => dispatch(receiveAlbumErrors(err.responseJSON))
-  ))
+export const createAlbum = formAlbum => dispatch => (
+  APIUtil.createAlbum(formAlbum)
+    .then(album => dispatch(receiveAlbum(album)))
+    .fail(err => dispatch(receiveAlbumErrors(err.responseJSON))
+  )
 );
 
-export const updateAlbum = album => dispatch => (
-  APIUtil.updateAlbum(album).then(album => (
-    dispatch(receiveAlbum(album)),
-    err => dispatch(receiveAlbumErrors(err.responseJSON))
-  ))
+export const updateAlbum = (formAlbum, id) => dispatch => (
+  APIUtil.updateAlbum(formAlbum, id)
+    .then(album => dispatch(receiveAlbum(album)))
+    .fail(err => dispatch(receiveAlbumErrors(err.responseJSON))
+  )
 );
 
-export const deleteAlbum = album => dispatch => (
-  APIUtil.deleteAlbum(album).then(album => (dispatch(removeAlbum(album))))
+export const deleteAlbum = formAlbum => dispatch => (
+  APIUtil.deleteAlbum(formAlbum).then(album => (dispatch(removeAlbum(album))))
 );
