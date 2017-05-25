@@ -11,7 +11,7 @@ class PhotoForm extends React.Component {
       description: "",
       image_url: "http://res.cloudinary.com/db1ywnpgj/image/upload/v1495218853/aperture_logo_white.png",
       image_file: null,
-      user_id: this.props.currentUser.id,
+      user_id: null,
     };
     this.handleSubmit = this.handleSubmit.bind(this);
   }
@@ -59,7 +59,8 @@ class PhotoForm extends React.Component {
     if (this.props.photo !== undefined) {
       this.setState({
         title: this.props.photo.title,
-        description: this.props.photo.description
+        description: this.props.photo.description,
+        user_id: this.props.currentUser.id
       });
     }
   }
