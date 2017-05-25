@@ -19,11 +19,11 @@ class UploadModal extends React.Component {
 
   closeModal() {
     this.setState({ modalOpen: false });
-    FormModalStyle.content.opacity = 0;
+    UploadModalStyle.content.opacity = 0;
   }
 
   afterModalOpen() {
-    FormModalStyle.content.opacity = 100;
+    UploadModalStyle.content.opacity = 100;
   }
 
   render() {

@@ -7,8 +7,11 @@ import SignupFormContainer from './session_form/signup_form_container';
 import PhotoIndexContainer from './photo/photo_index_container';
 import PhotoListContainer from './photo/photo_list_container';
 import UserProfileContainer from './user_profile/user_profile_container';
-import AlbumIndexContainer from './album_index/album_index_container';
+import UserPhotoContainer from './user_profile/user_photo_container';
+import AlbumIndexContainer from './album/album_index_container';
+import AlbumShowContainer from './album/album_show_container';
 import PhotoFormContainer from './photo_form/photo_form_container';
+import DiscoverContainer from './discover/discover_container';
 
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
 
@@ -19,11 +22,12 @@ const App = () => (
     </header>
     <section>
       <Route exact path="/" component={ HomeContainer } />
-      <ProtectedRoute exact path="/discover" component={ PhotoIndexContainer } />
+      <ProtectedRoute exact path="/discover" component={ DiscoverContainer } />
 
       <ProtectedRoute path="/users/:userId" component={ UserProfileContainer } />
-      <ProtectedRoute exact path="/users/:userId" component={ PhotoIndexContainer } />
+      <ProtectedRoute exact path="/users/:userId" component={ UserPhotoContainer } />
       <ProtectedRoute exact path="/users/:userId/albums" component={ AlbumIndexContainer } />
+      <ProtectedRoute exact path="/users/:userId/albums/:albumId/photos" component={ AlbumShowContainer } />
     </section>
   </div>
 );

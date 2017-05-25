@@ -12,3 +12,8 @@ export const selectPhoto = ({ photos }, id) => {
 export const selectAlbums = ({ albums }) => (
   values(albums)
 );
+
+export const selectAlbum = ({ albums }, id) => {
+  const album = albums[id] || {};
+  return album;
+};

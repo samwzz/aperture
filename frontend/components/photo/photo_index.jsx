@@ -7,29 +7,6 @@ import Modal from 'react-modal';
 class PhotoIndex extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      numPhotos: null
-    };
-  }
-
-  componentDidMount() {
-    const { match, fetchPhotos, fetchUserPhotos, photos } = this.props;
-    // decide whether to fetch all photos or only user photos
-    if (match.path === "/users/:userId") {
-      $('#photostream-tab').addClass('active');
-      fetchUserPhotos(parseInt(match.params["userId"]))
-      .then(() => this.setState({
-        numPhotos: photos.length
-      }))
-      .then(() => {});
-    } else {
-      fetchPhotos();
-    }
-
-  }
-
-  componentWillUnmount() {
-    $('#photostream-tab').removeClass('active');
   }
 
   componentDidUpdate() {
@@ -54,20 +31,13 @@ class PhotoIndex extends React.Component {
     const photoModals = photos.map((photo) => (
       <PhotoModal key={`${photo.id}-index`} photo={photo} />
     ));
-    let noPhotos;
-
-    if (this.state.numPhotos === 0) {
-      noPhotos = "You will find your photos here. Now, go out and take some photos!";
-    }
-
-
+    console.log(photos);
     return (
-      <section className="photo-index">
-        <h2 className="no-photo-msg">{noPhotos}</h2>
+      <div className="photo-index">
         <div id="gallery" className="justified-gallery">
           {photoModals}
         </div>
-      </section>
+      </div>
     );
   }
 }

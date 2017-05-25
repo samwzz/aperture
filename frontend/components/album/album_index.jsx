@@ -1,6 +1,6 @@
 import React from 'react';
-import { withRouter, Route } from 'react-router-dom';
-import AlbumIndexItem from '../album_index/album_index_item';
+import {withRouter, Route } from 'react-router-dom';
+import AlbumIndexItem from '../album/album_index_item';
 
 class AlbumIndex extends React.Component {
   constructor(props) {
@@ -30,9 +30,9 @@ class AlbumIndex extends React.Component {
       noAlbums = "You will find your albums here.";
     }
 
-    const { albums } = this.props;
+    const { albums, currentUser } = this.props;
     const albumItems = albums.map((album) => (
-      <AlbumIndexItem key={`${album.id}`} album={album} />
+      <AlbumIndexItem key={`${album.id}`} album={album} currentUser={currentUser} />
     ));
 
     return (
