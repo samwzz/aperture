@@ -3,6 +3,7 @@ import { RECEIVE_ALBUMS, RECEIVE_ALBUM, REMOVE_ALBUM, RECEIVE_ERRORS } from '../
 
 const defaultAlbum = Object.freeze({
   0: {
+    id: 0,
     title: "",
     description: "",
     user_id: null,
@@ -10,7 +11,7 @@ const defaultAlbum = Object.freeze({
   }
 });
 
-const PhotosReducer = (state = {}, action) => {
+const AlbumReducer = (state = {}, action) => {
   Object.freeze(state);
   let nextState;
 
@@ -32,4 +33,4 @@ const PhotosReducer = (state = {}, action) => {
   }
 };
 
-export default PhotosReducer;
+export default AlbumReducer;

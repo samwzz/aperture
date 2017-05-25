@@ -13,6 +13,7 @@ class PhotoShow extends React.Component {
       user_id: photo.user_id,
       album_id: photo.album_id
     };
+
     this.handleSelect = this.handleSelect.bind(this);
   }
 
@@ -20,29 +21,25 @@ class PhotoShow extends React.Component {
     this.props.fetchUserAlbums(this.props.currentUser.id);
   }
 
-  updateAlbum() {
-    return e => this.setState({ album_id: e.target.value.id });
-  }
-
   handleSelect(e) {
     e.preventDefault();
-    this.updateAlbum();
     debugger;
-    this.props.updatePhoto(this.state, this.props.photo.id);
+    this.setState({ album_id: parseInt(e.target.value)},
+    () => this.props.updatePhoto(this.state, this.props.photo.id));
   }
 
   selectAlbum() {
-    console.log(this.props);
+    console.log(this.state);
     const {photo, albums, currentUser } = this.props;
     if (photo.user_id === currentUser.id) {
       return(
         <form className="album-select">
           <select
-            value={this.state.album}
             onChange={this.handleSelect}
             defaultValue="Select Album">
+            <option key="disabled">Choose album</option>
             {albums.map((album, i) => {
-              return <option value={album} key={i}>{album.title}</option>;
+              return <option value={album.id} key={i}>{album.title}</option>;
               })}
             </select>
           </form>

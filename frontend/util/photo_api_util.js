@@ -42,9 +42,9 @@ export const updatePhoto = (photo, id) => {
     $.ajax({
       method: 'PATCH',
       url: `api/photos/${id}`,
-      contentType: false,
-      processData: false,
-      data: photo
+      contentType: photo.id ? 'application/x-www-form-urlencoded; charset=UTF-8' : false,
+      processData: photo.id ? true : false,
+      data: photo.id ? { photo } : photo
     })
   );
 };
