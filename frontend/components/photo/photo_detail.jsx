@@ -34,7 +34,7 @@ class PhotoDetail extends React.Component {
           onClick={this.confirmDelete}>Delete Photo</button>;
         }
     }
-    console.log(this.props);
+
     return (
       <div className="photo-detail-container">
         <Link to="/">Back to all photos</Link>
@@ -43,7 +43,6 @@ class PhotoDetail extends React.Component {
           {editButton}
           {deleteButton}
         </div>
-        <div></div>
       </div>
     );
   }

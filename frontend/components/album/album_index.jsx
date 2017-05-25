@@ -1,6 +1,7 @@
 import React from 'react';
 import {withRouter, Route } from 'react-router-dom';
 import AlbumIndexItem from '../album/album_index_item';
+import AlbumModal from '../modal/album_modal';
 
 class AlbumIndex extends React.Component {
   constructor(props) {
@@ -38,6 +39,9 @@ class AlbumIndex extends React.Component {
     return (
       <section className="album-index-container">
         <div className="album-index">
+          <AlbumModal receiveAlbumErrors={this.props.receiveAlbumErrors}
+            currentUser={this.props.currentUser}
+            formType="new" />
           {noAlbums}
           {albumItems}
         </div>

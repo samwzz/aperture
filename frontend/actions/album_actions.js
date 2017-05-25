@@ -20,7 +20,7 @@ export const removeAlbum = album => ({
   album
 });
 
-export const receiveErrors = errors => ({
+export const receiveAlbumErrors = errors => ({
   type: RECEIVE_ERRORS,
   errors
 });
@@ -40,12 +40,15 @@ export const fetchUserAlbums = userId => dispatch => (
 export const createAlbum = album => dispatch => (
   APIUtil.createAlbum(album).then(album => (
     dispatch(receiveAlbum(album)),
-    err => dispatch(receiveErrors(err.responseJSON))
+    err => dispatch(receiveAlbumErrors(err.responseJSON))
   ))
 );
 
 export const updateAlbum = album => dispatch => (
-  APIUtil.updateAlbum(album).then(album => (dispatch(receiveAlbum(album))))
+  APIUtil.updateAlbum(album).then(album => (
+    dispatch(receiveAlbum(album)),
+    err => dispatch(receiveAlbumErrors(err.responseJSON))
+  ))
 );
 
 export const deleteAlbum = album => dispatch => (

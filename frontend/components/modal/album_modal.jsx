@@ -1,9 +1,9 @@
 import React from 'react';
 import Modal from 'react-modal';
-import PhotoFormContainer from '../photo/photo_form_container';
+import AlbumFormContainer from '../album/album_form_container';
 import UploadModalStyle from './upload_modal_style';
 
-class UploadModal extends React.Component {
+class AlbumModal extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -27,17 +27,17 @@ class UploadModal extends React.Component {
   }
 
   render() {
-    let uploadLink;
-    if (this.props.formType === "upload") {
-      uploadLink = <a className="upload-link"
-        onClick={this.openModal}>Upload</a>;
+    let albumLink;
+    if (this.props.formType === "new") {
+      albumLink = <a className="new-album"
+        onClick={this.openModal}>New Album</a>;
     } else if (this.props.formType === "edit") {
-      uploadLink = <a className="edit-link"
-        onClick={this.openModal}>Edit Photo</a>;
+      albumLink = <a className="edit-album"
+        onClick={this.openModal}>Edit Album</a>;
     }
     return(
-      <div className="upload-modal-container">
-        {uploadLink}
+      <div className="album-modal-container">
+        {albumLink}
         <Modal
           isOpen={this.state.modalOpen}
           onAfterOpen={this.afterModalOpen}
@@ -46,8 +46,8 @@ class UploadModal extends React.Component {
           contentLabel="UploadModal"
           className="upload-modal"
           >
-          <PhotoFormContainer formType={this.props.formType}
-                              photo={this.props.photo}
+          <AlbumFormContainer formType={this.props.formType}
+                              album={this.props.album}
                               closeModal={this.closeModal}
                               currentUser={this.props.currentUser} />
         </Modal>
@@ -56,4 +56,4 @@ class UploadModal extends React.Component {
   }
 }
 
-export default UploadModal;
+export default AlbumModal;

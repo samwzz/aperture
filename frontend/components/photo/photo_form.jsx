@@ -78,7 +78,7 @@ class PhotoForm extends React.Component {
 
   render() {
     const formTitle = (this.props.formType === "upload") ? "Upload Photo" : "Edit Photo";
-    console.log(this.props.formType);
+
     return(
       <form className="photo-form-container" onSubmit={this.handleSubmit}>
         <div className="photo-form">
