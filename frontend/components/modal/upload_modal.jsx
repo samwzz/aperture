@@ -46,7 +46,6 @@ class UploadModal extends React.Component {
           contentLabel="UploadModal"
           className="upload-modal"
           >
-          <a onClick={this.closeModal}>Close</a>
           <PhotoFormContainer formType={this.props.formType}
                               photo={this.props.photo}
                               closeModal={this.closeModal}

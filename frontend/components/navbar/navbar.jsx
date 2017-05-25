@@ -91,9 +91,9 @@ class Navbar extends React.Component {
             {currentUser.username}
           </Link>
           <a className="header-button" onClick={logout}>Log Out</a>
-              <UploadModal receivePhotoErrors={this.props.receivePhotoErrors}
-                currentUser={this.props.currentUser}
-                formType="upload" />
+          <UploadModal receivePhotoErrors={this.props.receivePhotoErrors}
+            currentUser={this.props.currentUser}
+            formType="upload" />
         </hgroup>
       );
     }

@@ -1,4 +1,85 @@
-.photo-form {
+.photo-form-container {
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
+  font-family: $sans-serif;
+
+  .photo-form {
+    display: flex;
+
+    .photo-form-right, .photo-form-left {
+      display: flex;
+      flex-direction: column
+    }
+
+    .photo-form-left {
+      margin-right: 36px;
+    }
+
+    .input {
+      margin: 6px 0 17px 0;
+      height: 37px;
+      width: 265px;
+    }
+
+    .input:focus {
+      border-color: $blue;
+    }
+
+    .textarea {
+      width: 265px;
+      margin: 6px 0 17px 0;
+      height: 152px;
+      resize: none;
+
+      &:focus {
+        border-color: $blue;
+      }
+    }
+
+    input[type="file"] {
+      -webkit-appearance: none;
+    }
+
+    .image-preview {
+      width: 250px;
+      height: 250px;
+      object-fit: cover;
+      margin: 10px 0;
+    }
+
+    h3 {
+      font-size: 16px;
+      text-align: center;
+      margin: 0 auto;
+    }
+
+    label {
+      color: $blue;
+    }
+  }
+
+  .upload-submit {
+    display: flex;
+    justify-content: center;
+  }
+
+  .submit-button {
+    -webkit-appearance: button;
+    width: 250px;
+    color: white;
+    background-color: $green;
+    border: 1px solid $dark-green;
+    border-radius: 3px;
+    padding: 7 9px;
+    margin-top: 8px;
+    text-align: center;
+    font-size: 16px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+
+    &:hover {
+      background-color: $light-green;
+    }
+  }
 }

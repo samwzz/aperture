@@ -9,7 +9,7 @@ class PhotoForm extends React.Component {
     this.state = {
       title: "",
       description: "",
-      image_url: "",
+      image_url: "http://res.cloudinary.com/db1ywnpgj/image/upload/v1495218853/aperture_logo_white.png",
       image_file: null,
       user_id: this.props.currentUser.id,
     };
@@ -77,35 +77,41 @@ class PhotoForm extends React.Component {
   }
 
   render() {
-    const formTitle = (this.props.photoId === undefined) ? "Create New Photo" : "Edit Photo";
-
+    const formTitle = (this.props.formType === "upload") ? "Upload Photo" : "Edit Photo";
+    console.log(this.props.formType);
     return(
-      <form className="photo-form" onSubmit={this.handleSubmit}>
-        <h3 className="form-title">{formTitle}</h3>
-        {this.renderErrors()}
-        <label>
-          Title:
-          <input className="input"
-            value={this.state.title}
-            onChange={this.update('title')}
-          />
-        </label>
-        <label>
-          Description:
-          <textarea className="input"
-           value={this.state.description}
-           onChange={this.update('description')}
-           />
-        </label>
-        <label>
-          Image:
-          <input
-            type="file"
-            onChange={this.updateFile()}
-            />
-        </label>
-        <img src={this.state.image_url} />;
-        <button className="submit-button">Submit</button>
+      <form className="photo-form-container" onSubmit={this.handleSubmit}>
+        <div className="photo-form">
+          <div className="photo-form-left">
+            <h3 className="form-title">{formTitle}</h3>
+            {this.renderErrors()}
+            <label>Title</label>
+            <input className="input"
+              type="text"
+              value={this.state.title}
+              onChange={this.update('title')}
+              />
+
+            <label>Description</label>
+            <textarea className="textarea"
+              type="text"
+              placeholder="Tell us more about your photo"
+              value={this.state.description}
+              onChange={this.update('description')}
+              cols="40" rows="5"
+              />
+          </div>
+          <div className="photo-form-right">
+            <input
+              type="file"
+              onChange={this.updateFile()}
+              />
+            <img className="image-preview" src={this.state.image_url} />
+          </div>
+        </div>
+        <div className="upload-submit">
+          <button className="submit-button">Submit photo</button>
+        </div>
       </form>
     );
   }
