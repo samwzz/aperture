@@ -45,11 +45,12 @@ class PhotoForm extends React.Component {
     formData.append("photo[user_id]", this.state.user_id);
 
     if (this.props.formType === "upload") {
-      this.props.createPhoto( formData, this.goBack)
-        .then(data => this.props.history.push(`/photos/${this.props.photo.id}`))
+      this.props.createPhoto( formData )
+        .then(data => {
+          return this.props.history.push(`/photos/${data.photo.id}`);})
         .then(() => this.props.closeModal());
    } else {
-      this.props.updatePhoto({ formData, id: this.props.photo.id }, this.goBack)
+      this.props.updatePhoto( formData, this.props.photo.id )
         .then(data => this.props.history.push("/"))
         .then(() => this.props.closeModal());
    }

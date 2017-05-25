@@ -1,6 +1,6 @@
 class Photo < ApplicationRecord
-  include Taggable
-  
+  # include Taggable
+
   validates :title, :description, :user_id, presence: true
 
   has_attached_file :image, default_url: "/images/:style/missing.png"

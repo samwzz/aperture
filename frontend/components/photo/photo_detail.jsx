@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import PhotoShow from './photo_show';
+import PhotoShowContainer from './photo_show_container';
 import UploadModal from '../modal/upload_modal';
 
 class PhotoDetail extends React.Component {
@@ -39,7 +39,7 @@ class PhotoDetail extends React.Component {
       <div className="photo-detail-container">
         <Link to="/">Back to all photos</Link>
         <div className="photo-detail">
-          <PhotoShow photo={this.props.photo} />
+          <PhotoShowContainer photo={this.props.photo} />
           {editButton}
           {deleteButton}
         </div>

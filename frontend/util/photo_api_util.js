@@ -19,6 +19,13 @@ export const fetchUserPhotos = (userId) => (
   })
 );
 
+export const fetchAlbumPhotos = (albumId) => (
+  $.ajax({
+    method: 'GET',
+    url: `api/albums/${albumId}/photos`
+  })
+);
+
 export const createPhoto = data => (
   $.ajax({
     method: 'POST',
@@ -29,15 +36,18 @@ export const createPhoto = data => (
   })
 );
 
-export const updatePhoto = photo => (
-  $.ajax({
-    method: 'PATCH',
-    url: `api/photos/${photo.id}`,
-    contentType: false,
-    processData: false,
-    data: photo
-  })
-);
+export const updatePhoto = (photo, id) => {
+  console.log(photo);
+  return(
+    $.ajax({
+      method: 'PATCH',
+      url: `api/photos/${id}`,
+      contentType: false,
+      processData: false,
+      data: photo
+    })
+  );
+};
 
 export const deletePhoto = photo => (
   $.ajax({

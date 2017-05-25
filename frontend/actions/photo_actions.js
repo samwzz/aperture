@@ -43,15 +43,14 @@ export const fetchUserPhotos = userId => dispatch => (
   ))
 );
 
-export const createPhoto = photo => dispatch => (
-  APIUtil.createPhoto(photo).then(photo => (
-    dispatch(receivePhoto(photo)),
-    err => dispatch(receivePhotoErrors(err.responseJSON))
-  ))
+export const createPhoto = formPhoto => dispatch => (
+  APIUtil.createPhoto(formPhoto)
+    .then(photo => dispatch(receivePhoto(photo)))
+    .fail(err => dispatch(receivePhotoErrors(err.responseJSON)))
 );
 
-export const updatePhoto = photo => dispatch => (
-  APIUtil.updatePhoto(photo).then(photo => (
+export const updatePhoto = (formPhoto, id) => dispatch => (
+  APIUtil.updatePhoto(formPhoto, id).then(photo => (
     dispatch(receivePhoto(photo)),
     err => dispatch(receivePhotoErrors(err.responseJSON))
   ))

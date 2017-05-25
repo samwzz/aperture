@@ -9,7 +9,7 @@ const mapStateToProps = ({ session, photos }) => ({
 
 const mapDispatchToProps = (dispatch, ownProps) => ({
   createPhoto: (photo) => dispatch(createPhoto(photo)),
-  updatePhoto: (photo) => dispatch(updatePhoto(photo)),
+  updatePhoto: (photo, id) => dispatch(updatePhoto(photo, id)),
   receivePhotoErrors: (err) => dispatch(receivePhotoErrors(err)),
   closeModal: () => ownProps.closeModal()
 });
