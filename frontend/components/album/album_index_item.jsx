@@ -8,7 +8,7 @@ class AlbumIndexItem extends React.Component {
 
   albumThumbnail() {
     const { album } = this.props;
-    if (album.photos.length > 0) {
+    if ( album.photos && album.photos.length > 0) {
       return album.photos[0].image_url;
     } else {
       return "http://res.cloudinary.com/db1ywnpgj/image/upload/v1495219123/aperture_logo.png";

@@ -27,7 +27,7 @@ class AlbumIndex extends React.Component {
 
   render () {
     let noAlbums;
-    if (this.state.numAlbums === 0) {
+    if (this.props.albums && this.props.albums.length === 0) {
       noAlbums = "You will find your albums here.";
     }
 

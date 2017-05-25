@@ -23,11 +23,11 @@ class AlbumForm extends React.Component {
 
     if (this.props.formType === "new") {
       this.props.createAlbum( this.state )
-        .then(data => this.props.history.push(`/users/${this.state.user_id}/albums/${this.props.album.id}`))
+        .then(data => this.props.history.push(`/users/${this.state.user_id}/albums`))
         .then(() => this.props.closeModal());
    } else {
       this.props.updateAlbum(this.state)
-        .then(data => this.props.history.push(`/users/${this.state.user_id}/albums/${this.props.album.id}`))
+        .then(data => this.props.history.push(`/users/${this.state.user_id}/albums`))
         .then(() => this.props.closeModal());
    }
  }
