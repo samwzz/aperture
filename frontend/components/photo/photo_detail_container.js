@@ -16,6 +16,8 @@ const mapStateToProps = (state, { match }) => {
 
 const mapDispatchToProps = (dispatch) => ({
   fetchPhoto: id => dispatch(fetchPhoto(id)),
+  updatePhoto: photo => dispatch(updatePhoto(photo)),
+  deletePhoto: photo => dispatch(deletePhoto(photo)),
   receivePhotoErrors: err => dispatch(receivePhotoErrors(err))
 });
 

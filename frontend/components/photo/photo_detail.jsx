@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import PhotoShow from './photo_show';
+import UploadModal from '../modal/upload_modal';
 
 class PhotoDetail extends React.Component {
   constructor(props) {

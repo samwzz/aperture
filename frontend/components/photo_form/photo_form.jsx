@@ -10,7 +10,8 @@ class PhotoForm extends React.Component {
       title: "",
       description: "",
       image_url: "",
-      image_file: null
+      image_file: null,
+      user_id: this.props.currentUser.id,
     };
     this.handleSubmit = this.handleSubmit.bind(this);
   }
@@ -41,13 +42,14 @@ class PhotoForm extends React.Component {
     formData.append("photo[title]", this.state.title);
     formData.append("photo[description]", this.state.description);
     formData.append("photo[image]", this.state.image_file);
+    formData.append("photo[user_id]", this.state.user_id);
 
     if (this.props.formType === "upload") {
-      this.props.createPhoto(formData, this.goBack)
-        .then(data => this.props.history.push("/"))
+      this.props.createPhoto( formData, this.goBack)
+        .then(data => this.props.history.push(`/photos/${this.props.photo.id}`))
         .then(() => this.props.closeModal());
    } else {
-      this.props.updatePhoto(formData, this.goBack)
+      this.props.updatePhoto({ formData, id: this.props.photo.id }, this.goBack)
         .then(data => this.props.history.push("/"))
         .then(() => this.props.closeModal());
    }
@@ -80,6 +82,7 @@ class PhotoForm extends React.Component {
     return(
       <form className="photo-form" onSubmit={this.handleSubmit}>
         <h3 className="form-title">{formTitle}</h3>
+        {this.renderErrors()}
         <label>
           Title:
           <input className="input"
