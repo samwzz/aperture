@@ -12,6 +12,7 @@ import AlbumIndexContainer from './album/album_index_container';
 import AlbumShowContainer from './album/album_show_container';
 import PhotoFormContainer from './photo_form/photo_form_container';
 import DiscoverContainer from './discover/discover_container';
+import PhotoDetailContainer from './photo/photo_detail_container';
 
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
 
@@ -23,7 +24,7 @@ const App = () => (
     <section>
       <Route exact path="/" component={ HomeContainer } />
       <ProtectedRoute exact path="/discover" component={ DiscoverContainer } />
-
+      <ProtectedRoute exact path="/photos/:photoId" component={ PhotoDetailContainer } />
       <ProtectedRoute path="/users/:userId" component={ UserProfileContainer } />
       <ProtectedRoute exact path="/users/:userId" component={ UserPhotoContainer } />
       <ProtectedRoute exact path="/users/:userId/albums" component={ AlbumIndexContainer } />

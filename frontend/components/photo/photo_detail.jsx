@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import PhotoShow from './photo_show';
 
 class PhotoDetail extends React.Component {
   constructor(props) {
@@ -7,9 +8,9 @@ class PhotoDetail extends React.Component {
     this.confirmDelete = this.confirmDelete.bind(this);
   }
 
-  // componentDidMount() {
-  //   this.props.fetchPhoto(this.props.photo.id);
-  // }
+  componentDidMount() {
+    this.props.fetchPhoto(this.props.match.params.photoId);
+  }
 
   confirmDelete(e){
     e.preventDefault();
@@ -32,12 +33,12 @@ class PhotoDetail extends React.Component {
           onClick={this.confirmDelete}>Delete Photo</button>;
         }
     }
-
+    console.log(this.props);
     return (
       <div className="photo-detail-container">
         <Link to="/">Back to all photos</Link>
         <div className="photo-detail">
-          <PhotoShow photo={photo} />
+          <PhotoShow photo={this.props.photo} />
           {editButton}
           {deleteButton}
         </div>

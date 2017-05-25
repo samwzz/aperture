@@ -12,7 +12,7 @@ class PhotoIndex extends React.Component {
   componentDidUpdate() {
     $("#gallery").justifiedGallery({
       rowHeight : 300,
-      lastRow : 'nojustify',
+      lastRow : 'justify',
       margins : 9,
       cssAnimation: true,
     });
@@ -28,10 +28,10 @@ class PhotoIndex extends React.Component {
 
   render () {
     const { photos } = this.props;
-    const photoModals = photos.map((photo) => (
+    const photoModals = photos && photos.map((photo) => (
       <PhotoModal key={`${photo.id}-index`} photo={photo} />
     ));
-    console.log(photos);
+
     return (
       <div className="photo-index">
         <div id="gallery" className="justified-gallery">

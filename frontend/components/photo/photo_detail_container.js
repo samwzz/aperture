@@ -2,7 +2,7 @@ import { connect } from 'react-redux';
 import { fetchPhoto, updatePhoto, deletePhoto, receivePhotoErrors } from '../../actions/photo_actions';
 import { selectPhoto } from '../../reducers/selectors';
 
-import PhotoDetail from './photo_show';
+import PhotoDetail from './photo_detail';
 
 const mapStateToProps = (state, { match }) => {
   const photoId = parseInt(match.params.photoId);
@@ -20,6 +20,6 @@ const mapDispatchToProps = (dispatch) => ({
 });
 
 export default connect(
-  null,
+  mapStateToProps,
   mapDispatchToProps
 )(PhotoDetail);

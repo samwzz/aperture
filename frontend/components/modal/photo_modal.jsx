@@ -68,6 +68,7 @@ class PhotoModal extends React.Component {
           >
           <a onClick={this.closeModal}>Back to photos</a>
           <PhotoShow key={photo.id} photo={photo} />
+          <Link to={`/photos/${photo.id}`}>See photo detail</Link>
         </Modal>
       </div>
     );
