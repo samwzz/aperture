@@ -9,8 +9,7 @@ class AlbumForm extends React.Component {
     this.state = {
       title: "",
       description: "",
-      user_id: this.props.currentUser.id,
-      photos: []
+      user_id: this.props.currentUser.id
     };
     this.handleSubmit = this.handleSubmit.bind(this);
   }
@@ -22,7 +21,7 @@ class AlbumForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
 
-    if (this.props.formType === "upload") {
+    if (this.props.formType === "new") {
       this.props.createAlbum( this.state )
         .then(data => this.props.history.push(`/users/${this.state.user_id}/albums/${this.props.album.id}`))
         .then(() => this.props.closeModal());
@@ -80,7 +79,7 @@ class AlbumForm extends React.Component {
           </div>
           <div className="album-form-right">
             <label>Choose photos</label>
-            
+
           </div>
         </div>
         <div className="album-submit">
