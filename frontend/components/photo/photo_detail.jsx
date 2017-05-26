@@ -4,11 +4,14 @@ import PhotoShowContainer from './photo_show_container';
 import UploadModal from '../modal/upload_modal';
 import CommentIndexContainer from '../comment/comment_index_container';
 import CommentFormContainer from '../comment/comment_form_container';
+import TagIndex from '../tag/tag_index';
+import TagFormContainer from '../tag/tag_form_container';
 
 class PhotoDetail extends React.Component {
   constructor(props) {
     super(props);
     this.confirmDelete = this.confirmDelete.bind(this);
+    this.handleAddTag = this.handleAddTag.bind(this);
   }
 
   componentDidMount() {
@@ -21,6 +24,22 @@ class PhotoDetail extends React.Component {
     if (result) {
       this.props.deletePhoto(this.props.photo)
         .then(data => this.props.history.push(`/discover`));
+    }
+  }
+
+  handleAddTag() {}
+
+  tags() {
+    const { photo } = this.props;
+
+  }
+
+  addTag() {
+    const { currentUser, photo } = this.props;
+    if (currentUser === photo.user_id) {
+      return(
+        <button className="add-tag" onClick={ this.handleAddTag } />
+      );
     }
   }
 
@@ -48,6 +67,9 @@ class PhotoDetail extends React.Component {
         <div className="comment-container">
           <CommentIndexContainer />
         </div>
+        <TagIndex photo={photo} />
+
+        <TagFormContainer photo={photo} />
       </div>
     );
   }

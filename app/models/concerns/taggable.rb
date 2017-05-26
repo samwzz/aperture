@@ -1,8 +1,8 @@
-module Toyable
+module Taggable
   extend ActiveSupport::Concern
 
   included do
-    has_many :tags, as: :taggeable
+    has_many :tags, as: :taggable
   end
 
   def receive_tag(name)
