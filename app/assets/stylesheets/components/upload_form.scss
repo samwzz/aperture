@@ -1,18 +1,18 @@
-.photo-form-container {
+.upload-form-container {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   font-family: $sans-serif;
 
-  .photo-form {
+  .upload-form {
     display: flex;
 
-    .photo-form-right, .photo-form-left {
+    .upload-form-right, .upload-form-left {
       display: flex;
       flex-direction: column
     }
 
-    .photo-form-left {
+    .upload-form-left {
       margin-right: 36px;
     }
 

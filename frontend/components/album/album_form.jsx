@@ -57,9 +57,9 @@ class AlbumForm extends React.Component {
     const formTitle = (this.props.formType === "new") ? "Create Album" : "Edit Album";
 
     return(
-      <form className="album-form-container" onSubmit={this.handleSubmit}>
-        <div className="album-form">
-          <div className="album-form-left">
+      <form className="upload-form-container" onSubmit={this.handleSubmit}>
+        <div className="upload-form">
+          <div className="upload-form-left">
             <h3 className="form-title">{formTitle}</h3>
             {this.renderErrors()}
             <label>Title</label>
@@ -78,8 +78,6 @@ class AlbumForm extends React.Component {
               />
           </div>
           <div className="album-form-right">
-            <label>Choose photos</label>
-
           </div>
         </div>
         <div className="album-submit">

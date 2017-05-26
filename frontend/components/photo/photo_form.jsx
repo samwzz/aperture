@@ -57,7 +57,7 @@ class PhotoForm extends React.Component {
 
   componentWillMount() {
     const { photo } = this.props;
-    
+
     if (this.props.photo !== undefined) {
       this.setState({
         title: photo.title,
@@ -85,9 +85,9 @@ class PhotoForm extends React.Component {
     const formTitle = (this.props.formType === "upload") ? "Upload Photo" : "Edit Photo";
 
     return(
-      <form className="photo-form-container" onSubmit={this.handleSubmit}>
-        <div className="photo-form">
-          <div className="photo-form-left">
+      <form className="upload-form-container" onSubmit={this.handleSubmit}>
+        <div className="upload-form">
+          <div className="upload-form-left">
             <h3 className="form-title">{formTitle}</h3>
             {this.renderErrors()}
             <label>Title</label>
