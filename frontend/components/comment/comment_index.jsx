@@ -8,7 +8,7 @@ class CommentIndex extends React.Component {
   }
 
   componentDidMount() {
-    this.props.fetchPhotoComments(this.props.match.params);
+    this.props.fetchPhotoComments(parseInt(this.props.match.params.photoId));
   }
 
   render () {

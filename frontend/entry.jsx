@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import configureStore from './store/store';
 import Root from './components/root';
 import Modal from 'react-modal';
-import * as APIUtil from './actions/photo_actions';
+import * as APIUtil from './actions/comment_actions';
 
 document.addEventListener('DOMContentLoaded', () => {
   let store;
@@ -15,8 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
     store = configureStore();
   }
   window.store = store;
-  window.fetchPhotos = APIUtil.fetchPhotos;
-  window.fetchUserPhotos = APIUtil.fetchUserPhotos;
+  window.fetchPhotoComments = APIUtil.fetchPhotoComments;
   Modal.setAppElement(document.body);
   const root = document.getElementById('root');
   ReactDOM.render(<Root store={ store }/>, root);

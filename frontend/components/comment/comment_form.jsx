@@ -17,7 +17,6 @@ class CommentForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    debugger
     this.props.createComment(this.state);
  }
 
