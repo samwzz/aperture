@@ -5,7 +5,8 @@ class CommentForm extends React.Component {
     super(props);
     this.state = {
       body: "",
-      user_id: this.props.currentUser.id
+      user_id: this.props.currentUser.id,
+      photo_id: this.props.photoId
     };
     this.handleSubmit = this.handleSubmit.bind(this);
   }
@@ -16,6 +17,7 @@ class CommentForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
+    debugger
     this.props.createComment(this.state);
  }
 

@@ -28,7 +28,6 @@ class PhotoShow extends React.Component {
   }
 
   selectAlbum() {
-    console.log(this.state);
     const {photo, albums, currentUser } = this.props;
     if (photo.user_id === currentUser.id) {
       return(

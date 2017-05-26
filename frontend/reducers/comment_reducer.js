@@ -13,7 +13,6 @@ const defaultComment = Object.freeze({
 const CommentReducer = (state = {}, action) => {
   Object.freeze(state);
   let nextState;
-
   switch (action.type) {
     case RECEIVE_COMMENTS:
       return action.comments;

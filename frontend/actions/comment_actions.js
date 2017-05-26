@@ -25,9 +25,9 @@ export const receiveCommentErrors = errors => ({
   errors
 });
 
-export const fetchPhotoComments = userId => dispatch => (
-  APIUtil.fetchPhotoComments(userId).then(comments => (
-    dispatch(receiveComment(comments))
+export const fetchPhotoComments = photoId => dispatch => (
+  APIUtil.fetchPhotoComments(photoId).then(comments => (
+    dispatch(receiveComments(comments))
   ))
 );
 

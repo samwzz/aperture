@@ -2,9 +2,10 @@ import { connect } from 'react-redux';
 import { createComment, updateComment, receiveCommentErrors } from '../../actions/comment_actions';
 import CommentForm from './comment_form';
 
-const mapStateToProps = ({ session, comments }) => ({
+const mapStateToProps = ({ session, comments }, { photoId }) => ({
   currentUser: session.currentUser,
-  errors: comments.errors
+  errors: comments.errors,
+  photoId
 });
 
 const mapDispatchToProps = (dispatch, ownProps) => ({
