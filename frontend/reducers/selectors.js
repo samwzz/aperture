@@ -21,3 +21,7 @@ export const selectAlbum = ({ albums }, id) => {
 export const selectComments = ({ comments }) => (
   values(comments)
 );
+
+export const selectTags = ({ tags }) => (
+  values(tags)
+);

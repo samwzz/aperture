@@ -27,7 +27,7 @@ export const receiveTagErrors = errors => ({
 
 export const fetchPhotoTags = userId => dispatch => (
   APIUtil.fetchPhotoTags(userId).then(tags => (
-    dispatch(receiveTag(tags))
+    dispatch(receiveTags(tags))
   ))
 );
 

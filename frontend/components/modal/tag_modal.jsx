@@ -29,8 +29,8 @@ class TagModal extends React.Component {
   render() {
     return(
       <div className="album-modal-container">
-        <a className="add-tag"
-            onClick={this.openModal}>Add Tag</a>
+        <button className="add-tag"
+            onClick={this.openModal}>Add Tag</button>
         <Modal
           isOpen={this.state.modalOpen}
           onAfterOpen={this.afterModalOpen}

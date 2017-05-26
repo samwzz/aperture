@@ -1,0 +1,23 @@
+.tag-index-container {
+  display: flex;
+  flex-flow: row wrap;
+}
+
+.tag-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: $light-gray;
+  border-radius: 3px;
+  width: auto;
+  height: auto;
+  margin: 5px;
+  padding: 5px;
+  text-align: center;
+  font-size: 16px;
+  float: left;
+}
+
+.tag-item:hover {
+  background-color: $gray;
+}

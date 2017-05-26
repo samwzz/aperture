@@ -1,6 +1,6 @@
 class Api::TagsController < ApplicationController
   def index
-    @tags = Tag.where(photo_id: params[:photo_id])
+    @tags = Photo.find_by(id: params[:photo_id]).tags
   end
 
   def show

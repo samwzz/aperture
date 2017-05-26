@@ -4,8 +4,7 @@ import PhotoShowContainer from './photo_show_container';
 import UploadModal from '../modal/upload_modal';
 import CommentIndexContainer from '../comment/comment_index_container';
 import CommentFormContainer from '../comment/comment_form_container';
-import TagIndex from '../tag/tag_index';
-import TagModal from '../modal/tag_modal';
+import TagIndexContainer from '../tag/tag_index_container';
 
 class PhotoDetail extends React.Component {
   constructor(props) {
@@ -73,21 +72,22 @@ class PhotoDetail extends React.Component {
             <li>{deleteButton}</li>
           </ul>
         </div>
-        <div className="photo-info">
-          <div className="photo-head-group">
-            <div className="avatar">
-              <div className="avatar-wrapper">
-                <img src="https://res.cloudinary.com/db1ywnpgj/image/upload/v1495431600/Doge_hu9gbb.jpg"/>
+        <div className="photo-info-container">
+          <div className="photo-info">
+            <div className="photo-head-group">
+              <div className="avatar">
+                <div className="avatar-wrapper">
+                  <img src="https://res.cloudinary.com/db1ywnpgj/image/upload/v1495431600/Doge_hu9gbb.jpg"/>
+                </div>
+              </div>
+              <div className="photo-header">
+                <h1>{photo.user ? photo.user.username : ""}</h1>
+                <h1>{photo.title}</h1>
               </div>
             </div>
-            <div className="photo-header">
-              <h1>{photo.user ? photo.user.username : ""}</h1>
-              <h1>{photo.title}</h1>
-            </div>
+            <CommentIndexContainer />
           </div>
-          <CommentIndexContainer />
-          <TagIndex photo={photo} />
-          <TagModal photo={this.props.photo}/>
+          <TagIndexContainer photo={photo} />
         </div>
       </div>
     );
