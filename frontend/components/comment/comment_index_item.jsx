@@ -56,11 +56,16 @@ class CommentIndexItem extends React.Component {
 
     return(
       <li className="comment-item-container">
+        <div className="comment-icon">
+          <div className="icon-wrapper">
+            <img src="https://res.cloudinary.com/db1ywnpgj/image/upload/v1495431600/Doge_hu9gbb.jpg"/>
+          </div>
+        </div>
         <div className="comment-item">
           <div className="comment-header">
             <div className="comment-author">
-              <h2>{comment.user_id}</h2>
-              <span>{comment.updated_at}</span>
+              <h2>{comment.user.username}</h2>
+              <span>{comment.ago} ago</span>
             </div>
             {this.buttons()}
           </div>

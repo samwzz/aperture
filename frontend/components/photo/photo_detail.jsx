@@ -81,7 +81,7 @@ class PhotoDetail extends React.Component {
               </div>
             </div>
             <div className="photo-header">
-              <h1>Username</h1>
+              <h1>{photo.user ? photo.user.username : ""}</h1>
               <h1>{photo.title}</h1>
             </div>
           </div>

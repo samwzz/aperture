@@ -19,6 +19,11 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+
+  span {
+    color: $gray;
+    font-weight: 500;
+  }
 }
 
 .comment-item {
@@ -63,6 +68,36 @@
   }
 }
 
-.comment-button-hidden {
-  display: none;
+.comment-icon {
+  height: 100%;
+  width: 50px;
+  position: relative;
+
+  z-index: 10;
+}
+
+.icon-wrapper {
+  height: 50px;
+  width: 50px;
+  margin: 0 auto;
+  border: 3px solid white;
+  border-radius: 50%;
+  position: relative;
+  overflow: hidden;
+  background-size: cover;
+  img {
+    height: 100%;
+    width: auto;
+    position: relative;
+    right: 20px;
+  }
+}
+
+.comment-item-container {
+  display: flex;
+  
+
+  .comment-item {
+    padding-left: 20px;
+  }
 }

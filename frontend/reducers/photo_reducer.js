@@ -9,7 +9,8 @@ const defaultPhoto = Object.freeze({
     user_id: null,
     album_id: null,
     tags: [],
-    errors: []
+    errors: [],
+    user: {}
   }
 });
 
