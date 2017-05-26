@@ -12,12 +12,23 @@ class CommentForm extends React.Component {
     };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.onFocus = this.onFocus.bind(this);
+    this.onBlur = this.onBlur.bind(this);
   }
 
   onFocus() {
-    this.setState({
-      commentButton: true
-    });
+    if (this.props.formType === "new") {
+      this.setState({
+        commentButton: true
+      });
+    }
+  }
+
+  onBlur() {
+    if (this.props.formType === "new") {
+      this.setState({
+        commentButton: false
+      });
+    }
   }
 
   update(property) {
@@ -31,6 +42,9 @@ class CommentForm extends React.Component {
       this.props.createComment(this.state)
       .then(() => this.setState({
         body: ""
+      }))
+      .then(() => this.setState({
+        commentButton: false
       }));
    } else {
       this.props.updateComment(this.state, this.props.comment.id)
@@ -50,7 +64,8 @@ class CommentForm extends React.Component {
   componentWillMount() {
     if (this.props.comment !== undefined) {
       this.setState({
-        body: this.props.comment.body
+        body: this.props.comment.body,
+        commentButton: true
       });
     }
   }

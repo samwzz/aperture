@@ -33,11 +33,13 @@
   }
 
   .photo-info {
-    width: 100%;
+    width: 80%;
     color: black;
-    padding: 0 19%;
+    margin: 0 200px;
+    padding: 50px 100px;
     position: relative;
-    top: 100px;
+    top: 50px;
+    background-color: $off-white;
 
     a {
       color: black;

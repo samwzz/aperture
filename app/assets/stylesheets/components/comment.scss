@@ -59,8 +59,10 @@
 
     &:focus {
       border-color: $blue;
-
-      
     }
   }
+}
+
+.comment-button-hidden {
+  display: none;
 }

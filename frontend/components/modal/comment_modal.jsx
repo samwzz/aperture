@@ -39,6 +39,7 @@ class CommentModal extends React.Component {
           contentLabel="UploadModal"
           className="upload-modal"
           >
+          <h1>Edit comment</h1>
           <CommentFormContainer formType="edit"
                                 comment={this.props.comment}
                                 closeModal={this.closeModal}
