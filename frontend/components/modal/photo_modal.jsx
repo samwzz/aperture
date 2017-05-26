@@ -47,10 +47,15 @@ class PhotoModal extends React.Component {
               onClick={this.openModal}
               className="photo-modal-image"
               />
-            <div className="photo-info-container">
-              <div className="photo-info">
+            <div className="photo-heading-container">
+              <div className="comment-icon">
+                <div className="icon-wrapper">
+                  <img src="https://res.cloudinary.com/db1ywnpgj/image/upload/v1495431600/Doge_hu9gbb.jpg"/>
+                </div>
+              </div>
+              <div className="photo-heading">
                 <p className="photo-username">
-                  User
+                  {photo.user.username}
                 </p>
                 <p className="photo-title">
                   {photo.title}

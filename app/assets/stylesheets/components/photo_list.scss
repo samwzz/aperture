@@ -22,7 +22,7 @@
   cursor: pointer;
 }
 
-.photo-list .photo-info-container {
+.photo-list .photo-heading-container {
   display: flex;
   align-items: center;
   height: 60px;
@@ -32,6 +32,10 @@
   border-bottom-right-radius: 5px;
   border-bottom-left-radius: 5px;
   font-family: $sans-serif;
+}
+
+.photo-heading {
+  margin-left: 10px;
 }
 
 .photo-list .photo-modal-container:hover {
