@@ -15,6 +15,7 @@ class PhotoDetail extends React.Component {
   }
 
   componentDidMount() {
+    window.scrollTo(0, 0);
     this.props.fetchPhoto(this.props.match.params.photoId);
   }
 
@@ -64,17 +65,32 @@ class PhotoDetail extends React.Component {
 
     return (
       <div className="photo-detail-container">
-        <Link to="/">Back to all photos</Link>
         <div className="photo-detail">
+          <Link to="/">Back to all photos</Link>
           <PhotoShowContainer photo={this.props.photo} />
-          {editButton}
-          {deleteButton}
+          <ul className="photo-actions">
+            <li>{editButton}</li>
+            <li>{deleteButton}</li>
+          </ul>
         </div>
-        <div className="comment-container">
-          <CommentIndexContainer />
+        <div className="photo-info">
+          <div className="photo-head-group">
+            <div className="avatar">
+              <div className="avatar-wrapper">
+                <img src="https://res.cloudinary.com/db1ywnpgj/image/upload/v1495431600/Doge_hu9gbb.jpg"/>
+              </div>
+            </div>
+            <div className="photo-header">
+              <h1>Username</h1>
+              <h1>{photo.title}</h1>
+            </div>
+          </div>
+          <div className="comment-container">
+            <CommentIndexContainer />
+          </div>
+          <TagIndex photo={photo} />
+          {this.addTag()}
         </div>
-        <TagIndex photo={photo} />
-        {this.addTag()}
       </div>
     );
   }
