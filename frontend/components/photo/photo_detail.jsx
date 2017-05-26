@@ -47,7 +47,6 @@ class PhotoDetail extends React.Component {
         </div>
         <div className="comment-container">
           <CommentIndexContainer />
-          <CommentFormContainer photoId={this.props.photo.id}/>
         </div>
       </div>
     );

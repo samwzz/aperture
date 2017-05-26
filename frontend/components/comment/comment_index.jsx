@@ -1,6 +1,7 @@
 import React from 'react';
 import {withRouter, Route } from 'react-router-dom';
 import CommentIndexItem from '../comment/comment_index_item';
+import CommentFormContainer from '../comment/comment_form_container';
 
 class CommentIndex extends React.Component {
   constructor(props) {
@@ -26,6 +27,7 @@ class CommentIndex extends React.Component {
       <section className="comment-index-container">
         <ul className="comment-index">
           {commentItems}
+          <CommentFormContainer formType="new"/>
         </ul>
       </section>
     );

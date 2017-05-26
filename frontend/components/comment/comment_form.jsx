@@ -18,7 +18,19 @@ class CommentForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    this.props.createComment(this.state);
+
+    if (this.props.formType === "new") {
+      this.props.createComment(this.state)
+      .then(() => this.setState({
+        body: ""
+      }));
+   } else {
+      this.props.updateComment(this.state, this.props.comment.id)
+      .then(() => this.setState({
+        body: ""
+      }))
+      .then(() => this.props.closeModal());
+   }
  }
 
  componentDidMount() {
@@ -30,7 +42,7 @@ class CommentForm extends React.Component {
   componentWillMount() {
     if (this.props.comment !== undefined) {
       this.setState({
-        title: this.props.comment.body
+        body: this.props.comment.body
       });
     }
   }
@@ -48,6 +60,7 @@ class CommentForm extends React.Component {
   }
 
   render() {
+    const buttonText = this.props.formType === "new" ? "Comment" : "Done";
     return(
       <form className="comment-form-container" onSubmit={this.handleSubmit}>
         <div className="comment-form">
@@ -64,7 +77,7 @@ class CommentForm extends React.Component {
           </div>
         </div>
         <div className="comment-submit">
-          <button className="submit-button">Comment</button>
+          <button className="submit-button">{buttonText}</button>
         </div>
       </form>
     );

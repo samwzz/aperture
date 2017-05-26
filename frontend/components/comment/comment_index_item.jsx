@@ -1,9 +1,13 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import CommentModal from '../modal/comment_modal';
 
 class CommentIndexItem extends React.Component {
   constructor(props) {
     super(props);
+    this.state = {
+      editComment: false
+    };
     this.handleDelete = this.handleDelete.bind(this);
   }
 
@@ -14,6 +18,39 @@ class CommentIndexItem extends React.Component {
     delete this.props;
   }
 
+  buttons() {
+    const { comment, currentUser } = this.props;
+    let editButton, deleteButton;
+    if (currentUser) {
+      if ( currentUser.id === comment.user_id ) {
+        editButton =
+        <CommentModal comment={this.props.comment}
+          receiveCommentErrors={this.props.receiveCommentErrors}
+        />;
+        deleteButton =
+        <button className="edit-delete" onClick={ this.handleDelete }>
+          Delete
+        </button>;
+        }
+    }
+    return(
+      <div className="comment-action-container">
+        {editButton}
+        {deleteButton}
+      </div>
+    );
+  }
+
+  comment() {
+    if (!this.state.editComment) {
+      return(
+        <div className="comment-container">
+          <p>{this.props.comment.body}</p>
+        </div>
+      );
+    }
+  }
+
   render () {
     const {currentUser, comment } = this.props;
 
@@ -22,14 +59,8 @@ class CommentIndexItem extends React.Component {
         <div className="comment-item">
           <h2>{comment.user_id}</h2>
           <span>{comment.updated_at}</span>
-          <div className="delete-button-container">
-            <button className="delete-button" onClick={ this.handleDelete }>
-              Delete
-            </button>
-          </div>
-          <div className="comment-container">
-            <p>{comment.body}</p>
-          </div>
+          {this.buttons()}
+          {this.comment()}
         </div>
       </li>
     );
