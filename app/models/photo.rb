@@ -1,5 +1,5 @@
 class Photo < ApplicationRecord
-  # include Taggable
+  include Taggable
 
   validates :title, :description, :user_id, presence: true
 

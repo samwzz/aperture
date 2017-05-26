@@ -37,7 +37,6 @@ export const createPhoto = data => (
 );
 
 export const updatePhoto = (photo, id) => {
-  console.log(photo);
   return(
     $.ajax({
       method: 'PATCH',

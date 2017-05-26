@@ -144,3 +144,19 @@ p14 = Photo.create!(title: "Bokeh",
 # p10 = Photo.create!(title: "", description: "", image_url: "https://res.cloudinary.com/db1ywnpgj/image/upload/v1495179973/photo-1494375856376-7d2b3a016fa3_usyiq2.jpg", user_id: u.id)
 # p10 = Photo.create!(title: "", description: "", image_url: "https://res.cloudinary.com/db1ywnpgj/image/upload/v1495179973/pexels-photo-141635_ueizkw.jpg", user_id: u.id)
 # p10 = Photo.create!(title: "", description: "", image_url: "", user_id: u.id)
+
+# Tag seeds
+
+Tag.destroy_all
+t1 = Tag.create!(name: "doge",
+                taggable_id: 1,
+                taggable_type: :Photo
+                )
+t1 = Tag.create!(name: "shiba",
+                taggable_id: 1,
+                taggable_type: :Photo
+                )
+t1 = Tag.create!(name: "cool",
+                taggable_id: 1,
+                taggable_type: :Photo
+                )

@@ -43,6 +43,12 @@ export const fetchUserPhotos = userId => dispatch => (
   ))
 );
 
+export const fetchAlbumPhotos = albumId => dispatch => (
+  APIUtil.fetchAlbumPhotos(albumId).then(photos => (
+    dispatch(receivePhotos(photos))
+  ))
+);
+
 export const createPhoto = formPhoto => dispatch => (
   APIUtil.createPhoto(formPhoto)
     .then(photo => dispatch(receivePhoto(photo)))
