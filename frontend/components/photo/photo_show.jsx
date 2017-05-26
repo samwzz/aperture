@@ -23,7 +23,6 @@ class PhotoShow extends React.Component {
 
   handleSelect(e) {
     e.preventDefault();
-    debugger;
     this.setState({ album_id: parseInt(e.target.value)},
     () => this.props.updatePhoto(this.state, this.props.photo.id));
   }

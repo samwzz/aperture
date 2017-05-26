@@ -13,7 +13,7 @@ class CommentIndex extends React.Component {
 
   render () {
     const { comments, currentUser } = this.props;
-    const commentItems = comments.map((comment) => (
+    const commentItems = comments && comments.map((comment) => (
       <CommentIndexItem key={`${comment.id}`} comment={comment} currentUser={currentUser} />
     ));
 

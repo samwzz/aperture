@@ -2,6 +2,8 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import PhotoShowContainer from './photo_show_container';
 import UploadModal from '../modal/upload_modal';
+import CommentIndexContainer from '../comment/comment_index_container';
+import CommentFormContainer from '../comment/comment_form_container';
 
 class PhotoDetail extends React.Component {
   constructor(props) {
@@ -42,6 +44,10 @@ class PhotoDetail extends React.Component {
           <PhotoShowContainer photo={this.props.photo} />
           {editButton}
           {deleteButton}
+        </div>
+        <div className="comment-container">
+          <CommentIndexContainer />
+          <CommentFormContainer />
         </div>
       </div>
     );

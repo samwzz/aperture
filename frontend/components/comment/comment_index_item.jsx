@@ -7,6 +7,7 @@ class CommentIndexItem extends React.Component {
   }
 
   render () {
+    debugger;
     const {currentUser, comment } = this.props;
     return(
       <div className="comment-item-container">
