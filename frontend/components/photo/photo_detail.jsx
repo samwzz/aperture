@@ -27,7 +27,11 @@ class PhotoDetail extends React.Component {
     }
   }
 
-  handleAddTag() {}
+  handleAddTag() {
+    return(
+      <TagFormContainer photo={this.props.photo} />
+    );
+  }
 
   tags() {
     const { photo } = this.props;
@@ -36,9 +40,11 @@ class PhotoDetail extends React.Component {
 
   addTag() {
     const { currentUser, photo } = this.props;
-    if (currentUser === photo.user_id) {
+    if (currentUser.id === photo.user_id) {
       return(
-        <button className="add-tag" onClick={ this.handleAddTag } />
+        <button className="add-tag" onClick={ this.handleAddTag }>
+          Add Tag
+        </button>
       );
     }
   }
@@ -68,8 +74,7 @@ class PhotoDetail extends React.Component {
           <CommentIndexContainer />
         </div>
         <TagIndex photo={photo} />
-
-        <TagFormContainer photo={photo} />
+        {this.addTag()}
       </div>
     );
   }

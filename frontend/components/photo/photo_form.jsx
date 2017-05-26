@@ -57,7 +57,7 @@ class PhotoForm extends React.Component {
 
   componentWillMount() {
     const { photo } = this.props;
-    debugger;
+    
     if (this.props.photo !== undefined) {
       this.setState({
         title: photo.title,
