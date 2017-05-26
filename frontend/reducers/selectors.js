@@ -17,3 +17,7 @@ export const selectAlbum = ({ albums }, id) => {
   const album = albums[id] || {};
   return album;
 };
+
+export const selectComments = ({ comments }) => (
+  values(comments)
+);
