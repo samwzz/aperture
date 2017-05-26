@@ -46,10 +46,6 @@
     }
   }
 
-  .photo-show-title, .photo-show-description {
-    display: none;
-  }
-
   .photo-header h1 {
     color: black;
     font-weight: bold;
@@ -72,4 +68,8 @@
     margin: 0 10px;
     top: 0;
   }
+}
+
+.photo-show-title, .photo-show-description {
+  display: none;
 }

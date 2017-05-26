@@ -39,6 +39,6 @@ class Api::TagsController < ApplicationController
   private
 
   def tag_params
-    params.require(:tag).permit(:name, :photo_id, :taggable_id)
+    params.require(:tag).permit(:name, :photo_id, :taggable_id, :taggable_type)
   end
 end

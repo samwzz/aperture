@@ -5,7 +5,8 @@ class TagForm extends React.Component {
     super(props);
     this.state = {
       name: "",
-      taggable_id: this.props.photo.id
+      taggable_id: this.props.photo.id,
+      taggable_type: "Photo"
     };
     this.handleSubmit = this.handleSubmit.bind(this);
   }
@@ -16,7 +17,8 @@ class TagForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    this.props.createTag(this.state);
+    this.props.createTag(this.state)
+    .then(() => this.props.closeModal());
   }
 
   render() {
