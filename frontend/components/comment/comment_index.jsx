@@ -25,6 +25,7 @@ class CommentIndex extends React.Component {
 
     return (
       <section className="comment-index-container">
+        <h1>Comments</h1>
         <ul className="comment-index">
           {commentItems}
           <CommentFormContainer formType="new"/>

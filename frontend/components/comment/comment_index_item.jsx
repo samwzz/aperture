@@ -57,9 +57,13 @@ class CommentIndexItem extends React.Component {
     return(
       <li className="comment-item-container">
         <div className="comment-item">
-          <h2>{comment.user_id}</h2>
-          <span>{comment.updated_at}</span>
-          {this.buttons()}
+          <div className="comment-header">
+            <div className="comment-author">
+              <h2>{comment.user_id}</h2>
+              <span>{comment.updated_at}</span>
+            </div>
+            {this.buttons()}
+          </div>
           {this.comment()}
         </div>
       </li>

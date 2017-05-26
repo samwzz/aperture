@@ -85,9 +85,7 @@ class PhotoDetail extends React.Component {
               <h1>{photo.title}</h1>
             </div>
           </div>
-          <div className="comment-container">
-            <CommentIndexContainer />
-          </div>
+          <CommentIndexContainer />
           <TagIndex photo={photo} />
           {this.addTag()}
         </div>

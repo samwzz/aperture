@@ -32,6 +32,7 @@ class PhotoShow extends React.Component {
     if (photo.user_id === currentUser.id) {
       return(
         <form className="album-select">
+          <h2>Select Album</h2>
           <select
             onChange={this.handleSelect}
             defaultValue="Select Album">

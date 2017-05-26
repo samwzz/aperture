@@ -7,9 +7,17 @@ class CommentForm extends React.Component {
     this.state = {
       body: "",
       user_id: this.props.currentUser.id,
-      photo_id: this.props.photoId
+      photo_id: this.props.photoId,
+      commentButton: false
     };
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.onFocus = this.onFocus.bind(this);
+  }
+
+  onFocus() {
+    this.setState({
+      commentButton: true
+    });
   }
 
   update(property) {
@@ -61,24 +69,22 @@ class CommentForm extends React.Component {
 
   render() {
     const buttonText = this.props.formType === "new" ? "Comment" : "Done";
+    let commentButton;
+    if (this.state.commentButton) {
+      commentButton = <button className="comment-button">{buttonText}</button>;
+    }
     return(
       <form className="comment-form-container" onSubmit={this.handleSubmit}>
         <div className="comment-form">
-          <div className="comment-form-left">
-            <textarea className="textarea"
-              type="text"
-              placeholder="Add a comment"
-              value={this.state.body}
-              onChange={this.update('body')}
-              />
-          </div>
-          <div className="comment-form-right">
-
-          </div>
+          <textarea className="textarea"
+            type="text"
+            placeholder="Add a comment"
+            value={this.state.body}
+            onChange={this.update('body')}
+            onFocus={this.onFocus}
+            />
         </div>
-        <div className="comment-submit">
-          <button className="submit-button">{buttonText}</button>
-        </div>
+        {commentButton}
       </form>
     );
   }

@@ -59,6 +59,11 @@
     display: flex;
     justify-content: flex-start;
     align-items: center;
+    border-bottom: 1px solid $light-gray;
+    padding: 0 0 10px 0;
+    width: 441px;
+    position: relative;
+    left: -20px;
   }
 
   .avatar {
