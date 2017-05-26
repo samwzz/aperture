@@ -5,7 +5,7 @@ import UploadModal from '../modal/upload_modal';
 import CommentIndexContainer from '../comment/comment_index_container';
 import CommentFormContainer from '../comment/comment_form_container';
 import TagIndex from '../tag/tag_index';
-import TagFormContainer from '../tag/tag_form_container';
+import TagModal from '../modal/tag_modal';
 
 class PhotoDetail extends React.Component {
   constructor(props) {
@@ -87,7 +87,7 @@ class PhotoDetail extends React.Component {
           </div>
           <CommentIndexContainer />
           <TagIndex photo={photo} />
-          {this.addTag()}
+          <TagModal photo={this.props.photo}/>
         </div>
       </div>
     );

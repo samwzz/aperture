@@ -12,6 +12,11 @@
 
 .photo-modal {
   background-color: $darker-gray;
+
+  a, h2 {
+    color: white;
+    font-family: $sans-serif;
+  }
 }
 
 .upload-modal {

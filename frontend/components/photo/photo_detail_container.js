@@ -7,7 +7,7 @@ import PhotoDetail from './photo_detail';
 
 const mapStateToProps = (state, { match }) => {
   const photoId = parseInt(match.params.photoId);
-  const photo = selectPhoto(state, match.params.photoId) || {user: {}};
+  const photo = selectPhoto(state, match.params.photoId);
   return {
     currentUser: state.session.currentUser,
     photoId,

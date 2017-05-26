@@ -5,7 +5,7 @@
 
 .photo-show {
   display: flex;
-  flex-direction: column;
+  flex-direction: column
 }
 
 .photo-show-img {
@@ -16,5 +16,13 @@
 .album-select {
   position: absolute;
   right: 5%;
-  bottom: 5%;
+  bottom: 3%;
+
+  h2 {
+    color: white;
+  }
+
+  select {
+    border: none;
+  }
 }

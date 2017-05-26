@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import { fetchUserAlbums } from '../../actions/album_actions';
 import { updatePhoto } from '../../actions/photo_actions';
-import { selectAlbums, selectPhoto } from '../../reducers/selectors';
+import { selectAlbums } from '../../reducers/selectors';
 
 import PhotoShow from './photo_show';
 

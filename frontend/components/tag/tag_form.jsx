@@ -4,8 +4,10 @@ class TagForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      name: ""
+      name: "",
+      taggable_id: this.props.photo.id
     };
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   update(property) {
@@ -17,14 +19,6 @@ class TagForm extends React.Component {
     this.props.createTag(this.state);
   }
 
-  componentWillMount() {
-    if (this.props.tag !== undefined) {
-      this.setState({
-        body: this.props.tag.name
-      });
-    }
-  }
-
   render() {
     const { currentUser, photo } = this.props;
     return(
@@ -34,6 +28,7 @@ class TagForm extends React.Component {
           value={this.state.name}
           onChange={this.update('name')}
           />
+        <button className="tag-button">Add Tag</button>
       </form>
     );
   }
