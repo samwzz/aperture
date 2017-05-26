@@ -12,16 +12,21 @@ class CommentIndex extends React.Component {
   }
 
   render () {
-    const { comments, currentUser } = this.props;
+    const { comments, currentUser, deleteComment } = this.props;
     const commentItems = comments && comments.map((comment) => (
-      <CommentIndexItem key={`${comment.id}`} comment={comment} currentUser={currentUser} />
+      <CommentIndexItem
+        key={`${comment.id}`}
+        comment={comment}
+        currentUser={currentUser}
+        deleteComment={deleteComment}
+      />
     ));
 
     return (
       <section className="comment-index-container">
-        <div className="comment-index">
+        <ul className="comment-index">
           {commentItems}
-        </div>
+        </ul>
       </section>
     );
   }

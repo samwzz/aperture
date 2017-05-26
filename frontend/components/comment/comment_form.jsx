@@ -1,4 +1,5 @@
 import React from 'react';
+import { withRouter } from 'react-router-dom';
 
 class CommentForm extends React.Component {
   constructor(props) {
@@ -18,6 +19,12 @@ class CommentForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     this.props.createComment(this.state);
+ }
+
+ componentDidMount() {
+   this.setState({
+     photo_id: parseInt(this.props.match.params.photoId)
+   });
  }
 
   componentWillMount() {
@@ -64,4 +71,4 @@ class CommentForm extends React.Component {
   }
 }
 
-export default CommentForm;
+export default withRouter(CommentForm);

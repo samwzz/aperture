@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { fetchPhotoComments } from '../../actions/comment_actions';
+import { fetchPhotoComments, deleteComment } from '../../actions/comment_actions';
 import { selectComments } from '../../reducers/selectors';
 
 import CommentIndex from './comment_index';
@@ -10,7 +10,8 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  fetchPhotoComments: (photoId) => dispatch(fetchPhotoComments(photoId))
+  fetchPhotoComments: (photoId) => dispatch(fetchPhotoComments(photoId)),
+  deleteComment: (comment) => dispatch(deleteComment(comment)),
 });
 
 export default connect(
