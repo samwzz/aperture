@@ -150,13 +150,13 @@ p14 = Photo.create!(title: "Bokeh",
 Tag.destroy_all
 t1 = Tag.create!(name: "doge",
                 taggable_id: 1,
-                taggable_type: :Photo
+                taggable_type: "Photo"
                 )
 t1 = Tag.create!(name: "shiba",
                 taggable_id: 1,
-                taggable_type: :Photo
+                taggable_type: "Photo"
                 )
 t1 = Tag.create!(name: "cool",
                 taggable_id: 1,
-                taggable_type: :Photo
+                taggable_type: "Photo"
                 )
