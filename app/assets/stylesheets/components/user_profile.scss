@@ -47,6 +47,10 @@
   }
 }
 
+.active {
+  border-bottom: 2px solid $blue;
+}
+
 .header-spacer {
   min-height: 100px;
 }
@@ -57,7 +61,7 @@
   position: relative;
   margin: 0 auto;
   top: 50px;
-  z-index: 10;
+  z-index: 1;
 }
 
 .avatar-wrapper {

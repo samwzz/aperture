@@ -11,7 +11,7 @@ const defaultAlbum = Object.freeze({
   }
 });
 
-const AlbumReducer = (state = {}, action) => {
+const AlbumReducer = (state = defaultAlbum, action) => {
   Object.freeze(state);
   let nextState;
 
@@ -23,7 +23,7 @@ const AlbumReducer = (state = {}, action) => {
       return merge({}, state, newAlbum);
     case RECEIVE_ERRORS:
       const errors = action.errors;
-      return merge({}, { errors });
+      return merge({}, state, { errors });
     case REMOVE_ALBUM:
       nextState = merge({}, state);
       delete nextState[action.album.id];

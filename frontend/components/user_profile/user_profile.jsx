@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link, withRouter } from 'react-router-dom';
+import { NavLink, withRouter } from 'react-router-dom';
 import PhotoListContainer from '../photo/photo_list_container';
 
 class UserProfile extends React.Component {
@@ -32,10 +32,10 @@ class UserProfile extends React.Component {
           <div className="user-nav">
             <ul className="profile-tabs">
               <li id="photostream-tab">
-                <Link to={`/users/${this.props.currentUser.id}`}>Photostream</Link>
+                <NavLink exact to={`/users/${this.props.currentUser.id}`}>Photostream</NavLink>
               </li>
               <li id="album-tab">
-                <Link to={`/users/${this.props.currentUser.id}/albums`}>Albums</Link>
+                <NavLink to={`/users/${this.props.currentUser.id}/albums`}>Albums</NavLink>
               </li>
             </ul>
           </div>
