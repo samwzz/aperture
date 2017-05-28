@@ -22,7 +22,7 @@ class AlbumIndexItem extends React.Component {
         <div className="back-layer"></div>
         <div className="mid-layer"></div>
         <div className="album-item">
-          <Link to={`/users/${currentUser.id}/albums/${album.id}`}>
+          <Link to={`/users/${currentUser.id}/albums/${album.id}`} className="album-item">
             <img src={this.albumThumbnail()} />
           </Link>
         </div>

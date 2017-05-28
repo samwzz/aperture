@@ -13,14 +13,9 @@ class AlbumIndex extends React.Component {
 
   componentDidMount() {
     window.scrollTo(0, 0);
-    // $('#album-tab').addClass('active');
     // set numAlbums after fetching user albums
     this.props.fetchUserAlbums(this.props.currentUser.id);
   }
-
-  // componentWillUnmount() {
-  //   $('#album-tab').removeClass('active');
-  // }
 
   render () {
     let noAlbums;

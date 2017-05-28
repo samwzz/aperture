@@ -42,9 +42,12 @@ class PhotoModal extends React.Component {
     return (
         <div>
           <div className="photo-modal-container">
+            <div onClick={this.openModal} className="gradient">
+              <h1>{photo.title}</h1>
+            </div>
             <img
-              src={photo.image_url}
               onClick={this.openModal}
+              src={photo.image_url}
               className="photo-modal-image"
               />
             <div className="photo-heading-container">
