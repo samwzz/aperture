@@ -1,5 +1,5 @@
 .comment-index-container {
-  width: 50%;
+  width: 100%;
   margin: 15px 0;
 
   h1 {
@@ -29,7 +29,6 @@
 .comment-item {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
 }
 
 .comment-container {
@@ -95,9 +94,10 @@
 
 .comment-item-container {
   display: flex;
-  
+
 
   .comment-item {
     padding-left: 20px;
+    width: 50%;
   }
 }
