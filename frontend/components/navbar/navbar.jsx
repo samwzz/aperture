@@ -102,6 +102,17 @@ class Navbar extends React.Component {
     }
   }
 
+  discover() {
+    if (this.props.loggedIn) {
+      return(
+        <Link className="discover-link" to="/discover">
+          <i className="fa fa-compass"></i>
+          <span>Discover</span>
+        </Link>
+      );
+    }
+  }
+
   loginFormModal() {
     return(
       <Modal
@@ -146,10 +157,7 @@ class Navbar extends React.Component {
               <Link id="logo-text" to="/">Aperture</Link>
             </li>
             <li>
-              <Link className="discover-link" to="/discover">
-                <i className="fa fa-compass"></i>
-                <span>Discover</span>
-              </Link>
+              {this.discover()}
             </li>
           </ul>
         </nav>
