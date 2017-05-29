@@ -79,6 +79,7 @@ class SignupForm extends React.Component {
               className="login-input"
             />
             <input type="submit" value="Sign up" />
+            <input type="submit" value="Guest login" onClick={this.handleGuestLogin} />
             <div className="login-form-text">
               <div className="tos-statement">
                 By signing up, you agree to our
@@ -89,12 +90,6 @@ class SignupForm extends React.Component {
                 Already have an account?
                 <a href="#" onClick={this.switchForm}> Log in</a>
               </div>
-            </div>
-            <div className="login-form-text">or</div>
-            <div className="login-form-text">
-              <a href="#" onClick={this.handleGuestLogin}>
-                Continue as guest
-              </a>
             </div>
           </div>
         </form>
