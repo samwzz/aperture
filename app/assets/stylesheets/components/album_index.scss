@@ -91,5 +91,9 @@ a.new-album {
     padding: 0 5px;
     font-size: 20px;
     color: black;
+
+    &:hover {
+      color: $blue;
+    }
   }
 }

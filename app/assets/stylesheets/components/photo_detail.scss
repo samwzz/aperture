@@ -44,6 +44,10 @@
     a {
       color: $gray;
       font-size: 16px;
+
+      &:hover {
+        color: $light-gray;
+      }
     }
   }
 
