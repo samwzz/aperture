@@ -32,14 +32,18 @@ class AlbumShow extends React.Component {
         editButton = <AlbumModal album={this.props.album}
           receiveAlbumErrors={this.props.receiveAlbumErrors}
           formType="edit"/>;
-        deleteButton = <button className='delete-button'
-          onClick={this.confirmDelete}>Delete Album</button>;
+        deleteButton = <a className='delete-button'
+          onClick={this.confirmDelete}>
+          <i className="fa fa-trash"></i>
+        </a>;
         }
     }
     return(
       <section className="album-photo-index">
-        {editButton}
-        {deleteButton}
+        <div className="edit-delete-album">
+          {editButton}
+          {deleteButton}
+        </div>
         <PhotoIndexContainer photos={photos} />
       </section>
     );

@@ -74,9 +74,12 @@ class PhotoModal extends React.Component {
           contentLabel="PhotoModal"
           className="photo-modal"
           >
-          <a onClick={this.closeModal}>Back to photos</a>
+          <a onClick={this.closeModal} className="back">
+            <i className="fa fa-arrow-left"></i>
+            <span>Back to photos</span>
+          </a>
           <PhotoShowContainer key={photo.id} photo={photo} />
-          <Link to={`/photos/${photo.id}`}>See photo detail</Link>
+          <Link className="see-photo-detail" to={`/photos/${photo.id}`}>See photo detail</Link>
         </Modal>
       </div>
     );

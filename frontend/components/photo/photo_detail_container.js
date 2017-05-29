@@ -20,8 +20,7 @@ const mapDispatchToProps = (dispatch) => ({
   updatePhoto: photo => dispatch(updatePhoto(photo)),
   deletePhoto: photo => dispatch(deletePhoto(photo)),
   createTag: tag => dispatch(createTag(tag)),
-  deleteTag: tag => dispatch(deleteTag(tag)),
-  receivePhotoErrors: err => dispatch(receivePhotoErrors(err))
+  deleteTag: tag => dispatch(deleteTag(tag))
 });
 
 export default connect(

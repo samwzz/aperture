@@ -2,7 +2,7 @@
   display: flex;
   flex-flow: row wrap;
   justify-content: space-around;
-  padding: 70px 150px;
+  padding: 20px 150px;
   background-color: $off-white;
 
   .album-item-container {
@@ -63,4 +63,33 @@
   background: linear-gradient(0deg,rgba(0,0,0,.9) 0,transparent 50%,transparent);
   z-index: 2;
   position: absolute;
+}
+
+a.new-album {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  i {
+    font-size: 40px;
+    color: black;
+  }
+}
+
+.album-photo-index {
+  background-color: $off-white;
+}
+
+.edit-delete-album {
+  padding: 0 40px;
+  display: flex;
+  justify-content: flex-start;
+  position: absolute;
+  padding: 25px 50px;
+
+  i {
+    padding: 0 5px;
+    font-size: 20px;
+    color: black;
+  }
 }

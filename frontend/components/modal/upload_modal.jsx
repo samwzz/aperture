@@ -30,10 +30,15 @@ class UploadModal extends React.Component {
     let uploadLink;
     if (this.props.formType === "upload") {
       uploadLink = <a className="upload-link"
-        onClick={this.openModal}>Upload</a>;
+        onClick={this.openModal}>
+        <i className="fa fa-cloud-upload"></i>
+        <span>Upload</span>
+      </a>;
     } else if (this.props.formType === "edit") {
       uploadLink = <a className="edit-link"
-        onClick={this.openModal}>Edit Photo</a>;
+        onClick={this.openModal}>
+        <i className="fa fa-pencil-square-o"></i>
+        </a>;
     }
     return(
       <div className="upload-modal-container">

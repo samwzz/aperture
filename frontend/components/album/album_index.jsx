@@ -31,11 +31,17 @@ class AlbumIndex extends React.Component {
     return (
       <section className="album-index-container">
         <div className="album-index">
-          <AlbumModal receiveAlbumErrors={this.props.receiveAlbumErrors}
-            currentUser={this.props.currentUser}
-            formType="new" />
           {noAlbums}
           {albumItems}
+          <div className="album-item-container">
+            <div className="back-layer"></div>
+            <div className="mid-layer"></div>
+            <div className="album-item">
+              <AlbumModal receiveAlbumErrors={this.props.receiveAlbumErrors}
+                currentUser={this.props.currentUser}
+                formType="new" />
+            </div>
+          </div>
         </div>
       </section>
     );

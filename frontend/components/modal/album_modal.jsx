@@ -30,10 +30,14 @@ class AlbumModal extends React.Component {
     let albumLink;
     if (this.props.formType === "new") {
       albumLink = <a className="new-album"
-        onClick={this.openModal}>New Album</a>;
+        onClick={this.openModal}>
+        <i className="fa fa-plus"></i>
+      </a>;
     } else if (this.props.formType === "edit") {
       albumLink = <a className="edit-album"
-        onClick={this.openModal}>Edit Album</a>;
+        onClick={this.openModal}>
+        <i className="fa fa-pencil-square-o"></i>
+      </a>;
     }
     return(
       <div className="album-modal-container">

@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import UploadModal from '../modal/upload_modal';
 
 class PhotoShow extends React.Component {
   constructor(props) {
@@ -15,6 +16,7 @@ class PhotoShow extends React.Component {
     };
 
     this.handleSelect = this.handleSelect.bind(this);
+    this.confirmDelete = this.confirmDelete.bind(this);
   }
 
   componentDidMount() {
@@ -27,12 +29,21 @@ class PhotoShow extends React.Component {
     () => this.props.updatePhoto(this.state, this.props.photo.id));
   }
 
+  confirmDelete(e){
+    e.preventDefault();
+    var result = confirm("Are you sure you want to delete?");
+    if (result) {
+      this.props.deletePhoto(this.props.photo)
+        .then(data => this.props.history.push(`/discover`));
+    }
+  }
+
   selectAlbum() {
     const {photo, albums, currentUser } = this.props;
     if (photo.user_id === currentUser.id) {
       return(
         <form className="album-select">
-          <h2>Select Album</h2>
+          <i className="fa fa-book"></i>
           <select
             onChange={this.handleSelect}
             defaultValue="Select Album">
@@ -47,7 +58,19 @@ class PhotoShow extends React.Component {
   }
 
   render() {
-    const { photo } = this.props;
+    const { photo, currentUser } = this.props;
+    let editButton, deleteButton;
+    if (currentUser) {
+      if ( currentUser.id === photo.user_id ) {
+        editButton = <UploadModal photo={this.props.photo}
+          receivePhotoErrors={this.props.receivePhotoErrors}
+          formType="edit"/>;
+        deleteButton = <a className='delete-button'
+          onClick={this.confirmDelete}>
+          <i className="fa fa-trash"></i>
+        </a>;
+        }
+    }
     return (
       <div className="photo-show-container">
         <div className="photo-show">
@@ -55,7 +78,13 @@ class PhotoShow extends React.Component {
           <img className="photo-show-img" src={photo.image_url} />
           <p className="photo-show-description">{ photo.description }</p>
         </div>
-        {this.selectAlbum()}
+        <div className="photo-actions">
+          <ul className="edit-delete">
+            <li>{editButton}</li>
+            <li>{deleteButton}</li>
+          </ul>
+          <div>{this.selectAlbum()}</div>
+        </div>
       </div>
     );
   }
