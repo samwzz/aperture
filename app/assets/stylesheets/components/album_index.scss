@@ -36,9 +36,6 @@
     }
 
     .album-item {
-      display: flex;
-      justify-content: center;
-      align-items: center;
       width: 250px;
       height: 250px;
       overflow: hidden;
@@ -92,6 +89,8 @@ a.new-album {
   display: flex;
   justify-content: center;
   align-items: center;
+  height: 250px;
+  width: 250px;
 
   i {
     font-size: 40px;
