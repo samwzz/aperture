@@ -15,7 +15,7 @@ class TagIndexItem extends React.Component {
 
   deleteTag() {
     const { currentUser, photo } = this.props;
-    console.log(currentUser);
+
     if (currentUser.id === photo.user_id) {
       return(
         <a className="delete-tag" onClick={ this.handleDelete }>

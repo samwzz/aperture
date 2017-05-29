@@ -2,7 +2,7 @@ import * as APIUtil from '../util/album_api_util';
 
 export const RECEIVE_ALBUMS = "RECEIVE_ALBUMS";
 export const RECEIVE_ALBUM = "RECEIVE_ALBUM";
-export const RECEIVE_ERRORS = 'RECEIVE_ERRORS';
+export const RECEIVE_ALBUM_ERRORS = 'RECEIVE_ALBUM_ERRORS';
 export const REMOVE_ALBUM = 'REMOVE_ALBUM';
 
 export const receiveAlbums = albums => ({
@@ -20,9 +20,9 @@ export const removeAlbum = album => ({
   album
 });
 
-export const receiveAlbumErrors = errors => ({
-  type: RECEIVE_ERRORS,
-  errors
+export const receiveAlbumErrors = albumErrors => ({
+  type: RECEIVE_ALBUM_ERRORS,
+  albumErrors
 });
 
 export const fetchAlbum = id => dispatch => (

@@ -2,7 +2,7 @@ import * as APIUtil from '../util/tag_api_util';
 
 export const RECEIVE_TAGS = "RECEIVE_TAGS";
 export const RECEIVE_TAG = "RECEIVE_TAG";
-export const RECEIVE_ERRORS = 'RECEIVE_ERRORS';
+export const RECEIVE_TAG_ERRORS = 'RECEIVE_TAG_ERRORS';
 export const REMOVE_TAG = 'REMOVE_TAG';
 
 export const receiveTags = tags => ({
@@ -21,7 +21,7 @@ export const removeTag = tag => ({
 });
 
 export const receiveTagErrors = errors => ({
-  type: RECEIVE_ERRORS,
+  type: RECEIVE_TAG_ERRORS,
   errors
 });
 

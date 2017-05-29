@@ -1,11 +1,12 @@
 import { merge } from 'lodash';
-import { RECEIVE_TAGS, RECEIVE_TAG, REMOVE_TAG, RECEIVE_ERRORS } from '../actions/tag_actions';
+import { RECEIVE_TAGS, RECEIVE_TAG, REMOVE_TAG, RECEIVE_TAG_ERRORS } from '../actions/tag_actions';
 
 const defaultTag = Object.freeze({
   0: {
     id: 0,
     name: "",
-    photo_id: null
+    photo_id: null,
+    errors: []
   }
 });
 
@@ -19,7 +20,7 @@ const TagReducer = (state = {}, action) => {
     case RECEIVE_TAG:
       const newTag = {[action.tag.id]: action.tag};
       return merge({}, state, newTag);
-    case RECEIVE_ERRORS:
+    case RECEIVE_TAG_ERRORS:
       const errors = action.errors;
       return merge({}, { errors });
     case REMOVE_TAG:

@@ -1,12 +1,13 @@
 import { merge } from 'lodash';
-import { RECEIVE_COMMENTS, RECEIVE_COMMENT, REMOVE_COMMENT, RECEIVE_ERRORS } from '../actions/comment_actions';
+import { RECEIVE_COMMENTS, RECEIVE_COMMENT, REMOVE_COMMENT, RECEIVE_COMMENT_ERRORS } from '../actions/comment_actions';
 
 const defaultComment = Object.freeze({
   0: {
     id: 0,
     body: "",
     user_id: null,
-    photo_id: null
+    photo_id: null,
+    commentErrors: []
   }
 });
 
@@ -19,9 +20,9 @@ const CommentReducer = (state = {}, action) => {
     case RECEIVE_COMMENT:
       const newComment = {[action.comment.id]: action.comment};
       return merge({}, state, newComment);
-    case RECEIVE_ERRORS:
-      const errors = action.errors;
-      return merge({}, { errors });
+    case RECEIVE_COMMENT_ERRORS:
+      const commentErrors = action.commentErrors;
+      return merge({}, { commentErrors });
     case REMOVE_COMMENT:
       nextState = merge({}, state);
       delete nextState[action.comment.id];

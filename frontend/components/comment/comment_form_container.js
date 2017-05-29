@@ -4,7 +4,7 @@ import CommentForm from './comment_form';
 
 const mapStateToProps = ({ session, comments }, { photoId }) => ({
   currentUser: session.currentUser,
-  errors: comments.errors,
+  commentErrors: comments.commentErrors,
   photoId
 });
 
