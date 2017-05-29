@@ -36,13 +36,36 @@
     }
 
     .album-item {
+      display: flex;
+      justify-content: center;
+      align-items: center;
       width: 250px;
       height: 250px;
       overflow: hidden;
       background-size: cover;
       background: linear-gradient(0deg,rgba(0,0,0,.6) 0,transparent 50%,transparent);
 
-      a {
+      .gradient {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: linear-gradient(to bottom, transparent 0%, rgba(0,0,0,0.9) 100%);
+        opacity: 0;
+        transition: opacity 0.2s;
+        cursor: pointer;
+
+        &:hover {
+          opacity: 1;
+        }
+
+        h1 {
+          font-size: 24px;
+          color: white;
+          text-align: center;
+        }
+      }
+
+      .thumbnail {
         display: flex;
         justify-content: center;
         height: 250px;

@@ -15,15 +15,6 @@ class PhotoModal extends React.Component {
     this.afterModalOpen = this.afterModalOpen.bind(this);
   }
 
-  // componentDidUpdate() {
-  //   $(".photo-modals").justifiedGallery({
-  //     rowHeight : 300,
-  //     lastRow : 'justify',
-  //     margins : 8,
-  //     cssAnimation: false
-  //   });
-  // }
-
   openModal() {
     this.setState({ modalOpen: true });
   }

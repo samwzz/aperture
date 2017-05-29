@@ -23,7 +23,7 @@ u2 = User.create!(email: "user@example.com",
 # Album seeds
 
 Album.destroy_all
-a1 = Album.create(title: "album 1",
+a1 = Album.create(title: "Album 1",
                  description: "nice album 1",
                  user_id: u1.id
                  )
