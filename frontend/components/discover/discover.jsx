@@ -12,7 +12,7 @@ class Discover extends React.Component {
 
   render() {
     return(
-      <PhotoIndexContainer photos={this.props.photos}/>
+      <PhotoIndexContainer />
     );
   }
 }

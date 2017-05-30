@@ -26,7 +26,7 @@ class UserPhoto extends React.Component {
     return(
       <section className="user-photo">
         <h2 className="no-photo-msg">{noPhotos}</h2>
-        <PhotoIndexContainer photos={this.props.photos}/>
+        <PhotoIndexContainer />
       </section>
     );
   }

@@ -44,7 +44,7 @@ class AlbumShow extends React.Component {
           {editButton}
           {deleteButton}
         </div>
-        <PhotoIndexContainer photos={photos} />
+        <PhotoIndexContainer />
       </section>
     );
   }
