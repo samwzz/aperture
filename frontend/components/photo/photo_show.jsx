@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 import UploadModal from '../modal/upload_modal';
 
 class PhotoShow extends React.Component {
@@ -36,6 +36,7 @@ class PhotoShow extends React.Component {
       this.props.deletePhoto(this.props.photo)
         .then(data => this.props.history.push(`/discover`));
     }
+    console.log(this.props.history);
   }
 
   selectAlbum() {
@@ -90,4 +91,4 @@ class PhotoShow extends React.Component {
   }
 }
 
-export default PhotoShow;
+export default withRouter(PhotoShow);

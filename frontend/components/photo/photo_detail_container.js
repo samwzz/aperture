@@ -1,6 +1,5 @@
 import { connect } from 'react-redux';
-import { fetchPhoto, updatePhoto, deletePhoto, receivePhotoErrors } from '../../actions/photo_actions';
-import { createTag, deleteTag } from '../../actions/tag_actions';
+import { fetchPhoto } from '../../actions/photo_actions';
 import { selectPhoto } from '../../reducers/selectors';
 
 import PhotoDetail from './photo_detail';
@@ -16,11 +15,7 @@ const mapStateToProps = (state, { match }) => {
 };
 
 const mapDispatchToProps = (dispatch) => ({
-  fetchPhoto: id => dispatch(fetchPhoto(id)),
-  updatePhoto: photo => dispatch(updatePhoto(photo)),
-  deletePhoto: photo => dispatch(deletePhoto(photo)),
-  createTag: tag => dispatch(createTag(tag)),
-  deleteTag: tag => dispatch(deleteTag(tag))
+  fetchPhoto: id => dispatch(fetchPhoto(id))
 });
 
 export default connect(
