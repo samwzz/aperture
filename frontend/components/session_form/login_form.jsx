@@ -72,15 +72,10 @@ class LoginForm extends React.Component {
               className="login-input"
             />
             <input type="submit" value="Log in" />
+            <input type="submit" value="Guest login" onClick={this.handleGuestLogin} />
             <div className="login-form-text">
               Don't have an account?
               <a href="#" onClick={this.switchForm}> Sign up</a>
-            </div>
-            <div className="login-form-text">or</div>
-            <div className="login-form-text">
-              <a href="#" onClick={this.handleGuestLogin}>
-                Continue as guest
-              </a>
             </div>
           </div>
         </form>

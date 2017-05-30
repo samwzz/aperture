@@ -18,11 +18,21 @@
     font-family: $sans-serif;
   }
 
-  a:hover {
+  span:hover {
     text-decoration: underline;
+  }
+
+  .back {
+    i, span {
+      padding: 0 5px;
+    }
   }
 }
 
 .upload-modal {
   background-color: $off-white;
+}
+
+.see-photo-detail:hover {
+  text-decoration: underline;
 }

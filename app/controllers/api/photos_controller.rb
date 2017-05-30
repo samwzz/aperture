@@ -2,6 +2,8 @@ class Api::PhotosController < ApplicationController
   def index
     if params.key?(:user_id)
       @photos = Photo.where(user_id: params[:user_id])
+    elsif params.key?(:album_id)
+      @photos = Photo.where(album_id: params[:album_id])
     else
       @photos = Photo.all
     end

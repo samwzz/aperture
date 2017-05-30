@@ -9,12 +9,27 @@ class PhotoIndex extends React.Component {
     super(props);
   }
 
-  componentDidUpdate() {
-    $("#gallery").justifiedGallery({
-      rowHeight : 300,
-      lastRow : 'nojustify',
-      margins : 9,
-      cssAnimation: true,
+  photoAction() {
+    const { match, fetchPhotos, fetchUserPhotos, fetchAlbumPhotos } = this.props;
+
+    // decide whether to fetch all photos, only user photos, or album photos
+    if (match.path === "/users/:userId") {
+      return fetchUserPhotos(parseInt(match.params.userId));
+    } else if (match.path === "/users/:userId/albums/:albumId") {
+      return fetchAlbumPhotos(parseInt(match.params.albumId));
+    } else {
+      return fetchPhotos();
+    }
+  }
+
+  componentDidMount() {
+    this.photoAction().then(() => {
+      $("#gallery").justifiedGallery({
+        rowHeight : 290,
+        lastRow : 'nojustify',
+        margins : 9,
+        cssAnimation: true
+      });
     });
   }
 

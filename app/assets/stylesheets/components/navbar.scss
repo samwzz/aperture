@@ -39,7 +39,7 @@
 }
 
 .right-nav a {
-  padding: 0 20px;
+  padding: 0 15px;
 }
 
 // .left-nav a {
@@ -57,7 +57,7 @@
 
 #logo {
   display: flex;
-  padding: 0 10px 0 0;
+  padding: 0 15px 0 0;
 }
 
 #logo-image {
@@ -78,4 +78,33 @@
 a.discover-link {
   font-size: 14px;
   padding: 0 10px;
+}
+
+.main-nav {
+  a {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+.main-nav i {
+  font-size: 18px;
+}
+
+a.upload-link {
+  width: 75px;
+}
+
+a.user-profile-link {
+  width: 60px;
+  text-transform: capitalize;
+}
+
+a.header-button {
+  width: 75px;
+}
+
+a.discover-link {
+  width: 98px;
 }

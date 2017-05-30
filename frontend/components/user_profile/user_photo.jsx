@@ -10,15 +10,10 @@ class UserPhoto extends React.Component {
   }
 
   componentDidMount() {
-    $('#photostream-tab').addClass('active');
     this.props.fetchUserPhotos(parseInt(this.props.match.params["userId"]))
     .then(() => this.setState({
       numPhotos: this.props.photos.length
     }));
-  }
-
-  componentWillUnmount() {
-    $('#photostream-tab').removeClass('active');
   }
 
   render() {
@@ -31,7 +26,7 @@ class UserPhoto extends React.Component {
     return(
       <section className="user-photo">
         <h2 className="no-photo-msg">{noPhotos}</h2>
-        <PhotoIndexContainer photos={this.props.photos}/>
+        <PhotoIndexContainer />
       </section>
     );
   }

@@ -12,12 +12,27 @@ body {
 .photo-index {
   padding: 70px 40px;
   background-color: $off-white;
-}
 
-.photo-item {
+  .gradient {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, transparent 0%, rgba(0,0,0,0.9) 100%);
+    opacity: 0;
+    transition: opacity 0.2s;
+    cursor: pointer;
 
-  img {
+    &:hover {
+      opacity: 1;
+    }
 
+    h1 {
+      font-size: 24px;
+      color: white;
+      text-align: center;
+    }
   }
 }
 

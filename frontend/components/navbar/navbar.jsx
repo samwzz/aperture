@@ -86,15 +86,29 @@ class Navbar extends React.Component {
 
       return (
         <hgroup className="header-group">
-          <h2 className="header-name">Hi, {currentUser.username}!</h2>
           <Link className="user-profile-link" to={`/users/${currentUser.id}`}>
-            {currentUser.username}
+            <i className="fa fa-user"></i>
+            <span>{currentUser.username}</span>
           </Link>
-          <a className="header-button" onClick={logout}>Log Out</a>
+          <a className="header-button" onClick={logout}>
+            <i className="fa fa-sign-out"></i>
+            <span>Log Out</span>
+          </a>
           <UploadModal receivePhotoErrors={this.props.receivePhotoErrors}
             currentUser={this.props.currentUser}
             formType="upload" />
         </hgroup>
+      );
+    }
+  }
+
+  discover() {
+    if (this.props.loggedIn) {
+      return(
+        <Link className="discover-link" to="/discover">
+          <i className="fa fa-compass"></i>
+          <span>Discover</span>
+        </Link>
       );
     }
   }
@@ -143,7 +157,7 @@ class Navbar extends React.Component {
               <Link id="logo-text" to="/">Aperture</Link>
             </li>
             <li>
-              <Link className="discover-link" to="/discover">Discover</Link>
+              {this.discover()}
             </li>
           </ul>
         </nav>

@@ -4,7 +4,7 @@ import AlbumForm from './album_form';
 
 const mapStateToProps = ({ session, albums }) => ({
   currentUser: session.currentUser,
-  errors: albums.errors
+  albumErrors: albums.albumErrors
 });
 
 const mapDispatchToProps = (dispatch, ownProps) => ({

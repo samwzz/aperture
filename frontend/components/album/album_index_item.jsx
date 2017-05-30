@@ -22,9 +22,12 @@ class AlbumIndexItem extends React.Component {
         <div className="back-layer"></div>
         <div className="mid-layer"></div>
         <div className="album-item">
-          <Link to={`/users/${currentUser.id}/albums/${album.id}`}>
-            <img src={this.albumThumbnail()} />
+          <Link to={`/users/${currentUser.id}/albums/${album.id}`} className="album-item gradient">
+            <h1>{album.title}</h1>
           </Link>
+          <div className="thumbnail">
+            <img src={this.albumThumbnail()} />
+          </div>
         </div>
       </div>
     );

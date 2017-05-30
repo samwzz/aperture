@@ -30,7 +30,9 @@ class CommentModal extends React.Component {
     return(
       <div className="album-modal-container">
         <a className="edit-comment"
-            onClick={this.openModal}>Edit</a>
+            onClick={this.openModal}>
+          <i className="fa fa-pencil-square-o"></i>
+        </a>
         <Modal
           isOpen={this.state.modalOpen}
           onAfterOpen={this.afterModalOpen}

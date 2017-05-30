@@ -28,9 +28,9 @@ class CommentIndexItem extends React.Component {
           receiveCommentErrors={this.props.receiveCommentErrors}
         />;
         deleteButton =
-        <button className="edit-delete" onClick={ this.handleDelete }>
-          Delete
-        </button>;
+        <a className="edit-delete" onClick={ this.handleDelete }>
+          <i className="fa fa-trash"></i>
+        </a>;
         }
     }
     return(

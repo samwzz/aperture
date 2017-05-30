@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
-import { fetchUserAlbums } from '../../actions/album_actions';
-import { updatePhoto } from '../../actions/photo_actions';
+import { fetchUserAlbums, receivePhotoErrors } from '../../actions/album_actions';
+import { updatePhoto, deletePhoto } from '../../actions/photo_actions';
 import { selectAlbums } from '../../reducers/selectors';
 
 import PhotoShow from './photo_show';
@@ -12,7 +12,9 @@ const mapStateToProps = (state, { match }) => ({
 
 const mapDispatchToProps = dispatch => ({
   updatePhoto: (photo, id) => dispatch(updatePhoto(photo, id)),
-  fetchUserAlbums: (userId) => dispatch(fetchUserAlbums(userId))
+  deletePhoto: photo => dispatch(deletePhoto(photo)),
+  fetchUserAlbums: (userId) => dispatch(fetchUserAlbums(userId)),
+  receivePhotoErrors: err => dispatch(receivePhotoErrors(err))
 });
 
 export default connect(

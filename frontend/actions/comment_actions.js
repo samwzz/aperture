@@ -2,7 +2,7 @@ import * as APIUtil from '../util/comment_api_util';
 
 export const RECEIVE_COMMENTS = "RECEIVE_COMMENTS";
 export const RECEIVE_COMMENT = "RECEIVE_COMMENT";
-export const RECEIVE_ERRORS = 'RECEIVE_ERRORS';
+export const RECEIVE_COMMENT_ERRORS = 'RECEIVE_COMMENT_ERRORS';
 export const REMOVE_COMMENT = 'REMOVE_COMMENT';
 
 export const receiveComments = comments => ({
@@ -20,9 +20,9 @@ export const removeComment = comment => ({
   comment
 });
 
-export const receiveCommentErrors = errors => ({
-  type: RECEIVE_ERRORS,
-  errors
+export const receiveCommentErrors = commentErrors => ({
+  type: RECEIVE_COMMENT_ERRORS,
+  commentErrors
 });
 
 export const fetchPhotoComments = photoId => dispatch => (

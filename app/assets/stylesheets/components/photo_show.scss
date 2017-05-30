@@ -1,6 +1,8 @@
 .photo-show-container {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .photo-show {
@@ -14,15 +16,37 @@
 }
 
 .album-select {
-  position: absolute;
-  right: 5%;
-  bottom: 2%;
-
-  h2 {
-    color: white;
+  i {
+    color: $light-gray;
+    padding: 0 5px;
   }
 
   select {
     border: none;
+  }
+}
+
+.photo-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 30px 0 15px;
+
+  i {
+    font-size: 18px;
+  }
+
+  .edit-delete {
+    display: flex;
+
+    i {
+      padding: 0 5px;
+      color: $light-gray;
+
+      &:hover {
+        color: white;
+      }
+    }
   }
 }

@@ -15,15 +15,6 @@ class PhotoModal extends React.Component {
     this.afterModalOpen = this.afterModalOpen.bind(this);
   }
 
-  // componentDidUpdate() {
-  //   $(".photo-modals").justifiedGallery({
-  //     rowHeight : 300,
-  //     lastRow : 'justify',
-  //     margins : 8,
-  //     cssAnimation: false
-  //   });
-  // }
-
   openModal() {
     this.setState({ modalOpen: true });
   }
@@ -42,9 +33,12 @@ class PhotoModal extends React.Component {
     return (
         <div>
           <div className="photo-modal-container">
+            <div onClick={this.openModal} className="gradient">
+              <h1>{photo.title}</h1>
+            </div>
             <img
-              src={photo.image_url}
               onClick={this.openModal}
+              src={photo.image_url}
               className="photo-modal-image"
               />
             <div className="photo-heading-container">
@@ -71,9 +65,12 @@ class PhotoModal extends React.Component {
           contentLabel="PhotoModal"
           className="photo-modal"
           >
-          <a onClick={this.closeModal}>Back to photos</a>
+          <a onClick={this.closeModal} className="back">
+            <i className="fa fa-arrow-left"></i>
+            <span>Back to photos</span>
+          </a>
           <PhotoShowContainer key={photo.id} photo={photo} />
-          <Link to={`/photos/${photo.id}`}>See photo detail</Link>
+          <Link className="see-photo-detail" to={`/photos/${photo.id}`}>See photo detail</Link>
         </Modal>
       </div>
     );

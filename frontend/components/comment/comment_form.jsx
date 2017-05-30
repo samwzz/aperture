@@ -73,7 +73,7 @@ class CommentForm extends React.Component {
   renderErrors() {
     return(
       <ul className="errors">
-        {this.props.errors && this.props.errors.map((error, i) => (
+        {this.props.commentErrors && this.props.commentErrors.map((error, i) => (
           <li key={`error-${i}`}>
             {error}
           </li>
@@ -91,6 +91,7 @@ class CommentForm extends React.Component {
     return(
       <form className="comment-form-container" onSubmit={this.handleSubmit}>
         <div className="comment-form">
+          {this.renderErrors()}
           <textarea className="textarea"
             type="text"
             placeholder="Add a comment"
