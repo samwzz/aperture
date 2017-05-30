@@ -36,7 +36,6 @@ class PhotoShow extends React.Component {
       this.props.deletePhoto(this.props.photo)
         .then(data => this.props.history.push(`/discover`));
     }
-    console.log(this.props.history);
   }
 
   selectAlbum() {
