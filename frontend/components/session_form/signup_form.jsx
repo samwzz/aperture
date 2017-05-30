@@ -55,7 +55,7 @@ class SignupForm extends React.Component {
       <div className="login-form-container">
         <form onSubmit={this.handleSubmit} className="login-form-box">
           <div className="form-logo">
-            <img src="https://res.cloudinary.com/db1ywnpgj/image/upload/v1495219123/fstop_pz6x63.png"/>
+            <img src="http://res.cloudinary.com/db1ywnpgj/image/upload/v1495219123/aperture_logo.png"/>
           </div>
           <h1>Join Aperture</h1>
           {this.renderErrors()}
