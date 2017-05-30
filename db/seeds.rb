@@ -361,7 +361,7 @@ t19 = Tag.create!(name: "stars",
                 taggable_id: 33,
                 taggable_type: "Photo"
                 )
-t20 = Tag.create!(name: "night",
+t20 = Tag.create!(name: "lake",
                 taggable_id: 33,
                 taggable_type: "Photo"
                 )
