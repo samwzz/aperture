@@ -1,4 +1,5 @@
 import React from 'react';
+import { withRouter } from 'react-router';
 
 class SignupForm extends React.Component {
   constructor(props) {
@@ -22,13 +23,15 @@ class SignupForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     const user = Object.assign({}, this.state);
-    this.props.signup(user).then(() => this.props.closeSignupModal());
+    this.props.signup(user).then(() => this.props.closeSignupModal())
+    .then(() => this.props.history.push("/discover"));
   }
 
   handleGuestLogin(e) {
     e.preventDefault();
     this.props.login({username: "guest", password: "password"})
-      .then(() => this.props.closeSignupModal());
+      .then(() => this.props.closeSignupModal())
+      .then(() => this.props.history.push("/discover"));
   }
 
   switchForm(e) {
@@ -98,4 +101,4 @@ class SignupForm extends React.Component {
   }
 }
 
-export default SignupForm;
+export default withRouter(SignupForm);

@@ -40,7 +40,7 @@ class PhotoList extends React.Component {
 
   render () {
     const { photos } = this.props;
-    const photoModals = photos.map((photo) => (
+    const photoModals = photos.reverse().map((photo) => (
       <PhotoModal className="photo-modal" key={`${photo.id}-user`} photo={photo} />
     ));
     let noPhotos;
