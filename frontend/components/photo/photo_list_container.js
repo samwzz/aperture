@@ -10,7 +10,7 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  fetchPhotos: () => dispatch(fetchPhotos()),
+  fetchPhotos: (offset) => dispatch(fetchPhotos(offset)),
   fetchUserPhotos: (userId) => dispatch(fetchUserPhotos(userId))
 });
 

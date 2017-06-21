@@ -25,8 +25,8 @@ export const receivePhotoErrors = errors => ({
   errors
 });
 
-export const fetchPhotos = () => dispatch => (
-  APIUtil.fetchPhotos().then(photos => (
+export const fetchPhotos = offset => dispatch => (
+  APIUtil.fetchPhotos(offset).then(photos => (
     dispatch(receivePhotos(photos))
   ))
 );

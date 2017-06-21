@@ -1,11 +1,11 @@
 class Api::PhotosController < ApplicationController
   def index
     if params.key?(:user_id)
-      @photos = Photo.where(user_id: params[:user_id])
+      @photos = Photo.where(user_id: params[:user_id]).order(updated_at: :asc)
     elsif params.key?(:album_id)
-      @photos = Photo.where(album_id: params[:album_id])
+      @photos = Photo.where(album_id: params[:album_id]).order(updated_at: :asc)
     else
-      @photos = Photo.all
+      @photos = Photo.order(updated_at: :asc).limit(10).offset(params[:offset])
     end
 
     render :index
