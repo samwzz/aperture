@@ -11,7 +11,8 @@ const PhotoModalStyle = {
   },
   content : {
     position                   : 'fixed',
-    top                        : '5%',
+    top                        : '2%',
+    bottom                     : '2%',
     left                       : '10%',
     right                      : '10%',
     // border                     : '1px solid black',
