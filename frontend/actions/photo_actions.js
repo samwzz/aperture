@@ -31,6 +31,12 @@ export const fetchPhotos = offset => dispatch => (
   ))
 );
 
+export const fetchAllPhotos = () => dispatch => (
+  APIUtil.fetchPhotos().then(photos => (
+    dispatch(receivePhotos(photos))
+  ))
+);
+
 export const fetchPhoto = id => dispatch => (
   APIUtil.fetchPhoto(id).then(photo => (
     dispatch(receivePhoto(photo))

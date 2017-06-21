@@ -6,6 +6,13 @@ export const fetchPhotos = (offset) => (
   })
 );
 
+export const fetchAllPhotos = () => (
+  $.ajax({
+    method: 'GET',
+    url: '/api/photos'
+  })
+);
+
 export const fetchPhoto = id => (
   $.ajax({
     method: 'GET',

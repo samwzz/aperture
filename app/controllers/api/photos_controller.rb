@@ -4,8 +4,10 @@ class Api::PhotosController < ApplicationController
       @photos = Photo.where(user_id: params[:user_id]).order(updated_at: :asc)
     elsif params.key?(:album_id)
       @photos = Photo.where(album_id: params[:album_id]).order(updated_at: :asc)
-    else
+    elsif params.key?(:offset)
       @photos = Photo.order(updated_at: :asc).limit(10).offset(params[:offset])
+    else
+      @photos = Photo.all
     end
 
     render :index
