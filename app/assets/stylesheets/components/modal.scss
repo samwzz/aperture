@@ -33,6 +33,8 @@
   background-color: $off-white;
 }
 
-.see-photo-detail:hover {
-  text-decoration: underline;
+.detail-button-container {
+  display: flex;
+  justify-content: center;
+  margin-top: -10px;
 }

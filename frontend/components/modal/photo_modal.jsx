@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { withRouter } from 'react-router';
 import PhotoShowContainer from '../photo/photo_show_container';
 import Modal from 'react-modal';
 import PhotoModalStyle from './photo_modal_style';
@@ -13,6 +14,11 @@ class PhotoModal extends React.Component {
     this.openModal = this.openModal.bind(this);
     this.closeModal = this.closeModal.bind(this);
     this.afterModalOpen = this.afterModalOpen.bind(this);
+    this.handleClick = this.handleClick.bind(this);
+  }
+
+  handleClick() {
+    this.props.history.push(`/photos/${this.props.photo.id}`);
   }
 
   openModal() {
@@ -70,11 +76,13 @@ class PhotoModal extends React.Component {
             <span>Back to photos</span>
           </a>
           <PhotoShowContainer key={photo.id} photo={photo} />
-          <Link className="see-photo-detail" to={`/photos/${photo.id}`}>See photo detail</Link>
+          <div className="detail-button-container">
+            <button className="see-photo-detail" onClick={this.handleClick}>See photo detail</button>
+          </div>
         </Modal>
       </div>
     );
   }
 }
 
-export default PhotoModal;
+export default withRouter(PhotoModal);
