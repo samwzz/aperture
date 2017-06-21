@@ -15,24 +15,6 @@ class PhotoList extends React.Component {
     this.loadMore = this.loadMore.bind(this);
   }
 
-  // componentDidMount() {
-  //   window.scrollTo(0, 0);
-  //   const { fetchPhotos, fetchUserPhotos, currentUser } = this.props;
-  //   if (this.props.match.path === "/users/:userId") {
-  //     $('#photostream-tab').addClass('active');
-  //     fetchUserPhotos(currentUser.id)
-  //     .then(() => this.setState({
-  //       numPhotos: this.props.photos.length
-  //     }));
-  //   } else {
-  //     fetchPhotos();
-  //   }
-  // }
-
-  componentWillMount() {
-
-  }
-
   componentWillUnmount() {
     $('#photostream-tab').removeClass('active');
   }
@@ -46,8 +28,7 @@ class PhotoList extends React.Component {
   }
 
   hasMore() {
-    // return (this.props.photos.length > this.state.loaded);
-    return true;
+    return this.props.photos.length > 0;
   }
 
   loadMore(page) {
