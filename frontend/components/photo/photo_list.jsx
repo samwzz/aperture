@@ -51,7 +51,7 @@ class PhotoList extends React.Component {
   }
 
   loadMore(page) {
-    const loaded = 10 * (page - 1);
+    const loaded = 5 * (page - 1);
     this.props.fetchPhotos(loaded)
       .then(()=> {
         const photos = this.state.photos;
