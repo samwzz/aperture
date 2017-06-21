@@ -1,4 +1,12 @@
-export const fetchPhotos = () => (
+export const fetchPhotos = (offset) => (
+  $.ajax({
+    method: 'GET',
+    url: '/api/photos',
+    data: { offset }
+  })
+);
+
+export const fetchAllPhotos = () => (
   $.ajax({
     method: 'GET',
     url: '/api/photos'

@@ -10,7 +10,7 @@ class PhotoIndex extends React.Component {
   }
 
   photoAction() {
-    const { match, fetchPhotos, fetchUserPhotos, fetchAlbumPhotos } = this.props;
+    const { match, fetchAllPhotos, fetchUserPhotos, fetchAlbumPhotos } = this.props;
 
     // decide whether to fetch all photos, only user photos, or album photos
     if (match.path === "/users/:userId") {
@@ -18,7 +18,7 @@ class PhotoIndex extends React.Component {
     } else if (match.path === "/users/:userId/albums/:albumId") {
       return fetchAlbumPhotos(parseInt(match.params.albumId));
     } else {
-      return fetchPhotos();
+      return fetchAllPhotos();
     }
   }
 
