@@ -24,14 +24,14 @@ class SignupForm extends React.Component {
     e.preventDefault();
     const user = Object.assign({}, this.state);
     this.props.signup(user).then(() => this.props.closeSignupModal())
-    .then(() => this.props.history.push("/discover"));
+    .then(() => this.props.history.push("/"));
   }
 
   handleGuestLogin(e) {
     e.preventDefault();
     this.props.login({username: "guest", password: "password"})
       .then(() => this.props.closeSignupModal())
-      .then(() => this.props.history.push("/discover"));
+      .then(() => this.props.history.push("/"));
   }
 
   switchForm(e) {

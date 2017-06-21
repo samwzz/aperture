@@ -24,14 +24,14 @@ class LoginForm extends React.Component {
     const user = Object.assign({}, this.state);
     this.props.login(user)
       .then(() => this.props.closeLoginModal())
-      .then(() => this.props.history.push("/discover"));
+      .then(() => this.props.history.push("/"));
   }
 
   handleGuestLogin(e) {
     e.preventDefault();
     this.props.login({username: "guest", password: "password"})
       .then(() => this.props.closeLoginModal())
-      .then(() => this.props.history.push("/discover"));
+      .then(() => this.props.history.push("/"));
   }
 
   switchForm(e) {
