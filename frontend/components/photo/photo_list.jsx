@@ -15,10 +15,6 @@ class PhotoList extends React.Component {
     this.loadMore = this.loadMore.bind(this);
   }
 
-  componentWillUnmount() {
-    $('#photostream-tab').removeClass('active');
-  }
-
   openModal() {
     this.setState({ modalOpen: true });
   }
