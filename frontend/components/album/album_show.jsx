@@ -2,6 +2,7 @@ import React from 'react';
 import { withRouter } from 'react-router-dom';
 import PhotoIndexContainer from '../photo/photo_index_container';
 import AlbumModal from '../modal/album_modal';
+import UserProfileContainer from '../user_profile/user_profile_container';
 
 class AlbumShow extends React.Component {
   constructor(props) {
@@ -40,6 +41,7 @@ class AlbumShow extends React.Component {
     }
     return(
       <section className="album-photo-index">
+        <UserProfileContainer />
         <div className="edit-delete-album">
           {editButton}
           {deleteButton}

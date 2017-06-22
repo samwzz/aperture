@@ -2,6 +2,7 @@ import React from 'react';
 import {withRouter, Route } from 'react-router-dom';
 import AlbumIndexItem from '../album/album_index_item';
 import AlbumModal from '../modal/album_modal';
+import UserProfileContainer from '../user_profile/user_profile_container';
 
 class AlbumIndex extends React.Component {
   constructor(props) {
@@ -30,6 +31,7 @@ class AlbumIndex extends React.Component {
 
     return (
       <section className="album-index-container">
+        <UserProfileContainer />
         <div className="album-index">
           {noAlbums}
           {albumItems}

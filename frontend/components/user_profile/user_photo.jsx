@@ -1,6 +1,6 @@
 import React from 'react';
 import PhotoIndexContainer from '../photo/photo_index_container';
-import UserProfileContainer from './user_profile/user_profile_container';
+import UserProfileContainer from './user_profile_container';
 
 class UserPhoto extends React.Component {
   constructor(props) {
