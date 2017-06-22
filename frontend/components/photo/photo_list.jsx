@@ -36,7 +36,7 @@ class PhotoList extends React.Component {
     this.props.fetchPhotos(loaded)
       .then(()=> {
         const photos = this.state.photos;
-        this.props.photos.forEach(photo => photos.push(photo));
+        this.props.photos.reverse().forEach(photo => photos.push(photo));
       });
   }
 

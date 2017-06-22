@@ -5,7 +5,7 @@ class Api::PhotosController < ApplicationController
     elsif params.key?(:album_id)
       @photos = Photo.where(album_id: params[:album_id]).order(updated_at: :asc)
     elsif params.key?(:offset)
-      @photos = Photo.order(updated_at: :asc).limit(5).offset(params[:offset])
+      @photos = Photo.order(id: :desc).limit(5).offset(params[:offset])
     else
       @photos = Photo.all
     end
