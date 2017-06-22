@@ -41,7 +41,6 @@ class AlbumShow extends React.Component {
     }
     return(
       <section className="album-photo-index">
-        <UserProfileContainer />
         <div className="edit-delete-album">
           {editButton}
           {deleteButton}
