@@ -12,7 +12,7 @@ class PhotoIndex extends React.Component {
     };
   }
 
-  photoAction() {
+  fetchPhotos() {
     const { match, fetchAllPhotos, fetchUserPhotos, fetchAlbumPhotos } = this.props;
 
     // decide whether to fetch all photos, only user photos, or album photos
@@ -26,15 +26,14 @@ class PhotoIndex extends React.Component {
     }
   }
 
-  componentDidMount() {
-    this.photoAction().then(() => {
+  componentWillMount() {
+    this.fetchPhotos().then(() => {
       $("#gallery").justifiedGallery({
         rowHeight : 300,
         lastRow : 'justify',
         margins : 9,
-        cssAnimation: true,
         randomize: this.state.randomize
-      });
+      }, "norewind");
     });
   }
 
