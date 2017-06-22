@@ -7,14 +7,36 @@ class UserProfile extends React.Component {
     super(props);
   }
 
-  componentDidUpdate() {
-    $('.cover-photo').parallax({
-      imageSrc: 'https://res.cloudinary.com/db1ywnpgj/image/upload/v1495179973/pexels-photo-141635_ueizkw.jpg'
-    });
+  fetchPhotos() {
+    const { match, fetchUserPhotos, fetchAlbumPhotos } = this.props;
+    if (match.path === "/users/:userId") {
+      return fetchUserPhotos(parseInt(match.params.userId));
+    } else if (match.path === "/users/:userId/albums/:albumId") {
+      return fetchAlbumPhotos(parseInt(match.params.albumId));
+    }
   }
 
   componentWillUnmount() {
     $('.parallax-mirror').remove();
+  }
+
+  componentWillMount() {
+    this.fetchPhotos()
+    .then(() => {
+      const photo = this.props.photos[Math.floor(Math.random() * this.props.photos.length)];
+      $('.cover-photo').parallax({
+        imageSrc: photo.image_url
+      });
+    });
+  }
+
+  componentDidUpdate() {
+    const photo = this.props.photos[Math.floor(Math.random() * this.props.photos.length)];
+    if (true) {
+      $('.cover-photo').parallax({
+        imageSrc: photo.image_url
+      });
+    }
   }
 
   render () {
