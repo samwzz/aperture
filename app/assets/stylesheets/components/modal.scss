@@ -27,6 +27,19 @@
       padding: 0 5px 15px 5px;
     }
   }
+
+  .photo-header {
+    h1 {
+      color: white;
+      font-weight: bold;
+      font-size: 16px;
+      padding: 2px;
+    }
+    h2 {
+      color: $light-gray;
+      padding: 2px;
+    }
+  }
 }
 
 .upload-modal {
@@ -36,5 +49,5 @@
 .detail-button-container {
   display: flex;
   justify-content: center;
-  margin-top: -10px;
+  margin-top: -40px;
 }

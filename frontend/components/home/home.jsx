@@ -145,6 +145,30 @@ class Home extends React.Component {
     }
   }
 
+  footer() {
+    if (!this.props.loggedIn) {
+      return(
+        <footer className="footer">
+          <div className="github-link">
+            <a href="https://github.com/samwzz/aperture">
+              <i className="fa fa-github"></i>
+            </a>
+          </div>
+          <div className="linkedin-link">
+            <a href="https://www.linkedin.com/in/sam-wang-665980139/">
+              <i className="fa fa-linkedin"></i>
+            </a>
+          </div>
+          <div className="email-link">
+            <a href="mailto:sam.zz.wang@gmail.com">
+              <i className="fa fa-envelope"></i>
+            </a>
+          </div>
+        </footer>
+      );
+    }
+  }
+
   render() {
     const { currentUser, logout, loggedIn } = this.props;
 
@@ -155,6 +179,7 @@ class Home extends React.Component {
         {this.landing()}
         {this.allPhotos()}
         {this.scrollingBG()}
+        {this.footer()}
       </section>
     );
   }

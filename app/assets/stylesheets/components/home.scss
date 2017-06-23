@@ -77,3 +77,39 @@ button.get-started {
   height: 50px;
   font-size: 20px;
 }
+
+footer {
+  width: 100%;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  bottom: 0;
+  margin-top: -50px;
+  font-size: 36px;
+  background-color: rgba(0,0,0,0.6);
+  z-index: 10;
+}
+
+footer div {
+  height: 36px;
+  width: 36px;
+  margin: 0 25px;
+}
+
+footer a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+footer i {
+  color: white;
+  opacity: .5;
+  transition: opacity 0.2s;
+}
+
+footer i:hover {
+  opacity: 1;
+}

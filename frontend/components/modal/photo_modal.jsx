@@ -76,6 +76,10 @@ class PhotoModal extends React.Component {
             <span>Back to photos</span>
           </a>
           <PhotoShowContainer key={photo.id} photo={photo} />
+          <div className="photo-header">
+            <h1>{photo.user.username}</h1>
+            <h2>{photo.title}</h2>
+          </div>
           <div className="detail-button-container">
             <button className="see-photo-detail" onClick={this.handleClick}>See photo detail</button>
           </div>
