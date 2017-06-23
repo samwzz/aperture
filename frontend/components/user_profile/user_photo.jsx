@@ -1,5 +1,6 @@
 import React from 'react';
 import PhotoIndexContainer from '../photo/photo_index_container';
+import UserProfileContainer from './user_profile_container';
 
 class UserPhoto extends React.Component {
   constructor(props) {
@@ -24,10 +25,13 @@ class UserPhoto extends React.Component {
     }
 
     return(
-      <section className="user-photo">
-        <h2 className="no-photo-msg">{noPhotos}</h2>
-        <PhotoIndexContainer />
-      </section>
+      <div>
+        <UserProfileContainer photos={this.props.photos}/>
+        <section className="user-photo">
+          <h2 className="no-photo-msg">{noPhotos}</h2>
+          <PhotoIndexContainer />
+        </section>
+      </div>
     );
   }
 }

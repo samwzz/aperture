@@ -8,8 +8,9 @@ class UserProfile extends React.Component {
   }
 
   componentDidUpdate() {
+    const photo = this.props.photos[Math.floor(Math.random() * this.props.photos.length)];
     $('.cover-photo').parallax({
-      imageSrc: 'https://res.cloudinary.com/db1ywnpgj/image/upload/v1495179973/pexels-photo-141635_ueizkw.jpg'
+      imageSrc: photo.image_url
     });
   }
 

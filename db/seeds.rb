@@ -369,3 +369,53 @@ t21 = Tag.create!(name: "sky",
                 taggable_id: 33,
                 taggable_type: "Photo"
                 )
+t22 = Tag.create!(name: "space",
+                taggable_id: 37,
+                taggable_type: "Photo"
+                )
+t23 = Tag.create!(name: "rocket",
+                taggable_id: 37,
+                taggable_type: "Photo"
+                )
+t24 = Tag.create!(name: "stars",
+                taggable_id: 37,
+                taggable_type: "Photo"
+                )
+t25 = Tag.create!(name: "aurora",
+                taggable_id: 36,
+                taggable_type: "Photo"
+                )
+t26 = Tag.create!(name: "stars",
+                taggable_id: 36,
+                taggable_type: "Photo"
+                )
+t27 = Tag.create!(name: "lake",
+                taggable_id: 36,
+                taggable_type: "Photo"
+                )
+t28 = Tag.create!(name: "sky",
+                taggable_id: 35,
+                taggable_type: "Photo"
+                )
+t29 = Tag.create!(name: "stars",
+                taggable_id: 35,
+                taggable_type: "Photo"
+                )
+t30 = Tag.create!(name: "mountain",
+                taggable_id: 35,
+                taggable_type: "Photo"
+                )
+
+# Comment seeds
+
+Comment.destroy_all
+
+comments = ["wow!", "much cool!", "such photo!", "so impress!", "amaze!"]
+
+(1..Photo.count).each do |photo_id|
+  random_comments = comments.sample(3)
+  user_id = (1..User.count).to_a
+  random_comments.each do |comment|
+    Comment.create!(body: comment, user_id: user_id.sample, photo_id: photo_id)
+  end
+end

@@ -7,6 +7,9 @@ import Modal from 'react-modal';
 class PhotoIndex extends React.Component {
   constructor(props) {
     super(props);
+    this.state = {
+      randomize: false
+    };
   }
 
   photoAction() {
@@ -18,6 +21,7 @@ class PhotoIndex extends React.Component {
     } else if (match.path === "/users/:userId/albums/:albumId") {
       return fetchAlbumPhotos(parseInt(match.params.albumId));
     } else {
+      this.setState({ randomize: true });
       return fetchAllPhotos();
     }
   }
@@ -28,7 +32,8 @@ class PhotoIndex extends React.Component {
         rowHeight : 300,
         lastRow : 'justify',
         margins : 9,
-        cssAnimation: true
+        cssAnimation: true,
+        randomize: this.state.randomize
       });
     });
   }

@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { fetchPhotos, fetchUserPhotos } from '../../actions/photo_actions';
+import { fetchUserPhotos, fetchAlbumPhotos } from '../../actions/photo_actions';
 import { selectPhotos } from '../../reducers/selectors';
 
 import UserProfile from './user_profile';
@@ -10,8 +10,8 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  fetchPhotos: () => dispatch(fetchPhotos()),
-  fetchUserPhotos: (userId) => dispatch(fetchUserPhotos(userId))
+  fetchUserPhotos: (userId) => dispatch(fetchUserPhotos(userId)),
+  fetchAlbumPhotos: (albumId) => dispatch(fetchAlbumPhotos(albumId))
 });
 
 export default connect(
