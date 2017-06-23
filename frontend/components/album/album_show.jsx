@@ -2,6 +2,7 @@ import React from 'react';
 import { withRouter } from 'react-router-dom';
 import PhotoIndexContainer from '../photo/photo_index_container';
 import AlbumModal from '../modal/album_modal';
+import UserProfileContainer from '../user_profile/user_profile_container';
 
 class AlbumShow extends React.Component {
   constructor(props) {
