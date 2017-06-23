@@ -1,18 +1,21 @@
 # Aperture
 
-[Live site][heroku]
+[Live site][aperture]
 
-[heroku]: http://www.aperture-app.herokuapp.com
+[aperture]: http://www.aperture.world
 
 Aperture is a web application inspired by Flickr built using Ruby on Rails and React/Redux.
 
 It utilizes the following technologies:
+* React.js with a Redux architectural framework
 * Ruby on Rails backend
 * PostgreSQL database
-* React.js with a Redux architectural framework frontend
-
 
 ## Features & Implementation
+
+[Design Docs][docs]
+
+[docs]: docs/
 
 ### Note Rendering and Editing
 
@@ -66,6 +69,9 @@ Using [React Modals](https://github.com/reactjs/react-modal) to create a zoomed 
   <Link to={`/photos/${photo.id}`}>See photo detail</Link>
 </Modal>
 ```
+
+### Infinite Scroll
+
 
 
 ### Justified Gallery
