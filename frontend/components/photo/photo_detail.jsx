@@ -59,7 +59,8 @@ class PhotoDetail extends React.Component {
               </div>
               <div className="photo-header">
                 <h1>{photo.user ? photo.user.username : ""}</h1>
-                <h1>{photo.title}</h1>
+                <h2>{photo.title}</h2>
+                <p>{photo.description}</p>
               </div>
             </div>
             <CommentIndexContainer />
