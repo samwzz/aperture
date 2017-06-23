@@ -19,13 +19,17 @@ It utilizes the following technologies:
 
 ### Note Rendering and Editing
 
-  Photos are rendered in two different components: the `PhotoList` component, which shows photos and their respective heading in a scrollable list format, and the `PhotoIndex` component, displays photos in a justified gallery view. In both components, photos can be viewed using React Modals
+Photos are rendered in two different components: the `PhotoList` component, which shows photos and their respective heading in a scrollable list format, and the `PhotoIndex` component, displays photos in a justified gallery view.
 
-![image of photo index](docs/wireframes/home-logged-in.png)
+![gallery](docs/images/gallery1.gif)
+
+In both components, photos can be viewed using React Modals.
+
+![modal](docs/images/modal.gif)
 
 ### Single Page App
 
-Flickr uses [React Router](https://github.com/ReactTraining/react-router) to keep all its content on a single root page.
+Aperture uses [React Router](https://github.com/ReactTraining/react-router) to keep all its content on a single root page.
 
 ```html
 // root.jsx
@@ -69,9 +73,13 @@ Using [React Modals](https://github.com/reactjs/react-modal) to create a zoomed 
   <Link to={`/photos/${photo.id}`}>See photo detail</Link>
 </Modal>
 ```
+![modal](docs/images/modal1.gif)
 
 ### Infinite Scroll
 
+ To reduce load time, photos are sequentially fetched as the user scrolls to the bottom of the page.
+
+![scroll](docs/images/scroll.gif)
 
 
 ### Justified Gallery
@@ -89,9 +97,15 @@ componentDidUpdate() {
 }
 ```
 
+Gallery is responsive and automatically re-renders when window is resized.
+
+![gallery](docs/images/gallery.gif)
+
 #### User Profile
 
-User's profile provides a live view of their photostream and albums.
+User's profile provides a live view of their photostream and albums. Cover photo dynamically updates depending on current photos.
+
+![album](docs/images/album.gif)
 
 
 ### Tags
@@ -105,7 +119,3 @@ The next steps in developing Aperture will be:
 ### Search
 
 Allow users to search photos by their tags and display the results in realtime.
-
-### Infinite Scroll
-
-Implement infinite scroll to sequentially fetch photos as the user scrolls to the bottom of the page.
