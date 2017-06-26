@@ -151,7 +151,7 @@ class Home extends React.Component {
         <footer className="footer">
           <div className="portfolio-link">
             <a href="http://wwww.samwang.io">
-              <i className="fa fa-folder"></i>
+              <i className="fa fa-home"></i>
             </a>
           </div>
           <div className="github-link">
