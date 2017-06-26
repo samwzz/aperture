@@ -149,6 +149,11 @@ class Home extends React.Component {
     if (!this.props.loggedIn) {
       return(
         <footer className="footer">
+          <div className="portfolio-link">
+            <a href="http://wwww.samwang.io">
+              <i className="fa fa-folder"></i>
+            </a>
+          </div>
           <div className="github-link">
             <a href="https://github.com/samwzz/aperture">
               <i className="fa fa-github"></i>
