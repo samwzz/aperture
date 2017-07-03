@@ -27,14 +27,16 @@ class PhotoIndex extends React.Component {
   }
 
   componentDidMount() {
-    this.fetchPhotos().then(() => {
-      $("#gallery").justifiedGallery({
-        rowHeight : 300,
-        lastRow : 'justify',
-        margins : 9,
-        cssAnimation: true,
-        randomize: this.state.randomize
-      });
+    this.fetchPhotos();
+  }
+
+  componentWillReceiveProps() {
+    $("#gallery").justifiedGallery({
+      rowHeight : 300,
+      lastRow : 'justify',
+      margins : 9,
+      cssAnimation: true,
+      randomize: this.state.randomize
     });
   }
 
