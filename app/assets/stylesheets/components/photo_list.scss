@@ -52,3 +52,43 @@
 .photo-list .gradient {
   display: none;
 }
+
+.brighter {
+  filter: brightness(1.25);
+}
+
+.darker {
+  filter: brightness(0.75);
+}
+
+.contrast {
+  filter: contrast(1.25);
+}
+
+.saturate {
+  filter: saturate(1.25);
+}
+
+.grayscale {
+  filter: grayscale(1);
+}
+
+.sepia {
+  filter: sepia(1);
+}
+
+.invert {
+  filter: invert(1);
+}
+
+.blur {
+  filter: blur(5px);
+}
+
+.fade {
+  filter: contrast(0.75);
+}
+
+.opacity {
+  filter: opacity(.75);
+}

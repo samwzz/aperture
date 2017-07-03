@@ -4,17 +4,42 @@ import { withRouter } from 'react-router';
 import PhotoShowContainer from '../photo/photo_show_container';
 import Modal from 'react-modal';
 import PhotoModalStyle from './photo_modal_style';
+import classNames from 'classnames';
 
 class PhotoModal extends React.Component {
   constructor (props) {
     super(props);
     this.state = {
-      modalOpen: false
+      modalOpen: false,
+      filter: {
+        brighter: false,
+        darker: false,
+        contrast: false,
+        saturate: false,
+        grayscale: false,
+        sepia: false,
+        invert: false,
+        blur: false,
+        fade: false,
+        opacity: false
+      }
     };
     this.openModal = this.openModal.bind(this);
     this.closeModal = this.closeModal.bind(this);
     this.afterModalOpen = this.afterModalOpen.bind(this);
     this.handleClick = this.handleClick.bind(this);
+
+    this.resetFilters = this.resetFilters.bind(this);
+    this.brighter = this.brighter.bind(this);
+    this.darker = this.darker.bind(this);
+    this.contrast = this.contrast.bind(this);
+    this.saturate = this.saturate.bind(this);
+    this.grayscale = this.grayscale.bind(this);
+    this.sepia = this.sepia.bind(this);
+    this.invert = this.invert.bind(this);
+    this.blur = this.blur.bind(this);
+    this.fade = this.fade.bind(this);
+    this.opacity = this.opacity.bind(this);
   }
 
   handleClick() {
@@ -34,6 +59,63 @@ class PhotoModal extends React.Component {
     PhotoModalStyle.content.opacity = 100;
   }
 
+  resetFilters() {
+    this.setState({
+      filter: {
+        brighter: false,
+        darker: false,
+        contrast: false,
+        saturate: false,
+        grayscale: false,
+        sepia: false,
+        invert: false,
+        blur: false,
+        fade: false,
+        opacity: false
+      }
+    });
+  }
+
+  brighter() {
+    this.setState({ filter: { brighter: true }});
+  }
+
+  darker() {
+    this.setState({ filter: { darker: true }});
+  }
+
+  contrast() {
+    this.setState({ filter: { contrast: true }});
+  }
+
+  saturate() {
+    this.setState({ filter: { saturate: true }});
+  }
+
+  grayscale() {
+    this.setState({ filter: { grayscale: true }});
+  }
+
+  sepia() {
+    this.setState({ filter: { sepia: true }});
+  }
+
+  invert() {
+    this.setState({ filter: { invert: true }});
+  }
+
+  blur() {
+    this.setState({ filter: { blur: true }});
+  }
+
+  fade() {
+    this.setState({ filter: { fade: true }});
+  }
+
+  opacity() {
+    this.setState({ filter: { opacity: true }});
+  }
+
   render() {
     const { photo } = this.props;
     return (
@@ -42,10 +124,28 @@ class PhotoModal extends React.Component {
             <div onClick={this.openModal} className="gradient">
               <h1>{photo.title}</h1>
             </div>
+            <div className="filter-menu-container">
+              <div className="filter-menu-button">
+
+              </div>
+              <div className="filter-menu">
+                <button onClick={this.resetFilters}><p>Reset</p></button>
+                <button onClick={this.brighter}>Brighter</button>
+                <button onClick={this.darker}>Darker</button>
+                <button onClick={this.contrast}>Contrast</button>
+                <button onClick={this.saturate}>Saturate</button>
+                <button onClick={this.grayscale}>Grayscale</button>
+                <button onClick={this.sepia}>Sepia</button>
+                <button onClick={this.invert}>Invert</button>
+                <button onClick={this.blur}>Blur</button>
+                <button onClick={this.fade}>Fade</button>
+                <button onClick={this.opacity}>Opacity</button>
+              </div>
+            </div>
             <img
               onClick={this.openModal}
               src={photo.image_url}
-              className="photo-modal-image"
+              className={`photo-modal-image ${classNames(this.state.filter)}`}
               />
             <div className="photo-heading-container">
               <div className="comment-icon">
