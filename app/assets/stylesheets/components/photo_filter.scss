@@ -1,0 +1,65 @@
+.filter-menu-container {
+  width: 100%;
+  position: relative;
+  margin-bottom: -33.156px;
+  z-index: 1;
+
+  .filter-menu {
+    display: flex;
+    justify-content: space-between;
+
+    button {
+      background: transparent;
+      transition: transform 0.3s;
+      -webkit-transition: transform 0.3s;
+      -moz-transition: transform 0.3s;
+
+      &:hover {
+        transform: scale(1.1);
+        -webkit-transform: scale(1.1);
+        -moz-transform: scale(1.1);
+        color: $light-gray;
+      }
+    }
+  }
+}
+
+.brighter {
+  filter: brightness(1.25);
+}
+
+.darker {
+  filter: brightness(0.75);
+}
+
+.contrast {
+  filter: contrast(1.25);
+}
+
+.saturate {
+  filter: saturate(1.25);
+}
+
+.grayscale {
+  filter: grayscale(1);
+}
+
+.sepia {
+  filter: sepia(1);
+}
+
+.invert {
+  filter: invert(1);
+}
+
+.blur {
+  filter: blur(5px);
+}
+
+.fade {
+  filter: contrast(0.75);
+}
+
+.opacity {
+  filter: opacity(.75);
+}
