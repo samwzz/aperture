@@ -15,7 +15,8 @@
 .photo-list .photo-modal-container {
   width: 800px;
   margin-top: 90px;
-  z-index: 100;
+  overflow: hidden;
+  position: relative;
 }
 
 .photo-modal-image {

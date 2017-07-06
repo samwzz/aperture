@@ -125,9 +125,6 @@ class PhotoModal extends React.Component {
               <h1>{photo.title}</h1>
             </div>
             <div className="filter-menu-container">
-              <div className="filter-menu-button">
-
-              </div>
               <div className="filter-menu">
                 <button onClick={this.resetFilters}><p>Reset</p></button>
                 <button onClick={this.brighter}>Brighter</button>
@@ -140,6 +137,9 @@ class PhotoModal extends React.Component {
                 <button onClick={this.blur}>Blur</button>
                 <button onClick={this.fade}>Fade</button>
                 <button onClick={this.opacity}>Opacity</button>
+              </div>
+              <div className="filter-menu-button">
+                <i className="fa fa-angle-double-down"></i>
               </div>
             </div>
             <img
