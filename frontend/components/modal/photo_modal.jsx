@@ -139,7 +139,7 @@ class PhotoModal extends React.Component {
                 <button onClick={this.opacity}>Opacity</button>
               </div>
               <div className="filter-menu-button">
-                <i className="fa fa-angle-double-down"></i>
+                <i className="fa fa-chevron-down"></i>
               </div>
             </div>
             <img
