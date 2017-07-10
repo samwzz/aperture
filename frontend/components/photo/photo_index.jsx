@@ -7,7 +7,8 @@ class PhotoIndex extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      randomize: false
+      randomize: false,
+      loading: true
     };
   }
 
@@ -25,7 +26,7 @@ class PhotoIndex extends React.Component {
     }
   }
 
-  componentDidMount() {
+  componentWillMount() {
     this.fetchPhotos().then(() => {
       setTimeout(() => {
         $("#gallery").justifiedGallery({
@@ -35,8 +36,21 @@ class PhotoIndex extends React.Component {
           cssAnimation: true,
           randomize: this.state.randomize
         });
-      }, 300);
+        this.setState({ loading: false });
+      }, 2000);
     });
+  }
+
+  loading() {
+    if (this.state.loading) {
+      return(
+        <div className="spinner">
+          <div className="bounce1"></div>
+          <div className="bounce2"></div>
+          <div className="bounce3"></div>
+        </div>
+      );
+    }
   }
 
   render () {
@@ -47,6 +61,7 @@ class PhotoIndex extends React.Component {
 
     return (
       <div className="photo-index">
+        {this.loading()}
         <div id="gallery" className="justified-gallery">
           {photoModals}
         </div>

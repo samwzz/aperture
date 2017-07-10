@@ -45,7 +45,11 @@ class PhotoList extends React.Component {
     if (this.state.numPhotos === 0) {
       noPhotos = "You will find your photos here. Now, go out and take some photos!";
     }
-    const loader = <div className="loader">Loading ...</div>;
+    const loader = <div className="spinner">
+      <div className="bounce1"></div>
+      <div className="bounce2"></div>
+      <div className="bounce3"></div>
+    </div>;
 
     return (
       <section className="photo-list-container">
