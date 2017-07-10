@@ -2,7 +2,6 @@ import React from 'react';
 import { Route, withRouter } from 'react-router-dom';
 import PhotoIndexItem from './photo_index_item';
 import PhotoModal from '../modal/photo_modal';
-import Modal from 'react-modal';
 
 class PhotoIndex extends React.Component {
   constructor(props) {
@@ -27,25 +26,17 @@ class PhotoIndex extends React.Component {
   }
 
   componentDidMount() {
-    this.fetchPhotos();
-  }
-
-  componentWillReceiveProps() {
-    $("#gallery").justifiedGallery({
-      rowHeight : 300,
-      lastRow : 'justify',
-      margins : 9,
-      cssAnimation: true,
-      randomize: this.state.randomize
+    this.fetchPhotos().then(() => {
+      setTimeout(() => {
+        $("#gallery").justifiedGallery({
+          rowHeight : 300,
+          lastRow : 'justify',
+          margins : 9,
+          cssAnimation: true,
+          randomize: this.state.randomize
+        });
+      }, 300);
     });
-  }
-
-  openModal() {
-    this.setState({ modalOpen: true });
-  }
-
-  closeModal() {
-    this.setState({ modalOpen: false });
   }
 
   render () {
